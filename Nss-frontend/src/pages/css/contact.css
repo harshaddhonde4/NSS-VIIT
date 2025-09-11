@@ -1,0 +1,99 @@
+ .section-contact {
+    /* background-color: rgba(4, 207, 243, 0.188); */
+    background-image: url('https://res.cloudinary.com/diyw5ilre/image/upload/v1715015163/nss/1_yb270v.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: repeat; */
+    /* padding: 30px; */
+ }
+ 
+ .grid-contact {
+     margin-top: -3rem;
+     max-width: 80%;
+     display: grid;
+     grid-template-columns: 2fr 1fr;
+ }
+
+ .section-contact-main {
+     max-width: 75%;
+ }
+
+ .section-contact-main .grid {
+     gap: 3.2rem;
+ }
+
+ .section-contact-main form {
+     display: flex;
+     flex-direction: column;
+     gap: 2.2rem;
+ }
+
+ .section-contact-main input,
+ .section-contact-main textarea {
+     padding: 1.5rem 2rem;
+     border: 1px solid #605e5e;
+     border-radius: 10px;
+     font-size: 1.8rem;
+     /* font-family: "work sans"; */
+     font-family: 'Aleo', serif;
+     width: 100%;
+ }
+
+ input,
+ textarea {
+     background-color: transparent;
+ }
+
+ .section-contact-main input[type="submit"] {
+     max-width: 30%;
+     border: none;
+ }
+
+
+ .contact-text {
+     text-align: center;
+ }
+
+ .map {
+     box-shadow: 0px 10px 5px 10px rgba(38, 0, 255, 0.1);
+ }
+
+.toastBody {
+    font-size: 2rem;
+}
+
+ @media (max-width: 798px) {
+     .contact-container {
+         margin-top: -2rem;
+         padding: 0 2rem;
+         max-width: 100%;
+     }
+
+     .contact-container .btn {
+         font-size: 1rem;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
+
+     .grid-contact {
+         grid-template-columns: 1fr;
+         max-width: 100%;
+     }
+
+     .contact-text {
+         margin-top: 3rem;
+     } 
+
+     .section-contact-main input,
+     .section-contact-main textarea {
+         padding: 1rem 2rem;
+         border: 0.2rem solid #c9c9c9;
+         border-radius: 10px;
+         font-size: 1.6rem;
+     }
+
+     .section-contact-main form {
+         gap: 1.2rem;
+     }
+ }

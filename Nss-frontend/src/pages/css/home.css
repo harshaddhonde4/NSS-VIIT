@@ -1,0 +1,172 @@
+/* Hero section in App.css  */
+
+/* Carousel Section  */
+.carousel-section {
+    /* background: linear-gradient(300deg, #000000, #29292a, rgb(6, 2, 130)); */
+    background-size: 180% 180%;
+    animation: gradient-animation 26s ease infinite;
+    height: 80vh;
+    background-image: url('https://res.cloudinary.com/diyw5ilre/image/upload/v1715015174/nss/Carousel-bg_qlf1xk.png');
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+} 
+
+.Carousel {
+    max-width: 50%;
+    padding: 5px;
+    margin-top: 7rem;
+    /* box-shadow: 0 0 10px rgb(255, 255, 255);  */
+    /* border: 5px solid rgba(239, 236, 236, 0.616); */
+    border-radius: 50px;
+}
+
+.Carousel-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Carousel-Caption {
+    background-color: rgb(50, 48, 48); 
+}
+
+.c-img {
+    height: 60vh;
+    border-radius: 50px;
+}
+
+/* What section  */
+
+.what {
+    background-image: url('https://res.cloudinary.com/diyw5ilre/image/upload/v1715015170/nss/what-bg_qzfohk.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0;
+}
+
+/* YoutTube Section  */
+
+.youtube-section {
+    padding-top: 4rem;
+    background-image: url('https://res.cloudinary.com/diyw5ilre/image/upload/v1715015174/nss/youtube_uqvjbl.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0;
+    /* height: 60vh; */
+}
+
+iframe {
+    width: 400px;
+    height: 250px;
+}
+
+
+/* work-counter-section */
+
+.work-counter-section {
+    background-image: url('https://res.cloudinary.com/diyw5ilre/image/upload/v1715015174/nss/work-bg_ujcjqq.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px 0;
+    text-align: center;
+    padding: 5rem;
+
+}
+
+.work-counter-section h2 {
+    font-size: 3rem;
+}
+
+.work-counter-section p {
+    font-size: 3rem;
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Timeline */
+.timeline-section {
+    background-color: #242424;
+    /* 242424 */
+}
+
+.timeline {
+    padding-bottom: 1rem;
+}
+
+.timeline-icon {  
+    color: #fff;  
+    width: 60px;  
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;  
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+@media (max-width: 1000px) {
+    /* Timeline */
+    .timeline-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 798px) {
+    /* Carousel Section  */
+    .Carousel {
+        max-width: 95%;
+        margin-top: 10rem;
+    }
+
+    .c-img {
+        height: 35vh;
+    }
+
+    .carousel-section { 
+        height: 75vh;
+    }
+    
+
+    /* Youtube  */
+    iframe {
+        width: 300px;
+        height: 200px;
+        margin-left: 3rem;
+    }
+
+    .youtube-section {
+        padding-top: 1rem;
+    }
+
+    /* Work */
+    .work-counter-section h2 {
+        font-size: 2rem;
+    }
+    
+    .work-counter-section p {
+        font-size: 2rem; 
+    }
+
+    .work-counter-section .row {
+        row-gap: 3rem;
+    }
+}
