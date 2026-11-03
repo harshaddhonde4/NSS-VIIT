@@ -1,0 +1,831 @@
+/* ====================================================================
+   GRAM-SETU 2026 — Premium Flagship Page Styles
+   NSS VIIT Pune | Residential Camp · Jamgaon, Mulshi
+   ==================================================================== */
+
+/* ── HERO ── */
+.gs-hero {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gs-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 17, 40, 0.88) 0%,
+    rgba(10, 17, 40, 0.75) 50%,
+    rgba(27, 107, 58, 0.55) 100%
+  );
+}
+
+.gs-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 12rem 2.4rem 6rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.gs-flag-tag {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  border-radius: 50px;
+  color: #F59E0B;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 2rem;
+}
+
+.gs-hero-content h1 {
+  font-size: clamp(4.5rem, 9vw, 8rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  line-height: 1.05;
+  margin: 0 0 1.4rem;
+  background: linear-gradient(135deg, #FFFFFF 40%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gs-hero-sub {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.gs-hero-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.gs-hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.gs-hero-meta span svg {
+  color: #F59E0B;
+  font-size: 1.4rem;
+}
+
+.gs-hero-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 1.6rem;
+  animation: gsScrollBounce 2s infinite;
+  z-index: 2;
+}
+
+@keyframes gsScrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ── OVERVIEW STRIP ── */
+.gs-overview-strip {
+  background: linear-gradient(135deg, #0A1128 0%, #112240 100%);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0;
+  border-bottom: 3px solid #F59E0B;
+}
+
+.gs-strip-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.8rem 4rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background 0.25s;
+  min-width: 160px;
+}
+
+.gs-strip-stat:last-child { border-right: none; }
+.gs-strip-stat:hover { background: rgba(245, 158, 11, 0.06); }
+
+.gs-strip-num {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #F59E0B;
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+}
+
+.gs-strip-label {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* ── MAIN CONTENT WRAPPER ── */
+.gs-main {
+  background: #f0f4f8;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(27, 107, 58, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 40%);
+}
+
+/* ── SECTION HEAD ── */
+.gs-section-head {
+  text-align: center;
+  max-width: 70rem;
+  margin: 0 auto 4.5rem;
+}
+
+.gs-section-head h2 {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: #0A1128;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  margin: 1rem 0 1rem;
+}
+
+.gs-section-head p {
+  font-size: 1.6rem;
+  color: #64748B;
+  line-height: 1.7;
+}
+
+/* ── PADMA SHRI PAWAR SPOTLIGHT ── */
+.gs-pawar-spotlight {
+  background: linear-gradient(135deg, #0A1128 0%, #1a2340 100%);
+  padding: 7rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.gs-pawar-spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(245, 158, 11, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 30%, rgba(27, 107, 58, 0.08) 0%, transparent 50%);
+}
+
+.gs-pawar-flag {
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(90deg, #F59E0B, #D97706);
+  color: #0A1128;
+  padding: 0.7rem 3rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: 0 0 12px 12px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.gs-pawar-inner {
+  max-width: 110rem;
+  margin: 3rem auto 0;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 6rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.gs-pawar-photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.gs-pawar-img-wrap {
+  position: relative;
+  width: 260px;
+  height: 290px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid #F59E0B;
+  box-shadow:
+    0 0 0 6px rgba(245, 158, 11, 0.15),
+    0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.gs-pawar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.gs-pawar-img-note {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(10, 17, 40, 0.85);
+  color: #F59E0B;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.8rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.gs-pawar-award-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  color: #F59E0B;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+
+.gs-pawar-content-col .gs-pawar-label {
+  display: inline-block;
+  color: #F59E0B;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.gs-pawar-content-col h2 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  line-height: 1.1;
+  margin: 0 0 0.6rem;
+}
+
+.gs-pawar-credential {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 2.4rem;
+  font-style: italic;
+}
+
+.gs-pawar-quote {
+  border-left: 4px solid #F59E0B;
+  margin: 0 0 3rem;
+  padding: 1.6rem 2.4rem;
+  background: rgba(245, 158, 11, 0.06);
+  border-radius: 0 12px 12px 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.7rem;
+  line-height: 1.75;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+}
+
+.gs-pawar-facts {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.gs-pawar-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.gs-pawar-fact strong {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #F59E0B;
+  font-family: "Inter", sans-serif;
+}
+
+.gs-pawar-fact span {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Inter", sans-serif;
+}
+
+/* ── GUEST GRID ── */
+.gs-guests {
+  padding: 8rem 3rem;
+  max-width: 130rem;
+  margin: 0 auto;
+}
+
+.gs-guest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2.4rem;
+}
+
+.gs-guest-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(10, 17, 40, 0.07);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gs-guest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(27, 107, 58, 0.15);
+  border-color: #1B6B3A;
+}
+
+.gs-guest-photo-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.gs-guest-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.gs-guest-card:hover .gs-guest-photo {
+  transform: scale(1.05);
+}
+
+.gs-guest-tag-pill {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(10, 17, 40, 0.85);
+  backdrop-filter: blur(8px);
+  color: #F59E0B;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.gs-guest-body {
+  padding: 2rem 2rem 2.4rem;
+}
+
+.gs-guest-body h3 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #0A1128;
+  font-family: "Inter", sans-serif;
+  margin: 0 0 0.6rem;
+  line-height: 1.3;
+}
+
+.gs-guest-theme {
+  font-size: 1.3rem;
+  color: #1B6B3A;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  margin: 0 0 1rem;
+}
+
+.gs-guest-desc {
+  font-size: 1.4rem;
+  color: #64748B;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── DAILY SCHEDULE TIMELINE ── */
+.gs-schedule {
+  background: linear-gradient(135deg, #0A1128 0%, #112240 100%);
+  padding: 8rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.gs-schedule::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(27, 107, 58, 0.1) 0%, transparent 60%);
+}
+
+.gs-schedule .gs-section-head h2,
+.gs-schedule .gs-section-head p { color: rgba(255, 255, 255, 0.9); }
+.gs-schedule .gs-section-head p { color: rgba(255, 255, 255, 0.5); }
+
+.gs-timeline {
+  max-width: 110rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.gs-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, #F59E0B 10%, #F59E0B 90%, transparent);
+  transform: translateX(-50%);
+}
+
+.gs-timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: calc(50% + 3.5rem);
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.gs-timeline-item.right {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: calc(50% + 3.5rem);
+}
+
+.gs-timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2), 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.gs-timeline-dot span {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0A1128;
+  font-family: "Inter", sans-serif;
+}
+
+.gs-timeline-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.4rem;
+  max-width: 42rem;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.gs-timeline-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(245, 158, 11, 0.4);
+  transform: translateY(-2px);
+}
+
+.gs-timeline-header {
+  margin-bottom: 1.4rem;
+}
+
+.gs-day-chip {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #F59E0B;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  padding: 0.3rem 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 0.8rem;
+}
+
+.gs-timeline-header h3 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.gs-timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.gs-timeline-list li {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: "Inter", sans-serif;
+  padding-left: 1.6rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.gs-timeline-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: #1B6B3A;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+
+/* ── OUTCOMES ── */
+.gs-outcomes {
+  padding: 8rem 3rem;
+  max-width: 130rem;
+  margin: 0 auto;
+}
+
+.gs-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.4rem;
+}
+
+.gs-outcome-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 3rem 2.8rem;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid var(--oc, #1B6B3A);
+  box-shadow: 0 4px 20px rgba(10, 17, 40, 0.06);
+  transition: all 0.3s ease;
+}
+
+.gs-outcome-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(10, 17, 40, 0.1);
+}
+
+.gs-outcome-icon {
+  width: 5.4rem;
+  height: 5.4rem;
+  background: color-mix(in srgb, var(--oc, #1B6B3A) 12%, #f8fafc);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: var(--oc, #1B6B3A);
+  margin-bottom: 1.6rem;
+}
+
+.gs-outcome-card h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0A1128;
+  font-family: "Inter", sans-serif;
+  margin: 0 0 0.8rem;
+}
+
+.gs-outcome-card p {
+  font-size: 1.45rem;
+  color: #64748B;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── OMKAR CALLOUT ── */
+.gs-omkar-callout {
+  background: linear-gradient(135deg, #0A1128 0%, #112240 100%);
+  padding: 6rem 3rem;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.gs-omkar-callout::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(236, 72, 153, 0.1) 0%, transparent 55%);
+}
+
+.gs-omkar-inner {
+  max-width: 90rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.gs-omkar-icon {
+  width: 8rem;
+  height: 8rem;
+  min-width: 8rem;
+  background: rgba(236, 72, 153, 0.15);
+  border: 2px solid rgba(236, 72, 153, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.2rem;
+  color: #EC4899;
+  box-shadow: 0 0 0 8px rgba(236, 72, 153, 0.08);
+}
+
+.gs-omkar-tag {
+  display: inline-block;
+  color: #EC4899;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.gs-omkar-content h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  margin: 0 0 0.3rem;
+}
+
+.gs-omkar-dept {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 1.6rem;
+}
+
+.gs-omkar-story {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.78;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 2rem;
+}
+
+.gs-omkar-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.gs-omkar-badges span {
+  padding: 0.5rem 1.4rem;
+  background: rgba(236, 72, 153, 0.12);
+  border: 1px solid rgba(236, 72, 153, 0.35);
+  border-radius: 50px;
+  color: #EC4899;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+
+/* ── GALLERY ── */
+.gs-gallery {
+  padding: 8rem 3rem;
+  max-width: 130rem;
+  margin: 0 auto;
+}
+
+.gs-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 1.4rem;
+}
+
+.gs-gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gs-gallery-featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gs-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.gs-gallery-item:hover img { transform: scale(1.05); }
+
+.gs-gallery-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(10, 17, 40, 0.85));
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  padding: 2rem 1.5rem 1.2rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gs-gallery-item:hover .gs-gallery-caption { transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .gs-pawar-inner { grid-template-columns: 260px 1fr; gap: 4rem; }
+  .gs-timeline::before { left: 2.5rem; transform: none; }
+  .gs-timeline-item { padding-right: 0; padding-left: 7rem; justify-content: flex-start; }
+  .gs-timeline-item.right { padding-left: 7rem; }
+  .gs-timeline-dot { left: 2.5rem; transform: translateX(-50%); }
+  .gs-timeline-card { max-width: 100%; }
+  .gs-gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .gs-hero-content h1 { font-size: 4.5rem; }
+  .gs-hero-meta { gap: 1.8rem; }
+  .gs-hero-meta span { font-size: 1.3rem; }
+  .gs-pawar-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .gs-pawar-photo-col { flex-direction: row; align-items: flex-start; gap: 2rem; }
+  .gs-pawar-img-wrap { width: 160px; height: 180px; }
+  .gs-pawar-content-col h2 { font-size: 3rem; }
+  .gs-pawar-spotlight { padding: 5rem 2rem; }
+  .gs-guests, .gs-outcomes, .gs-gallery { padding: 5rem 1.5rem; }
+  .gs-section-head h2 { font-size: 2.8rem; }
+  .gs-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gs-gallery-featured { grid-column: span 2; }
+  .gs-strip-stat { padding: 2rem 2.5rem; }
+  .gs-omkar-inner { flex-direction: column; text-align: center; gap: 2rem; }
+  .gs-omkar-badges { justify-content: center; }
+}
+
+@media (max-width: 520px) {
+  .gs-hero-content { padding: 10rem 1.5rem 4rem; }
+  .gs-hero-content h1 { font-size: 3.5rem; }
+  .gs-hero-sub { font-size: 1.6rem; }
+  .gs-hero-meta { flex-direction: column; gap: 1rem; }
+  .gs-pawar-photo-col { flex-direction: column; align-items: center; }
+  .gs-schedule { padding: 5rem 1.5rem; }
+  .gs-gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
+  .gs-gallery-featured { grid-column: span 1; grid-row: span 1; }
+  .gs-gallery-caption { transform: translateY(0); }
+  .gs-strip-stat { width: 50%; min-width: auto; padding: 1.8rem 1.5rem; }
+  .gs-timeline-item { padding-left: 5.5rem; }
+  .gs-timeline-dot { left: 1.5rem; width: 3.2rem; height: 3.2rem; }
+  .gs-timeline::before { left: 1.5rem; }
+}

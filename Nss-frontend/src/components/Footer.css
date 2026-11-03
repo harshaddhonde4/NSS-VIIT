@@ -1,203 +1,363 @@
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-
-/* The footer is fixed to the bottom of the page */
+/* ============================================
+   FOOTER — Premium NGO Style
+   ============================================ */
 
 footer {
-    /* position: fixed; */
-    bottom: 0;
-}
-
-@media (max-height:800px) {
-    footer {
-        position: static;
-    }
-    header {
-        padding-top: 40px;
-    }
+  bottom: 0;
 }
 
 .footer-distributed {
-    background-color: #2d2a30;
-    box-sizing: border-box;
-    width: 100%;
-    text-align: left;
-    font: bold 16px sans-serif;
-    padding: 50px 50px 60px 50px; 
+  background: linear-gradient(135deg, #0A1128 0%, #112240 100%);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  padding: 6rem 5rem;
+  border-top: 4px solid #1B6B3A;
 }
 
-.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
-    display: inline-block;
-    vertical-align: top;
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  display: inline-block;
+  vertical-align: top;
 }
 
-/* Footer left */
-
+/* Footer Left */
 .footer-distributed .footer-left {
-    text-align: center;
-    width: 30%;
+  text-align: left;
+  width: 30%;
 }
 
 .footer-distributed h3 {
-    color: #ffffff;
-    font: normal 36px 'Cookie', cursive;
-    margin: 0;
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
 }
-
 
 .footer-distributed h3 span {
-    color: #e0ac1c;
+  color: #F59E0B;
 }
 
-/* Footer links */
+.footer-tagline {
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
+  margin: 0 0 2.4rem;
+  font-weight: 400;
+}
 
 .footer-distributed .footer-links {
-    color: #ffffff;
-    margin: 20px 0 12px;
+  color: rgba(255,255,255,0.8);
+  margin: 2rem 0 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .footer-distributed .footer-links a {
-    display: inline-block;
-    line-height: 1.8;
-    text-decoration: none;
-    color: inherit;
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.footer-distributed .footer-links a::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #1B6B3A;
+  transition: all 0.3s ease;
+}
+
+.footer-distributed .footer-links a:hover {
+  color: #F59E0B;
+  padding-left: 2rem;
+}
+
+.footer-distributed .footer-links a:hover::before {
+  color: #F59E0B;
 }
 
 .footer-distributed .footer-company-name {
-    color: #8f9296;
-    font-size: 17px;
-    font-weight: normal;
-    margin: 0;
+  color: rgba(255,255,255,0.4);
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 2rem 0 0;
+  line-height: 1.6;
 }
 
 /* Footer Center */
-
 .footer-distributed .footer-center {
-    width: 25%; 
-    margin-left: 10rem;
-    margin-top: 2rem;
+  width: 25%;
+  margin-left: 8rem;
+  margin-top: 0;
 }
 
-.footer-distributed .footer-center i { 
-    color: #ffffff;
-    font-size: 25px; 
-    text-align: center;
-    line-height: 42px;
-    margin: 10px 15px;
-    vertical-align: middle;
+.footer-center-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #F59E0B;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
-.footer-distributed .footer-center i.fa-envelope {
-    font-size: 17px;
-    line-height: 38px;
+.footer-center-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+}
+
+.footer-distributed .footer-center i {
+  color: #1B6B3A;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1;
+  margin-right: 1.4rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 1.4rem;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: all 0.3s ease;
+}
+
+.footer-contact-row:hover {
+  background: rgba(27, 107, 58, 0.1);
+  border-color: rgba(27, 107, 58, 0.3);
+}
+
+.footer-contact-icon {
+  color: #1B6B3A;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
 }
 
 .footer-distributed .footer-center p {
-    display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    margin: 0;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  text-align: left;
+  display: block;
 }
 
 .footer-distributed .footer-center p span {
-    display: block;
-    font-weight: normal;
-    font-size: 18px;
-    text-align: left;
-    line-height: 2;
+  display: block;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin-bottom: 0.2rem;
 }
 
 .footer-distributed .footer-center p a {
-    color: #e0ac1c;
-    text-decoration: none;
-    ;
+  color: #F59E0B;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-distributed .footer-center p a:hover {
+  color: #FBBF24;
 }
 
 /* Footer Right */
-
 .footer-distributed .footer-right {
-    width: 30%;
+  width: 30%;
+  padding-left: 4rem;
+}
+
+.footer-right-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #F59E0B;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.footer-right-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
 }
 
 .footer-distributed .footer-company-about {
-    line-height: 20px;
-    color: #92999f;
-    font-size: 15px;
-    font-weight: normal;
-    margin: 0;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0 0 2.4rem;
 }
 
 .footer-distributed .footer-company-about span {
-    display: block;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  display: block;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  font-family: "Inter", sans-serif;
 }
 
 .footer-distributed .footer-icons {
-    margin-top: 1rem;
-    text-align: center;
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .footer-distributed .footer-icons a {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    background-color: #33383b;
-    border-radius: 2px;
-    font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 35px;
-    margin-right: 3px;
-    margin-bottom: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
 .footer-distributed .footer-icons a:hover {
-    background-color: #3F71EA;
+  background-color: #1B6B3A;
+  color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(27, 107, 58, 0.4);
+  border-color: #1B6B3A;
 }
 
-.footer-links a:hover {
-    color: #3F71EA;
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 5rem;
+  padding-top: 2.4rem;
+  text-align: center;
 }
 
-.footer-hr {
-    display: none;
+.footer-bottom p {
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: #F59E0B;
+  font-weight: 600;
+}
+
+.footer-hr { display: none; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1000px) {
+  .footer-distributed {
+    padding: 5rem 3rem;
+  }
+
+  .footer-distributed .footer-center {
+    margin-left: 4rem;
+  }
+
+  .footer-distributed .footer-right {
+    padding-left: 2rem;
+  }
 }
 
 @media (max-width: 880px) {
-    .footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
-        display: block;
-        width: 100%;
-        margin-bottom: 40px;
-        text-align: center;
-    }
-    .footer-distributed .footer-center i {
-        margin-left: 0;
-    }
-
-    .footer-distributed .footer-right {
-        margin-top: 3rem;
-    }
-
-    .footer-distributed .footer-center {
-        margin-left: 0px;
-    }
-
-    .footer-distributed .footer-center p span {
-        text-align: center;
-    }
-
-    .footer-distributed .footer-center p {
-    display: initial; /* or any other appropriate value */
-    /* color: inherit; */
-    vertical-align: initial;
-    margin: initial;
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 4rem;
+    text-align: center;
   }
 
-  .footer-hr {
-    display: block;
+  .footer-distributed h3 { text-align: center; }
+  .footer-tagline { text-align: center; }
+
+  .footer-distributed .footer-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 2rem;
+  }
+
+  .footer-distributed .footer-links a {
+    padding-left: 0;
+    text-align: center;
+  }
+  .footer-distributed .footer-links a::before { display: none; }
+  .footer-distributed .footer-links a:hover { padding-left: 0; }
+
+  .footer-distributed .footer-center {
+    margin-left: 0;
+  }
+
+  .footer-contact-row {
+    text-align: left;
+    max-width: 40rem;
+    margin: 0 auto 1.6rem;
+  }
+
+  .footer-distributed .footer-right {
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+  .footer-distributed .footer-company-about { text-align: center; }
+
+  .footer-distributed .footer-icons {
+    justify-content: center;
+  }
+
+  .footer-hr { display: block; border-color: rgba(255,255,255,0.1); }
+
+  .footer-bottom p { font-size: 1.2rem; }
+
+  .footer-center-title,
+  .footer-right-title {
+    justify-content: center;
+  }
+
+  .footer-center-title::after,
+  .footer-right-title::after { display: none; }
 }
-}       

@@ -11,11 +11,9 @@ import { useEffect } from 'react';
 const EventCard = ({ name, date, venue, imgSrc, setup, text }) => {
 
   useEffect(() => {
-    Aos.init({ duration: 2000 }, { delay: 50 }, { offset: 400 });
+    Aos.init({ duration: 800, once: true, offset: 60 });
   }, [])
 
-
-  // Function to truncate the text to 100 words
   const truncateText = (text) => {
     const words = text.split(' ');
     if (words.length > 20) {
@@ -25,34 +23,28 @@ const EventCard = ({ name, date, venue, imgSrc, setup, text }) => {
   };
 
   return (
-    <>
-      <section className="eventcard-section" data-aos="zoom-in" >
-        <div className='event-card' >
+    <section className="eventcard-section" data-aos="fade-up">
+      <div className="event-card">
+        <div style={{ overflow: 'hidden', borderRadius: '18px 18px 0 0', margin: '-1px -1px 0 -1px' }}>
+          <img className='event-image' src={imgSrc[0]} alt={name} />
+        </div>
+        <div style={{ padding: '1.8rem 2rem 2rem' }}>
           <div>
             <h1>{name}</h1>
-            <p>{date}</p>
+            <p style={{ fontSize: '1.2rem', color: '#1B6B3A', fontWeight: 600, marginBottom: '0.6rem' }}>{date}</p>
           </div>
-          <div>
-            <img className='event-image' src={imgSrc[0]} alt='Event image' />
-          </div>
-          <p>
+          <p style={{ fontSize: '1.35rem', color: '#64748B', lineHeight: 1.6 }}>
             {truncateText(text)}
           </p>
 
-          {/* <a href='#'><button className='button event-btn' data-aos = "flip-left" >More...</button></a> */}
-          {/* <a href={`/events/singleevent?name=${encodeURIComponent(name)}&date=${encodeURIComponent(date)}&imgSrc=${encodeURIComponent(imgSrc)}&setup=${encodeURIComponent(setup)}&text=${encodeURIComponent(text)}&venue=${encodeURIComponent(venue)}`}>
-            <button className='button event-btn' data-aos="flip-left">More...</button>
-          </a> */}
-
-          <Link style={{textDecoration:"none"}} to={`/events/singleevent?name=${encodeURIComponent(name)}&date=${encodeURIComponent(date)}&imgSrc=${encodeURIComponent(imgSrc)}&setup=${encodeURIComponent(setup)}&text=${encodeURIComponent(text)}&venue=${encodeURIComponent(venue)}`}>
-            <button className='button event-btn' data-aos="flip-left">
-              More...
+          <Link style={{ textDecoration: "none" }} to={`/events/singleevent?name=${encodeURIComponent(name)}&date=${encodeURIComponent(date)}&imgSrc=${encodeURIComponent(imgSrc)}&setup=${encodeURIComponent(setup)}&text=${encodeURIComponent(text)}&venue=${encodeURIComponent(venue)}`}>
+            <button className='button event-btn'>
+              Read More
             </button>
           </Link>
-
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 

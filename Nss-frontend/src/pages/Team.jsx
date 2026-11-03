@@ -1,84 +1,116 @@
 import { useEffect, useState } from "react";
 import TeamCard from "./TeamCard";
 import "./css/Team.css";
-import { MdArrowRight } from "react-icons/md";
 import Team_24_25 from "./Team_24-25";
 import Team_23_24 from "./Team_23-24";
+import Team_25_26 from "./Team_25-26";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Team = () => {
   useEffect(() => {
-    document.title = "NSS | Team";
+    document.title = "NSS VIIT Pune | Our Team";
   });
 
-  const [Batch, SetBatch] = useState("2024-25")
+  useEffect(() => {
+    Aos.init({ duration: 800, once: true, offset: 60 });
+  }, []);
 
-  const handleBatchChange = (e) =>{
-    const batch = e.target.innerText
-    SetBatch(batch)
-  }
+  const [Batch, SetBatch] = useState("2025-26");
 
-  const renderBatchChange = () =>{
+  const batches = ["2025-26", "2024-25", "2023-24"];
+
+  const renderBatchChange = () => {
     switch (Batch) {
-      case "2024-25":{
-        return <Team_24_25/>
-      }
-
-      case "2023-24":{
-        return <Team_23_24/>
-      }
-
-      default:{
-        return <Team_24_25/>
-      }
+      case "2025-26":
+        return <Team_25_26 />;
+      case "2024-25":
+        return <Team_24_25 />;
+      case "2023-24":
+        return <Team_23_24 />;
+      default:
+        return <Team_25_26 />;
     }
-  }
+  };
 
   return (
     <>
-      <section>
-        <div className="wrapper">
-          <div className="title">
-            <h4>Faculty Members</h4>
+      {/* Page Banner */}
+      <div className="team-banner">
+        <span className="label-tag label-light">The People Behind the Mission</span>
+        <h1>Our Team</h1>
+        <p>Meet the dedicated faculty and student leaders who drive NSS VIIT Pune forward</p>
+      </div>
+
+      <section className="team-page">
+
+        {/* ===== STUDENT TEAM FIRST ===== */}
+        <div className="team-section-header" data-aos="fade-up">
+          <h2>Student Team</h2>
+          <div className="section-line"></div>
+          <p>The passionate student leaders shaping our vision on the ground</p>
+        </div>
+
+        <div className="batch-selector" data-aos="fade-up">
+          <span className="batch-label">Select Batch:</span>
+          <div className="batch-pills">
+            {batches.map((b) => (
+              <button
+                key={b}
+                className={`batch-pill${Batch === b ? " active" : ""}`}
+                onClick={() => SetBatch(b)}
+              >
+                {b}
+              </button>
+            ))}
           </div>
+        </div>
 
-          <div className="card_Container">
-            <TeamCard
-              name="Vikas Kolekar"
-              role="NSS program officer"
-              imgSrc="https://res.cloudinary.com/diyw5ilre/image/upload/v1715015192/nss/faculty-1_i9h7jw.png"
-              twitter="#"
-              email="vikas.kolekar@viit.ac.in"
-              linkedin="https://www.linkedin.com/in/vikas-kolekar/"
-            />
+        <div className="batch-content">
+          {renderBatchChange()}
+        </div>
 
-            <TeamCard
-              name="Nitin Sakhare"
-              role="NSS program officer"
-              imgSrc="https://res.cloudinary.com/diyw5ilre/image/upload/v1715015193/nss/faculty-2_z7queo.png"
-              twitter="#"
-              email="nitin.sakhare@viit.ac.in"
-              linkedin="https://www.linkedin.com/in/nitin-sakhare-b2485383/"
-            />
+        {/* Divider */}
+        <div className="team-divider" data-aos="fade-up">
+          <div className="divider-line"></div>
+          <span className="divider-text">✦</span>
+          <div className="divider-line"></div>
+        </div>
 
-            <TeamCard
-              name="Sharada Desai"
-              role="NSS program officer"
-              imgSrc="https://res.cloudinary.com/diyw5ilre/image/upload/v1717755195/WhatsApp_Image_2024-06-07_at_3.32.58_PM_qxg4ir.jpg"
-              twitter="#"
-              email="sharada.desai@viit.ac.in"
-              linkedin="https://www.linkedin.com/in/sharada-desai-669ba3a/"
-            />
-          </div>
+        {/* ===== FACULTY ADVISORS SECOND ===== */}
+        <div className="team-section-header" data-aos="fade-up">
+          <h2>Faculty Advisors</h2>
+          <div className="section-line"></div>
+          <p>Our guiding mentors who inspire and lead by example</p>
+        </div>
 
-          <div className="title">
-            <h4>Our Team Section</h4>
-            <div className="batchWrapper">
-              Batch <MdArrowRight />
-              <div className="batchClass" onClick={handleBatchChange}>2023-24</div>
-              <div className="batchClass" onClick={handleBatchChange}>2024-25</div>
-            </div>
-            {renderBatchChange()}
-          </div>
+        <div className="card_Container faculty-container" data-aos="fade-up">
+          <TeamCard
+            name="Vikas Kolekar"
+            role="NSS Program Officer"
+            imgSrc="https://res.cloudinary.com/diyw5ilre/image/upload/v1715015192/nss/faculty-1_i9h7jw.png"
+            twitter="#"
+            email="vikas.kolekar@viit.ac.in"
+            linkedin="https://www.linkedin.com/in/vikas-kolekar/"
+          />
+
+          <TeamCard
+            name="Amol Suryawanshi"
+            role="NSS Program Officer"
+            imgSrc="https://res.cloudinary.com/dapdhkhle/image/upload/v1758392982/42e3745c-290f-4d94-91d3-7ab60e53c059.png"
+            twitter="#"
+            email="amol.suryawanshi@viit.ac.in"
+            linkedin="https://www.linkedin.com/in/amol-shivajirao-suryawanshi-81216b18/"
+          />
+
+          <TeamCard
+            name="Sharada Desai"
+            role="NSS Program Officer"
+            imgSrc="https://res.cloudinary.com/diyw5ilre/image/upload/v1717755195/WhatsApp_Image_2024-06-07_at_3.32.58_PM_qxg4ir.jpg"
+            twitter="#"
+            email="sharada.desai@viit.ac.in"
+            linkedin="https://www.linkedin.com/in/sharada-desai-669ba3a/"
+          />
         </div>
       </section>
     </>

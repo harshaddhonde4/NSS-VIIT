@@ -1,53 +1,90 @@
+import "./Footer.css";
 
-import './Footer.css'; // Import CSS file for styles....
-
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { MdCall, MdEmail } from "react-icons/md";
-
+import { MdCall, MdEmail, MdLocationOn } from "react-icons/md";
 
 function Footer() {
   return (
     <footer className="footer-distributed">
       <div className="footer-left">
-        <h3>NSS<span>VIIT</span></h3>
-        <p className="footer-links">
-          <a href="/">Home</a> | 
-          <a href="/about">About</a> | 
-          <a href="/contact">Contact</a> | 
+        <h3>
+          NSS VIIT<span> Pune</span>
+        </h3>
+        <p className="footer-tagline">Not Me But You — Service Above Self</p>
+        <div className="footer-links">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
           <a href="/events">Events</a>
-        </p>
+          <a href="/team">Our Team</a>
+          <a href="/contact">Contact</a>
+        </div>
         <p className="footer-company-name">
-          Copyright © 2024 <strong>Developed by: NSS VIIT</strong> All rights reserved
+          © 2026 <strong>NSS VIIT Pune</strong>. All rights reserved.
         </p>
       </div>
-      <hr className='footer-hr' style={{color:"white"}}/>
+
+      <hr className="footer-hr" style={{ color: "rgba(255,255,255,0.1)" }} />
+
       <div className="footer-center">
-        <div>
-          <i><FaMapMarkerAlt/></i>
-          <p><span></span>NSS VIIT HQ, PUNE</p>
+        <div className="footer-center-title">Get in Touch</div>
+
+        <div className="footer-contact-row">
+          <MdLocationOn className="footer-contact-icon" />
+          <p>
+            <span>Address</span>
+            2/2A/9, Betal Nagar, Kondhwa, Pune, Maharashtra 411048
+          </p>
         </div>
-        <div>
-          <i><MdCall/></i>
-          <p><span></span><a href="tel:+919284708471">+91 9284708471</a></p>
+
+        <div className="footer-contact-row">
+          <MdCall className="footer-contact-icon" />
+          <p>
+            <span>Phone</span>
+            <a href="tel:+919403554039">+91 9403554039</a>
+          </p>
         </div>
-        <div>
-          <i><MdEmail/></i>
-          <p><a href="mailto:nss@viit.ac.in"><span></span>nss@viit.ac.in</a></p>
+
+        <div className="footer-contact-row">
+          <MdEmail className="footer-contact-icon" />
+          <p>
+            <span>Email</span>
+            <a href="mailto:nss@viit.ac.in">nss@viit.ac.in</a>
+          </p>
         </div>
       </div>
-      <hr className='footer-hr' style={{color:"white"}}/>
+
+      <hr className="footer-hr" style={{ color: "rgba(255,255,255,0.1)" }} />
+
       <div className="footer-right">
+        <div className="footer-right-title">About NSS VIIT Pune</div>
         <p className="footer-company-about">
-          <span>About NSS VIIT</span>
-          <strong>The National Service Scheme (NSS) at Vishwakarma Institute of Information Technology (VIIT), Pune, embodies a commitment to community engagement and social responsibility among its students.</strong> 
+          The National Service Scheme (NSS) at Vishwakarma Institute of
+          Information Technology (VIIT), Pune, embodies a commitment to
+          community engagement and social responsibility among its students.
+          Through service, we build character and create lasting impact.
         </p>
         <div className="footer-icons">
-          <a href="https://www.facebook.com/www.nssviit.org/"><FaFacebookF/></a>
-          <a href="https://www.instagram.com/nss.viit.pune?igsh=MXZ5MXU3eGhsMzlteg=="><FaInstagram /></a>
-          <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/"><FaLinkedinIn /></a>
-          <a href="https://x.com/NSS_VIIT_PUNE?t=yM3oygffaI1aw5f1utKzeQ&s=09"><FaXTwitter /></a>
-          <a href="https://youtube.com/@nssviit8764?si=HpbpZGpKu8YGuaPc"><FaYoutube /></a>
+          <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer">
+            <FaFacebookF />
+          </a>
+          <a href="https://www.instagram.com/nss.viit.pune?igsh=MXZ5MXU3eGhsMzlteg==" target="_blank" rel="noreferrer">
+            <FaInstagram />
+          </a>
+          <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer">
+            <FaLinkedinIn />
+          </a>
+          <a href="https://x.com/NSS_VIIT_PUNE?t=yM3oygffaI1aw5f1utKzeQ&s=09" target="_blank" rel="noreferrer">
+            <FaXTwitter />
+          </a>
+          <a href="https://youtube.com/@nssviit8764?si=HpbpZGpKu8YGuaPc" target="_blank" rel="noreferrer">
+            <FaYoutube />
+          </a>
         </div>
       </div>
     </footer>

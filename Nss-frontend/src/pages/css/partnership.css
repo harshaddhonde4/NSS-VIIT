@@ -1,0 +1,98 @@
+/* ============================================
+   PARTNERS — Scrolling Banner Marquee
+   ============================================ */
+
+.partners-section {
+  background: #FFFFFF;
+  padding: 5rem 0 4rem;
+  overflow: hidden;
+  border-top: 1px solid #e2e8f0;
+}
+
+.partners-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.partners-header h2 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #0A1128;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.06rem;
+}
+
+/* Marquee Wrapper */
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem 0;
+}
+
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #FFFFFF, transparent);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #FFFFFF, transparent);
+}
+
+/* Scrolling Track — two identical images side by side */
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  animation: marqueeScroll 20s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 3rem)); }
+}
+
+/* Partner Banner Image */
+.partner-banner {
+  height: 8rem;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 798px) {
+  .partners-section { padding: 4rem 0 3rem; }
+  .partners-header h2 { font-size: 2.6rem; }
+  .partner-banner { height: 6rem; }
+  .marquee-track { gap: 4rem; }
+  .marquee-wrapper::before,
+  .marquee-wrapper::after { width: 5rem; }
+}
+
+@media (max-width: 520px) {
+  .partners-header h2 { font-size: 2.2rem; }
+  .partner-banner { height: 4.5rem; }
+  .marquee-track { gap: 3rem; }
+  .marquee-wrapper::before,
+  .marquee-wrapper::after { width: 3rem; }
+}

@@ -3,26 +3,252 @@ import EventCard from "./EventCard";
 
 const Events = () => {
   useEffect(() => {
-    document.title = "NSS | Events";
+    document.title = "NSS VIIT Pune | Events";
   }, []);
 
   return (
     <>
+      {/* Page Banner */}
+      <div className="page-banner">
+        <span className="label-tag label-light" style={{ background: 'rgba(245,158,11,0.1)', color: '#F59E0B', border: '1px solid rgba(245,158,11,0.25)', position: 'relative', zIndex: 1 }}>What We Do</span>
+        <h1>Our Events</h1>
+        <p style={{ position: 'relative', zIndex: 1 }}>Explore the initiatives and programs that define NSS VIIT Pune</p>
+      </div>
+
       <section className="events-section">
-        <center>
-          <h1 style={{ color: "black" }} className="container main-heading">
-            {" "}
-            Events{" "}
-          </h1>
-        </center>
 
         <div className="event-card-grid">
 
-          {/* Blood Donation  */}
+          {/* ════════════════════════════════════════════════════════
+              BATCH 2025-26 EVENTS — Newest first
+          ════════════════════════════════════════════════════════ */}
+
+          {/* Gram-Setu — NSS Residential Camp 2026 (FLAGSHIP — FEATURED) */}
+          <EventCard
+            featured={true}
+            name="Gram-Setu — NSS Residential Camp 2026"
+            date="21–28 January 2026"
+            venue="Jamgaon Village, Mulshi, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/diyw5ilre/image/upload/v1715019790/nss/Events/1_trmyhl.jpg",
+              "https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/1_iuv2k5.png",
+              /* → Replace above with: Nss_Website/GramSetu_2026/gallery/day1_inauguration.jpg, day4_dindi.jpg, day5_street_play.jpg, day8_closing.jpg */
+            ]}
+            setup="NSS VIIT Pune's flagship Residential Camp — Gram-Setu 2026 — deployed 60+ engineering volunteers for 8 transformative days at Jamgaon village, Mulshi (approximately 35 km from Pune). Volunteers were organized into teams and briefed on activities: watershed drainage management, school cleanliness, village surveys, children's education (Math & English), menstrual hygiene awareness, road safety, and financial literacy."
+            text="Gram-Setu 2026 was the most impactful NSS VIIT residential camp to date. Over 8 days (21–28 January 2026), 60+ volunteers immersed themselves in rural life at Jamgaon, Mulshi — NSS VIIT's adopted village since 2008.
+
+Highlights included: a Dindi procession through the village; the street play 'Paristhitichi Janiv' performed by volunteers; and a landmark keynote address by Padma Shri Popatrao Pawar — the architect of India's model village Hiware Bazar — who mentored volunteers on bridging administration and people to eliminate poverty.
+
+Distinguished guests: Wing Cdr M.M. Yagnaraman (Retd.) on 'Service Before Self'; Everest Summiteer Shrihari Tapkir on resilience; Omkar Ugale (MGVS) on NGO ground realities; and Deepankar Patil on the corporate-to-service transition.
+
+Technical Shramdaan: volunteers executed drainage management and ground leveling at Disali School. Daily activities included morning yoga, vegetable gardening, guest lectures, and competitive programmes. The camp produced measurable outcomes: village awareness, education support for local children, urban-rural bonding, and sustainability habits. Jamgaon has maintained a 100% Class 10 result for 5 consecutive years, directly attributed to NSS VIIT's doorstep teaching initiative."
+          />
+
+          {/* Rakta-Setu — Blood Donation Drive 2025 */}
+          <EventCard
+            name="Rakta-Setu — Blood Donation Drive 2025"
+            date="7–8 October 2025"
+            venue="VIIT, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1727811380/Nss_Website/Events/Blood%20Donation%2024-25/yekztr651berk3a7bza8.jpg",
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1727811380/Nss_Website/Events/Blood%20Donation%2024-25/pn5p6k37o2jn0zhwh7l1.jpg",
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1727811380/Nss_Website/Events/Blood%20Donation%2024-25/v6h1aq3yhwhdokpfztbq.jpg",
+            ]}
+            setup="Rakta-Setu 2025 was organized by NSS VIIT Pune in collaboration with Adhar Blood Bank on 7–8 October 2025. Committee members managed registration, discipline, food arrangements, medical check-up coordination, and publicity. A street play was performed as part of pre-event awareness. Seminars on Breast Cancer and PCOD were organized alongside the donation drive."
+            text="Rakta-Setu — NSS VIIT Pune's flagship blood donation initiative — achieved its largest scale in 2025. The two-day drive on 7–8 October 2025 recorded 956+ total participants and 385 student blood donors, partnered with Adhar Blood Bank.
+
+In addition to blood donation, 11 types of free medical check-ups were offered including ECG, Hemoglobin, and Dental check-ups. A street play was performed to spread awareness, and dedicated seminars addressed Breast Cancer awareness and PCOD among women attendees.
+
+The event was inaugurated with the traditional Deep Prajwalan ceremony, attended by faculty and student leaders. Food supplements were provided to all donors and volunteers throughout the day. The scale and impact of Rakta-Setu 2025 marks it as one of the largest student-driven healthcare events in NSS VIIT's history."
+          />
+
+          {/* Road Safety Drive 2025 */}
+          <EventCard
+            name="Road Safety Awareness Drive 2025"
+            date="1 October 2025"
+            venue="VIIT, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/diyw5ilre/image/upload/v1715019934/nss/Events/1_ia8hau.jpg",
+            ]}
+            setup="Organized in collaboration with SAARC VIIT. The event was held in memory of alumnus Sanket Wankhade, continuing NSS VIIT's annual road safety commitment. 80+ participants were mobilized with awareness materials and interactive sessions."
+            text="On 1 October 2025, NSS VIIT Pune collaborated with SAARC VIIT to organize a Road Safety Awareness Drive in memory of their alumnus Sanket Wankhade. The event drew 80+ participants and included insightful discussions on road safety, sharing of practical tips, and interactive activities reinforcing responsible road behaviour.
+
+The drive reinforced the community's collective commitment to preventing road accidents. Helmet safety and traffic rule compliance were emphasized. The event served as both a tribute to Sanket's memory and a call to action for every student on campus to take road safety seriously."
+          />
+
+          {/* Swachh-Setu — Cleanliness Drive */}
+          <EventCard
+            name="Swachh-Setu — Cleanliness Drive 2025"
+            date="26 September 2025"
+            venue="VIIT Main Gate, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/diyw5ilre/image/upload/v1715019407/nss/Events/1_nfg79u.jpg",
+            ]}
+            setup="Organized in collaboration with Pune Municipal Corporation under the national 'Swachhata Hi Seva' campaign. Volunteers coordinated with PMC officials for logistics, waste collection, and public awareness at the VIIT main gate area."
+            text="On 26 September 2025, NSS VIIT Pune conducted Swachh-Setu — a 'Swachhata Hi Seva' cleanliness drive — at the VIIT main gate in collaboration with Pune Municipal Corporation (PMC). Volunteers actively cleaned the surrounding area, collected waste, and spread awareness about civic hygiene responsibility.
+
+This initiative demonstrated NSS VIIT's urban outreach commitment under the national cleanliness mission. The collaboration with PMC reflects the unit's ability to scale community partnerships from the village (Jamgaon) to the city."
+          />
+
+          {/* Suraksha-Setu (SPO) 2025 */}
+          <EventCard
+            name="Suraksha-Setu — Special Police Officer (SPO) 2025"
+            date="6–7 September 2025 (Anant Chaturdashi)"
+            venue="Swargate Police Station and surrounding areas, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1727811773/Nss_Website/Events/SPO%2024-25/zqlltxblfxa3tkxhqdpe.jpg",
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1727811773/Nss_Website/Events/SPO%2024-25/z68svaae0lvqm2exw1im.jpg",
+            ]}
+            setup="On 5 September, Swargate Police provided SPO ID cards and T-shirts to all 122+ NSS volunteers. Volunteers were divided into groups and areas were allocated for Ganpati Visarjan crowd management duty from the evening of 6 September through to 7 September morning. Detailed briefing on protocol, emergency procedures, and coordination with police officers was conducted."
+            text="Suraksha-Setu 2025 was the largest Special Police Officer deployment in NSS VIIT's history. On the occasion of Anant Chaturdashi (6–7 September 2025), 122+ NSS volunteers joined hands with Swargate Police Station to manage public order during the Ganpati Visarjan festival.
+
+Volunteers served from 1:00 PM on 6 September through 6:00 AM on 7 September — a 17-hour continuous service shift. Each volunteer was assigned a specific area and worked under the direct supervision of police officers to ensure the safety and smooth flow of the procession.
+
+The initiative was recognized and appreciated by Sakal Media, highlighting the scale and discipline of NSS VIIT's civic deployment. Suraksha-Setu has become a defining annual collaboration between NSS VIIT and law enforcement."
+          />
+
+          {/* Cervical Cancer Checkup Camp (UBA 2025) */}
+          <EventCard
+            name="Cervical Cancer Awareness & Check-up Camp 2025"
+            date="September 2025"
+            venue="Jamgaon Village, Mulshi, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/diyw5ilre/image/upload/v1715017844/nss/Events/1_awpcdt.jpg",
+            ]}
+            setup="Organized by NSS VIIT Pune in collaboration with Unnat Bharat Abhiyan (UBA) and Prayas NGO. Free cervical cancer check-ups were provided for women aged 30–65. Meals were arranged for all attendees. Medical team was coordinated in advance and all logistics handled by NSS committee members."
+            text="In September 2025, NSS VIIT Pune organized a Cervical Cancer Awareness and Check-up Camp at Jamgaon village in collaboration with Unnat Bharat Abhiyan and Prayas NGO. Women between the ages of 30 and 65 were eligible for free check-ups. Snacks and full meals were provided to all participants, ensuring comfort and encouraging attendance.
+
+This initiative built on NSS VIIT's longstanding healthcare outreach in Jamgaon, extending the unit's impact beyond education to critical preventive health for rural women. The camp demonstrated the power of institutional collaboration — VIIT + UBA + NGO — in delivering tangible healthcare access to underserved communities."
+          />
+
+          {/* Tree Plantation Drive 2025-26 */}
+          <EventCard
+            name="Tree Plantation Drive 2025–26"
+            date="2025 (Date TBD)"
+            venue="Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/diyw5ilre/image/upload/v1715019445/nss/Events/5_ugjphv.jpg",
+            ]}
+            setup="Organized in collaboration with Sakal YIN. 300+ volunteers were mobilized across planting locations. Logistics, sapling procurement, and site selection were coordinated with Sakal YIN's team. Volunteers were briefed on planting techniques and post-plantation care."
+            text="NSS VIIT Pune's Tree Plantation Drive 2025–26, conducted in collaboration with Sakal YIN, mobilized 300+ volunteers to plant 620+ trees — the largest single-season plantation drive in the unit's history.
+
+The event reinforced NSS VIIT's commitment to environmental sustainability, building on the legacy of previous plantation drives with Anandvan Foundation and Tata Motors. The scale of 620+ trees planted by 300+ volunteers in a single initiative sets a new benchmark for environmental activism by an engineering college NSS unit in Pune."
+          />
+
+          {/* Women Empowerment & Hygiene Session */}
+          <EventCard
+            name="Women Empowerment & Menstrual Hygiene Session"
+            date="2025–26"
+            venue="VIIT, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/diyw5ilre/image/upload/v1715024431/nss/Events/IMG_20230815_130457_syk6ka.jpg",
+            ]}
+            setup="Session organized for female students and community members to address menstrual hygiene awareness. Sanitary pads were procured and distributed. Resource persons coordinated the awareness session."
+            text="NSS VIIT Pune organized a Women Empowerment and Menstrual Hygiene Session for female students and community members. The session covered menstrual health education, hygiene practices, and breaking the social stigma around menstruation. Sanitary pads were distributed to participants at no cost.
+
+This initiative aligns with NSS VIIT's broader health awareness mandate — extending hygiene education from urban campuses to the rural communities they serve, including in Jamgaon during Gram-Setu 2026."
+          />
+
+          {/* E-Waste Collection Drive */}
+          <EventCard
+            name="E-Waste Collection Drive"
+            date="2025–26"
+            venue="VIIT, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/diyw5ilre/image/upload/v1715019407/nss/Events/1_nfg79u.jpg",
+            ]}
+            setup="Awareness campaign and collection drive for old electronics. Coordination with authorized e-waste recyclers for responsible disposal. Volunteers managed collection points and educated students on e-waste hazards."
+            text="NSS VIIT Pune organized an E-Waste Collection Drive to raise awareness about the environmental hazards of improperly discarded electronics. Students and staff were encouraged to contribute old electronics — mobile phones, chargers, batteries, laptops, and accessories.
+
+All collected e-waste was handed over to authorized recyclers for responsible disposal, ensuring zero environmental harm. The drive educated the campus community about the growing e-waste crisis and NSS VIIT's role as a responsible civic actor."
+          />
+
+          {/* Cloth Donation Drive */}
+          <EventCard
+            name="Cloth Donation Drive"
+            date="2025–26"
+            venue="VIIT, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/diyw5ilre/image/upload/v1715019715/nss/Events/4_rcaerw.jpg",
+            ]}
+            setup="Organized in collaboration with Rotary Club. Collection drive for gently used clothing to support flood-affected families in Punjab and Solapur. NSS volunteers managed collection, sorting, and handover logistics."
+            text="In collaboration with Rotary Club, NSS VIIT Pune organized a Cloth Donation Drive to support people affected by floods in Punjab and Solapur. NSS volunteers collected gently used clothing from students, faculty, and staff across campus.
+
+All donated items were sorted, packed, and handed over to Rotary Club for distribution to affected families. This drive exemplified NSS VIIT's core ethos — reaching beyond local boundaries to help communities in need across India."
+          />
+
+          {/* Rakhi-with-Anath */}
+          <EventCard
+            name="Rakhi-with-Anath — Raksha Bandhan at Orphanage"
+            date="2025–26"
+            venue="Local Orphanage, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1726658826/Nss_Website/Events/Rakhi-With-Khaki/heplhs5glgpqpsnhf8iv.jpg",
+            ]}
+            setup="NSS VIIT volunteers coordinated a Raksha Bandhan celebration at a local orphanage. Rakhis, sweets, and activity kits were procured. Volunteers planned activities and performances for the children."
+            text="NSS VIIT Pune celebrated Raksha Bandhan with children at a local orphanage, continuing the tradition of 'Rakhi-with-Anath.' Volunteers tied rakhis on the children, distributed sweets, and engaged them in joyful activities and performances.
+
+The initiative embodied the spirit of family and community care that defines NSS VIIT — extending celebration beyond familiar circles to children who deserve the warmth of connection and belonging."
+          />
+
+          {/* ── VOLUNTEER SPOTLIGHT: Omkar Gengaje ── */}
+          <EventCard
+            name="Volunteer Spotlight: Omkar Gengaje — Stem Cell Donation"
+            date="2025–26"
+            venue="Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png",
+            ]}
+            setup="Omkar Gengaje, a Computer Engineering student and NSS VIIT volunteer, voluntarily donated stem cells through a 4-hour medical procedure to save a young girl's life from cancer — entirely free of cost. This act required no event, no platform, and no recognition — only selflessness."
+            text="In an extraordinary act of selfless service, Omkar Gengaje — a Computer Engineering student and NSS VIIT Pune volunteer — donated his stem cells to save a young girl battling cancer. The 4-hour medical procedure was undergone entirely voluntarily, and without any financial compensation.
+
+Omkar's act is perhaps the most direct embodiment of NSS VIIT's motto: 'Not Me But You.' There was no stage, no award, no audience — only a quiet decision to give a part of himself so another could live.
+
+NSS VIIT Pune acknowledges this act with the highest respect and gratitude. Omkar Gengaje represents what every volunteer aspires to be."
+          />
+
+          {/* Independence Day 79th (2025) */}
+          <EventCard
+            name="Independence Day 2025 — 79th Celebration"
+            date="15 August 2025 | 8:00 AM"
+            venue="5 Mulshi villages — Jamgaon, Male, Mulshi, Valane, Sambhave"
+            imgSrc={[
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1726658454/Nss_Website/Events/Indpendence%20Day%202024-25/avj3jjpfmnbqablrnuij.jpg",
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1726658451/Nss_Website/Events/Indpendence%20Day%202024-25/mh4bbj8imbptgrj6vj92.jpg",
+            ]}
+            setup="Under Unnat Bharat Abhiyan (UBA), 25+ volunteers were deployed across 5 Mulshi villages in groups of 4–6. Volunteers arranged their own transportation and arrived at assigned villages by 8:00 AM for the flag hoisting ceremony."
+            text="NSS VIIT Pune celebrated the 79th Independence Day of India across five villages in Mulshi Taluka — Jamgaon, Male, Mulshi, Valane, and Sambhave — under the Unnat Bharat Abhiyan initiative. 25+ volunteers were deployed in groups of 4–6 to each village.
+
+The celebrations began with flag hoisting, followed by cultural performances by local school children, speeches, and patriotic programmes. Volunteers engaged with Grampanchayat officials and villagers, discussing ongoing community needs and future support areas.
+
+This initiative reflects NSS VIIT's deep-rooted relationship with rural Pune — going beyond Jamgaon to ensure that the spirit of national service reaches every adopted community on Independence Day."
+          />
+
+          {/* Rakhi-with-Khaki 2025 */}
+          <EventCard
+            name="Rakhi-With-Khaki 2025"
+            date="2025 (Raksha Bandhan) | 11:30 AM — Swargate, 12:30 PM — Bibvewadi"
+            venue="Swargate Police Station & Bibvewadi Police Station, Pune"
+            imgSrc={[
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1726658826/Nss_Website/Events/Rakhi-With-Khaki/heplhs5glgpqpsnhf8iv.jpg",
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1726658804/Nss_Website/Events/Rakhi-With-Khaki/qoaqoozal7ivwc3a7p7m.jpg",
+              "https://res.cloudinary.com/dmokljnng/image/upload/v1726658827/Nss_Website/Events/Rakhi-With-Khaki/fd5iroh0bsjwjn9nn8fh.jpg",
+            ]}
+            setup="Female volunteers visited Swargate Police Station at 11:30 AM and Bibvewadi Police Station at 12:30 PM. Rakhis were prepared and volunteers coordinated their own transport between both locations."
+            text="On the occasion of Raksha Bandhan 2025, NSS VIIT Pune continued its annual 'Rakhi-With-Khaki' tradition — honouring the police officers who protect our communities. Volunteers visited Swargate Police Station (11:30 AM) and Bibvewadi Police Station (12:30 PM), tying rakhis and expressing gratitude for the officers' tireless service.
+
+Special appreciation was extended to women police officers for their dedication. The volunteers engaged in warm interactions, reinforcing the bond between citizens and law enforcement. The event strengthened NSS VIIT's ongoing relationship with Swargate Police — a partnership that also extends to the annual SPO (Suraksha-Setu) deployment during Ganpati Visarjan."
+          />
+
+          {/* ════════════════════════════════════════════════════════
+              BATCH 2024-25 EVENTS
+          ════════════════════════════════════════════════════════ */}
+
+          {/* Blood Donation 2024 */}
 
           <EventCard
-            name="Blood Donation"
-            date="24th Sept 2024 | 9AM - 5PM"
+            name="Blood Donation Drive 2024"
+            date="24 September 2024 | 9:00 AM – 5:00 PM"
             venue="VIIT, Pune"
             imgSrc={[
               "https://res.cloudinary.com/dmokljnng/image/upload/v1727811380/Nss_Website/Events/Blood%20Donation%2024-25/yekztr651berk3a7bza8.jpg",
@@ -32,31 +258,31 @@ const Events = () => {
               "https://res.cloudinary.com/dmokljnng/image/upload/v1727811380/Nss_Website/Events/Blood%20Donation%2024-25/k6sltqhdlvzfsm9egegd.jpg",
               "https://res.cloudinary.com/dmokljnng/image/upload/v1727811380/Nss_Website/Events/Blood%20Donation%2024-25/fk28z6azjfeuginvs5fw.jpg",
             ]}
-            setup="A blood donation camp was organized by NSS Committee of Vishwakarma Institute of Information Technology on 24th September 2024 in collaboration with Aadhar, Acharya, and Sasoon Blood Banks. The camp was set up under the guidance of NSS Committee members who were responsible for various duties like registration, discipline, food arrangements, and publicity. Preparations for the event were completed on the 23rd and the morning of 24th September, ensuring everything was in place for the smooth conduct of the camp."
-            text="The blood donation camp commenced at 9 AM with an inauguration ceremony. The guests of honor, Sathya Natarajan, Shirish Mohite, and Mansing Patil (Crime PI Kondhwa), performed the Deep Prajwalan to start the event on an auspicious note. After the ceremony, the guests addressed the gathering of volunteers, doctors, and donors, inspiring everyone and expressing their gratitude for the effort put into organizing the event. They emphasized the importance of blood donation in saving lives. Several prominent faculty members from VIIT, including Prof. Vikas Kolekar , Prof. Sharada Desai, Prof. Kirti Wanjale, and Prof. Nitin Sakhare, were also present at the event. 
-            The guests further inspired the volunteers with their speeches, stressing the value of community service and the significant impact of blood donation. Prof. Vikas Kolekar delivered the vote of thanks, appreciating the efforts of all involved.
-Once the speeches concluded, the blood donation drive officially began. The donors, consisting of students, faculty members, and other participants, were efficiently registered and guided through the process by the volunteers. The event was organized in a disciplined manner, ensuring that donors were comfortable and taken care of throughout the process. Food supplements were provided to the donors, volunteers, and guests to maintain their energy levels during the day.
-In addition to the blood donation camp, a free eye check-up was also organized as an additional health initiative by Dr. Mahesh Pawar and his team from 10 AM to 2 PM.
-The blood donation camp concluded at 5 PM, with a total of 156 units of blood collected. The event was a great success, and the volunteers and participants expressed their satisfaction with how it was conducted. The camp ended on a positive note, and the efforts of the NSS Committee were appreciated by everyone involved."
+            setup="A blood donation camp was organized by NSS Committee of VIIT on 24 September 2024 in collaboration with Aadhar, Acharya, and Sasoon Blood Banks. Committee members were assigned roles across registration, discipline, food arrangements, and publicity. All preparations were completed on 23 September and the morning of 24 September."
+            text="The blood donation camp commenced at 9:00 AM with an inauguration ceremony. Guests of honour Sathya Natarajan, Shirish Mohite, and Mansing Patil (Crime PI Kondhwa) performed the Deep Prajwalan to start the event auspiciously. Guests addressed the gathering of volunteers, doctors, and donors, emphasizing the importance of blood donation in saving lives.
+
+Faculty members including Prof. Vikas Kolekar, Prof. Sharada Desai, Prof. Kirti Wanjale, and Prof. Nitin Sakhare were present. Prof. Vikas Kolekar delivered the vote of thanks. The donation drive ran throughout the day with efficient registration and donor management. Food supplements were provided to all donors, volunteers, and guests.
+
+A free eye check-up was additionally organized by Dr. Mahesh Pawar and his team from 10:00 AM to 2:00 PM. A total of 156 units of blood were collected by 5:00 PM. The event was a great success and the efforts of the NSS Committee were widely appreciated."
           />
 
-          {/* SPO 2024 */}
-
+          {/* SPO 2024 — CORRECTED TEXT */}
           <EventCard
-            name="Special Police Officer (SPO) 2024"
-            date="17th and 18th September 2024 | 1:00 PM on 17th September to 6:00 AM on 18th September"
-            venue="Swargate Police Station premises and surrounding areas"
+            name="Special Police Officer (SPO) 2024 — Suraksha-Setu"
+            date="17–18 September 2024 | 1:00 PM (17 Sept) to 6:00 AM (18 Sept)"
+            venue="Swargate Police Station and surrounding areas, Pune"
             imgSrc={[
               "https://res.cloudinary.com/dmokljnng/image/upload/v1727811773/Nss_Website/Events/SPO%2024-25/zqlltxblfxa3tkxhqdpe.jpg",
               "https://res.cloudinary.com/dmokljnng/image/upload/v1727811773/Nss_Website/Events/SPO%2024-25/z68svaae0lvqm2exw1im.jpg",
             ]}
-            setup="A blood donation camp was organized by NSS Committee of Vishwakarma Institute of Information Technology on 24th September 2024 in collaboration with Aadhar, Acharya, and Sasoon Blood Banks. The camp was set up under the guidance of NSS Committee members who were responsible for various duties like registration, discipline, food arrangements, and publicity. Preparations for the event were completed on the 23rd and the morning of 24th September, ensuring everything was in place for the smooth conduct of the camp."
-            text="The blood donation camp commenced at 9 AM with an inauguration ceremony. The guests of honor, Sathya Natarajan, Shirish Mohite, and Mansing Patil (Crime PI Kondhwa), performed the Deep Prajwalan to start the event on an auspicious note. After the ceremony, the guests addressed the gathering of volunteers, doctors, and donors, inspiring everyone and expressing their gratitude for the effort put into organizing the event. They emphasized the importance of blood donation in saving lives. Several prominent faculty members from VIIT, including Prof. Vikas Kolekar , Prof. Sharada Desai, Prof. Kirti Wanjale, and Prof. Nitin Sakhare, were also present at the event. 
-            The guests further inspired the volunteers with their speeches, stressing the value of community service and the significant impact of blood donation. Prof. Vikas Kolekar delivered the vote of thanks, appreciating the efforts of all involved.
-Once the speeches concluded, the blood donation drive officially began. The donors, consisting of students, faculty members, and other participants, were efficiently registered and guided through the process by the volunteers. The event was organized in a disciplined manner, ensuring that donors were comfortable and taken care of throughout the process. Food supplements were provided to the donors, volunteers, and guests to maintain their energy levels during the day.
-In addition to the blood donation camp, a free eye check-up was also organized as an additional health initiative by Dr. Mahesh Pawar and his team from 10 AM to 2 PM.
-The blood donation camp concluded at 5 PM, with a total of 156 units of blood collected. The event was a great success, and the volunteers and participants expressed their satisfaction with how it was conducted. The camp ended on a positive note, and the efforts of the NSS Committee were appreciated by everyone involved."
+            setup="On 16 September, Swargate Police provided SPO ID cards and official T-shirts to NSS volunteers. All required instructions were given to volunteers including group assignments, area responsibilities, and emergency protocols for the Ganpati Visarjan crowd management duty."
+            text="On the occasion of Anant Chaturdashi 2024, NSS VIIT Pune collaborated with Swargate Police Station for the annual Special Police Officer (SPO) program. Volunteers reported at 1:00 PM on 17 September and served through the night until 6:00 AM on 18 September, supporting public order management during the Ganpati Visarjan festival.
+
+Each volunteer was assigned to specific areas and worked under direct supervision of police officers to ensure safe crowd management, traffic flow, and public safety along the procession route. Volunteers wore official SPO T-shirts and carried police-issued ID cards throughout the duty.
+
+The initiative demonstrated NSS VIIT's commitment to civic safety, building on years of collaboration with Swargate Police. The overnight dedication of NSS volunteers was recognized and appreciated by the police department and the broader community."
           />
+
 
           {/* Debate Competition */}
           <EventCard
@@ -87,8 +313,8 @@ The blood donation camp concluded at 5 PM, with a total of 156 units of blood co
 members, who were instructed to arrive on time and set up necessary arrangements. A poster and
 email with event details were sent to students one day before the drive. Members were also tasked
 with guiding students and maintaining discipline throughout the event."
-            text="Voter Registration Drive: A Successful Initiative By NSS VIIT
-The NSS VIIT successfully organized a Voter Registration Drive on August 29th and 30th
+            text="Voter Registration Drive: A Successful Initiative By NSS VIIT Pune
+The NSS VIIT Pune successfully organized a Voter Registration Drive on August 29th and 30th
 with the primary objective of not only encouraging eligible students to register to vote but also to
 raise awareness about their civic responsibilities. The event ran from 10:00 AM to 5:00 PM on
 both days, and a poster and email containing the drive's details, such as the date, time, venue, and
@@ -188,7 +414,7 @@ for their efforts."
               "/images/Events/cancer-checkup-camp/5.jpg",
             ]}
             setup=""
-            text="The NSS unit of VIIT Pune, in collaboration with Unnat Bharat Abhiyan and Prayas NGO, organized a Cervical cancer check-up camp for women on 21st Nov 2023 in Jamgaon village. Women between the ages of 30 to 65 were eligible for this camp. All check-ups were provided free of cost, and snacks and meals were also provided. We facilitated Vinod Surve, the Sarpanch of Jamgaon, Anjali Thombare (an Asha worker), and all Asha workers. A total of 8 doctors conducted the check-ups. After that we start the Checkups. The camp was done with 50+ screening. All reports were generated promptly. Rutuja Kadam (UBA coordinator, NSS VIIT), Nitin Sakhare (Dean Associate), and Vikas Kolekar (NSS Coordinator & program officer, NSS VIIT), was present for this camp."
+            text="The NSS unit of VIIT Pune, in collaboration with Unnat Bharat Abhiyan and Prayas NGO, organized a Cervical cancer check-up camp for women on 21st Nov 2023 in Jamgaon village. Women between the ages of 30 to 65 were eligible for this camp. All check-ups were provided free of cost, and snacks and meals were also provided. We facilitated Vinod Surve, the Sarpanch of Jamgaon, Anjali Thombare (an Asha worker), and all Asha workers. A total of 8 doctors conducted the check-ups. After that we start the Checkups. The camp was done with 50+ screening. All reports were generated promptly. Rutuja Kadam (UBA coordinator, NSS VIIT Pune), Nitin Sakhare (Dean Associate), and Vikas Kolekar (NSS Coordinator & program officer, NSS VIIT Pune), was present for this camp."
           />
 
           {/* Campus Cleaning Activity */}
