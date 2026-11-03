@@ -1,5 +1,5 @@
 import "./Footer.css";
-
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaInstagram,
@@ -18,11 +18,13 @@ function Footer() {
         </h3>
         <p className="footer-tagline">Not Me But You — Service Above Self</p>
         <div className="footer-links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/events">Events</a>
-          <a href="/team">Our Team</a>
-          <a href="/contact">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/events">Events</Link>
+          <Link to="/achievements">Achievements</Link>
+          <Link to="/gram-setu">Gram Setu</Link>
+          <Link to="/team">Our Team</Link>
+          <Link to="/contact">Contact</Link>
         </div>
         <p className="footer-company-name">
           © 2026 <strong>NSS VIIT Pune</strong>. All rights reserved.

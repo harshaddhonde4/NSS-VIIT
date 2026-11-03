@@ -56,6 +56,9 @@ const Navbar = () => {
               <NavLink to="/achievements" onClick={() => setShowMediaIcons(false)}>Achievements</NavLink>
             </li>
             <li>
+              <NavLink to="/gram-setu" onClick={() => setShowMediaIcons(false)}>Gram Setu</NavLink>
+            </li>
+            <li>
               <NavLink to="/team" onClick={() => setShowMediaIcons(false)}>Our Team</NavLink>
             </li>
             <li>
