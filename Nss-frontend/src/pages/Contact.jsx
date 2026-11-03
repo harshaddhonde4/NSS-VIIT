@@ -8,10 +8,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { MdCall, MdEmail, MdLocationOn } from "react-icons/md";
 import { FaInstagram, FaLinkedinIn, FaYoutube, FaFacebookF } from "react-icons/fa";
+import useSEO from "../components/useSEO";
 
 const Contact = () => {
-  useEffect(() => {
-    document.title = "NSS VIIT Pune | Contact";
+  useSEO({
+    title: "Contact Us | NSS VIIT Pune - Unit A-70",
+    description: "Connect with the NSS VIIT Pune unit. Reach out for collaborations, social drives, volunteering opportunities, blood donation camps, or inquiries.",
+    keywords: "Contact NSS VIIT, NSS VIIT address, VIIT Pune NSS contact, join NSS VIIT",
+    canonical: "https://nss-viit.vercel.app/contact",
   });
 
   useEffect(() => {
@@ -136,10 +140,10 @@ const Contact = () => {
                 <div>
                   <span className="info-label">Follow Us</span>
                   <div className="social-row">
-                    <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer"><FaFacebookF /></a>
-                    <a href="https://www.instagram.com/nss.viit.pune/" target="_blank" rel="noreferrer"><FaInstagram /></a>
-                    <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
-                    <a href="https://youtube.com/@nssviit8764" target="_blank" rel="noreferrer"><FaYoutube /></a>
+                    <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Facebook"><FaFacebookF /></a>
+                    <a href="https://www.instagram.com/nss.viit.pune/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram"><FaInstagram /></a>
+                    <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer" aria-label="NSS VIIT LinkedIn"><FaLinkedinIn /></a>
+                    <a href="https://youtube.com/@nssviit8764" target="_blank" rel="noreferrer" aria-label="NSS VIIT YouTube"><FaYoutube /></a>
                   </div>
                 </div>
               </div>

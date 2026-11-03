@@ -6,10 +6,14 @@ import Team_23_24 from "./Team_23-24";
 import Team_25_26 from "./Team_25-26";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import useSEO from "../components/useSEO";
 
 const Team = () => {
-  useEffect(() => {
-    document.title = "NSS VIIT Pune | Our Team";
+  useSEO({
+    title: "Our Team | NSS VIIT Pune Volunteers & Leadership",
+    description: "Meet the dedicated student leaders, coordinators, and volunteer team driving NSS Unit A-70 at VIIT Pune across batches 2025-26, 2024-25, and 2023-24.",
+    keywords: "NSS VIIT team, NSS student coordinators Pune, VIIT NSS leadership, NSS volunteers Pune",
+    canonical: "https://nss-viit.vercel.app/team",
   });
 
   useEffect(() => {

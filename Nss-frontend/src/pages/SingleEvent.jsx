@@ -1,14 +1,13 @@
 import { useRef } from 'react'; // Import useRef for creating a reference to the slider container
 import { useLocation } from 'react-router-dom';
-
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
-
+import useSEO from '../components/useSEO';
 
 const SingleEvent = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
 
-    const name = queryParams.get('name');
+    const name = queryParams.get('name') || 'Event Details';
     const date = queryParams.get('date');
     const imgSrc = queryParams.get('imgSrc');
     const text = queryParams.get('text');
@@ -16,6 +15,16 @@ const SingleEvent = () => {
     const setup = queryParams.get('setup');
 
     const img = imgSrc ? imgSrc.split(',') : [];
+
+    useSEO({
+        title: `${name} | NSS VIIT Pune`,
+        description: text
+            ? (text.length > 155 ? text.slice(0, 155) + '...' : text)
+            : `Details and highlights of ${name} organized by NSS VIIT Pune.`,
+        keywords: `${name}, NSS VIIT Pune, VIIT events, NSS social service`,
+        canonical: `https://nss-viit.vercel.app/events/singleevent${location.search}`,
+        ogImage: img.length > 0 ? img[0] : 'https://nss-viit.vercel.app/images/img/nss-logo.png',
+    });
 
     // Create a reference to the slider container
     const sliderRef = useRef(null);
@@ -50,7 +59,8 @@ const SingleEvent = () => {
                                         key={`slide-${index + 1}`}
                                         className='singleevent-image'
                                         src={imageSrc}
-                                        alt={`Event image ${index + 1}`}
+                                        alt={`${name} - Photo ${index + 1}`}
+                                        loading="lazy"
                                     />
                                 ))}
                             </div>

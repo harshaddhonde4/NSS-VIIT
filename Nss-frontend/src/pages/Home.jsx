@@ -14,6 +14,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 import History from './History';
+import useSEO from '../components/useSEO';
 
 import { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
@@ -21,9 +22,12 @@ import ScrollTrigger from 'react-scroll-trigger';
 import Partnership from './Partnerships';
 
 const Home = () => {
-
-  useEffect(() => {
-    document.title = 'NSS VIIT Pune | National Service Scheme';
+  useSEO({
+    title: 'NSS VIIT Pune | National Service Scheme - Vishwakarma Institute of Information Technology',
+    description: 'Official website of National Service Scheme (NSS) Unit A-70 at VIIT Pune. 250+ student volunteers working towards social welfare, rural development, blood donation camps, and environmental sustainability.',
+    keywords: 'NSS VIIT, National Service Scheme VIIT, NSS Pune, VIIT Pune NSS, NSS Unit A-70, Gram Setu, Blood Donation Camp VIIT',
+    canonical: 'https://nss-viit.vercel.app/',
+    ogImage: 'https://nss-viit.vercel.app/images/img/nss-logo.png',
   });
 
   useEffect(() => {

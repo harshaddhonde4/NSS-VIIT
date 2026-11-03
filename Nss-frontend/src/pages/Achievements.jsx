@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import './css/Achievements.css';
@@ -6,7 +6,7 @@ import { FaHome, FaHeartbeat, FaTrophy, FaStar, FaUsers, FaLeaf, FaGraduationCap
 import { MdVolunteerActivism } from 'react-icons/md';
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
-import { useState } from 'react';
+import useSEO from '../components/useSEO';
 
 /* ── Reusable Achievement Card ── */
 const AchCard = ({ icon: Icon, title, desc, accent }) => (
@@ -20,9 +20,12 @@ const AchCard = ({ icon: Icon, title, desc, accent }) => (
 );
 
 const Achievements = () => {
-  useEffect(() => {
-    document.title = 'Achievements | NSS VIIT Pune';
-  }, []);
+  useSEO({
+    title: 'Achievements & Milestones | NSS VIIT Pune',
+    description: 'Explore the key milestones and achievements of NSS VIIT Unit A-70: 17+ years of service, 2500+ blood units collected, 10000+ trees planted, and Gram Setu impact.',
+    keywords: 'NSS VIIT achievements, NSS awards Pune, blood donation record VIIT, Gram Setu achievements, volunteer milestones',
+    canonical: 'https://nss-viit.vercel.app/achievements',
+  });
 
   useEffect(() => {
     Aos.init({ duration: 800, once: true, offset: 60 });

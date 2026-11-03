@@ -4,6 +4,7 @@ import 'aos/dist/aos.css';
 import './css/GramSetu.css';
 import { FaMapMarkerAlt, FaCalendarAlt, FaUsers, FaMedal, FaLeaf, FaHeart, FaGraduationCap, FaHandsHelping } from 'react-icons/fa';
 import { MdVolunteerActivism, MdWater } from 'react-icons/md';
+import useSEO from '../components/useSEO';
 
 /* ============================================================
    CLOUDINARY PHOTO SLOTS — replace URLs after upload
@@ -54,9 +55,13 @@ const outcomes = [
 ];
 
 const GramSetu = () => {
-  useEffect(() => {
-    document.title = 'Gram-Setu 2026 | NSS VIIT Pune Residential Camp';
-  }, []);
+  useSEO({
+    title: 'Gram-Setu 2026 | NSS VIIT Pune Residential Rural Camp',
+    description: 'Gram-Setu 2026: 8-day flagship annual rural residential camp at Jamgaon, Mulshi by NSS VIIT Unit A-70. Watershed management, health camps, education & village transformation.',
+    keywords: 'Gram Setu 2026, NSS residential camp, Jamgaon Mulshi camp, rural development VIIT, NSS VIIT annual camp',
+    canonical: 'https://nss-viit.vercel.app/gram-setu',
+    ogImage: PHOTOS.hero,
+  });
 
   useEffect(() => {
     Aos.init({ duration: 800, once: true, offset: 60 });

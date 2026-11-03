@@ -3,11 +3,14 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import useSEO from '../components/useSEO';
 
 const About = () => {
-
-  useEffect(() => {
-    document.title = 'NSS VIIT Pune | About';
+  useSEO({
+    title: 'About NSS VIIT Pune | Mission, Vision & History',
+    description: 'Learn about NSS Unit A-70 at VIIT Pune, established in 2008. Discover our mission to prepare engineering students with social responsibility and rural engagement.',
+    keywords: 'About NSS VIIT, NSS Unit A-70 history, NSS mission vision, VIIT Pune social club',
+    canonical: 'https://nss-viit.vercel.app/about',
   });
 
   useEffect(() => {

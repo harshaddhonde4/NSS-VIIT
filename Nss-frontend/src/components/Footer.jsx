@@ -72,19 +72,19 @@ function Footer() {
           Through service, we build character and create lasting impact.
         </p>
         <div className="footer-icons">
-          <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer">
+          <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Facebook">
             <FaFacebookF />
           </a>
-          <a href="https://www.instagram.com/nss.viit.pune?igsh=MXZ5MXU3eGhsMzlteg==" target="_blank" rel="noreferrer">
+          <a href="https://www.instagram.com/nss.viit.pune?igsh=MXZ5MXU3eGhsMzlteg==" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
             <FaInstagram />
           </a>
-          <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer" aria-label="NSS VIIT LinkedIn">
             <FaLinkedinIn />
           </a>
-          <a href="https://x.com/NSS_VIIT_PUNE?t=yM3oygffaI1aw5f1utKzeQ&s=09" target="_blank" rel="noreferrer">
+          <a href="https://x.com/NSS_VIIT_PUNE?t=yM3oygffaI1aw5f1utKzeQ&s=09" target="_blank" rel="noreferrer" aria-label="NSS VIIT Twitter">
             <FaXTwitter />
           </a>
-          <a href="https://youtube.com/@nssviit8764?si=HpbpZGpKu8YGuaPc" target="_blank" rel="noreferrer">
+          <a href="https://youtube.com/@nssviit8764?si=HpbpZGpKu8YGuaPc" target="_blank" rel="noreferrer" aria-label="NSS VIIT YouTube Channel">
             <FaYoutube />
           </a>
         </div>

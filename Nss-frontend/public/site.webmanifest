@@ -1,0 +1,21 @@
+{
+  "name": "NSS VIIT Pune",
+  "short_name": "NSS VIIT",
+  "description": "National Service Scheme - Unit A-70, Vishwakarma Institute of Information Technology, Pune",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a1128",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

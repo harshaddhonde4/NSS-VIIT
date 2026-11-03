@@ -1,10 +1,13 @@
-import { useEffect } from "react";
 import EventCard from "./EventCard";
+import useSEO from "../components/useSEO";
 
 const Events = () => {
-  useEffect(() => {
-    document.title = "NSS VIIT Pune | Events";
-  }, []);
+  useSEO({
+    title: "Events & Initiatives | NSS VIIT Pune",
+    description: "Explore community service events, blood donation drives, tree plantation campaigns, and rural outreach programs organized by NSS VIIT Pune.",
+    keywords: "NSS VIIT events, Blood donation camp Pune, Tree plantation drive, Gram-Setu camp, NSS activities",
+    canonical: "https://nss-viit.vercel.app/events",
+  });
 
   return (
     <>

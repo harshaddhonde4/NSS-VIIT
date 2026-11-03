@@ -33,7 +33,7 @@ const Navbar = () => {
             <h2>
               <img
                 src="https://res.cloudinary.com/diyw5ilre/image/upload/v1714587159/nss-logo_wecruv.png"
-                alt="NSS Logo"
+                alt="NSS VIIT Pune Logo"
                 className="nav-logo-img"
               />
               NSS VIIT <span>Pune</span>
