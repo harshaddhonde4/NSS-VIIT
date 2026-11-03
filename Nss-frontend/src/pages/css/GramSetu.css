@@ -829,3 +829,11 @@
   .gs-timeline-dot { left: 1.5rem; width: 3.2rem; height: 3.2rem; }
   .gs-timeline::before { left: 1.5rem; }
 }
+
+@media (max-width: 360px) {
+  .gs-hero-content h1 { font-size: 2.8rem; }
+  .gs-strip-stat { width: 100%; }
+  .gs-section-head h2 { font-size: 2.2rem; }
+  .gs-pawar-content-col h2 { font-size: 2.4rem; }
+  .gs-flag-tag { font-size: 1.1rem; padding: 0.5rem 1.4rem; }
+}

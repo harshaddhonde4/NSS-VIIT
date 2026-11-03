@@ -80,150 +80,8 @@ p {
 }
 
 /* ============================================
-   NAVBAR STYLES (in App.css for specificity)
+   NAVBAR STYLES — Managed in components/navbar.css
    ============================================ */
-.main-nav {
-  width: 100%;
-  height: 8rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--gray-200);
-  box-shadow: 0 2px 20px rgba(10, 17, 40, 0.08);
-  display: grid;
-  grid-template-columns: 8rem 1fr 2fr 1fr 8rem;
-  transition: var(--transition);
-}
-
-.main-nav.scrolled {
-  height: 6.5rem;
-  background: rgba(10, 17, 40, 0.97);
-  border-bottom-color: rgba(255,255,255,0.1);
-}
-
-.logo {
-  display: grid;
-  grid-column: 2/3;
-  justify-content: start;
-  align-items: center;
-}
-
-.logo h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  font-family: var(--font-body);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--navy);
-  transition: var(--transition);
-}
-
-.main-nav.scrolled .logo h2 {
-  color: var(--white);
-}
-
-.logo h2 span {
-  color: var(--green);
-  font-size: 2.4rem;
-}
-
-.main-nav.scrolled .logo h2 span {
-  color: var(--amber);
-}
-
-.menu-link {
-  grid-column: 3/4;
-}
-
-.menu-link ul {
-  height: 8rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.menu-link ul li {
-  font-size: 1.5rem;
-  position: relative;
-}
-
-.menu-link ul li a {
-  color: var(--gray-800);
-  font-weight: 600;
-  font-family: var(--font-body);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 1.4rem;
-  transition: var(--transition);
-  padding: 0.5rem 0;
-}
-
-.menu-link ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--green);
-  transition: width 0.3s ease;
-  border-radius: 2px;
-}
-
-.menu-link ul li a:hover::after,
-.menu-link ul li a.active::after {
-  width: 100%;
-}
-
-.menu-link ul li a:hover,
-.menu-link ul li a.active {
-  color: var(--green);
-}
-
-.main-nav.scrolled .menu-link ul li a {
-  color: rgba(255,255,255,0.85);
-}
-
-.main-nav.scrolled .menu-link ul li a:hover,
-.main-nav.scrolled .menu-link ul li a.active {
-  color: var(--amber);
-}
-
-.main-nav.scrolled .menu-link ul li a::after {
-  background: var(--amber);
-}
-
-.social-media {
-  grid-column: 4/5;
-}
-
-.social-media ul {
-  height: 8rem;
-  display: grid;
-  grid-template-columns: 3fr repeat(4, 1fr);
-  align-items: center;
-}
-
-.social-media ul li:first-child {
-  grid-column: 2/3;
-}
-
-.social-media ul li {
-  font-size: 1.8rem;
-}
-
-.social-media .hamburger-menu {
-  display: none;
-}
-
-.facebook { color: #1877F2; }
-.instagram { color: #E1306C; }
-.youtube { color: #FF0000; }
-.linkedin { color: #0A66C2; }
 
 /* ============================================
    COMMON UTILITIES
@@ -745,71 +603,8 @@ p {
 /* Partnership styles now in pages/css/partnership.css */
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE (Navbar responsive rules in components/navbar.css)
    ============================================ */
-@media (max-width: 1080px) {
-  .main-nav {
-    height: 7rem;
-    grid-template-columns: 2rem 3fr 3fr 1fr 2rem;
-  }
-  .menu-link ul, .social-media ul { height: 7rem; }
-  .logo { height: 7rem; display: flex; align-items: center; }
-}
-
-@media (max-width: 998px) {
-  .main-nav {
-    height: 6.5rem;
-    grid-template-columns: 2rem 2fr 3fr 2rem 2rem;
-  }
-
-  .menu-link { display: none; }
-  .logo, .social-media ul { height: 6.5rem; }
-
-  .mobile-menu-link {
-    background-color: var(--white);
-    height: 22rem;
-    display: grid;
-    grid-column: 2/5;
-    align-items: center;
-    padding-left: 3rem;
-    transition: all 0.3s ease;
-    transform-origin: top;
-    box-shadow: var(--shadow-lg);
-    position: relative;
-    z-index: 99;
-    border-top: 3px solid var(--green);
-  }
-
-  .mobile-menu-link ul {
-    height: 22rem;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .mobile-menu-link ul li a {
-    color: var(--navy) !important;
-    font-size: 1.8rem;
-    font-weight: 700;
-  }
-
-  .social-media {
-    grid-row: 1/2;
-    grid-column: 3/5;
-    justify-items: end;
-    align-items: center;
-    height: 6.5rem;
-    display: flex;
-    justify-self: end;
-  }
-
-  .social-media .social-media-desktop { display: none; }
-  .social-media .hamburger-menu { display: flex; align-items: center; font-size: 2.4rem; color: var(--navy); }
-
-  .main-nav.scrolled .social-media .hamburger-menu { color: var(--white); }
-  .main-nav.scrolled .mobile-menu-link ul li a { color: var(--navy) !important; }
-}
 
 @media (max-width: 798px) {
   html { font-size: 55%; }
@@ -839,5 +634,18 @@ p {
   .page-banner { padding: 9rem 1.5rem 3.5rem; }
   .page-banner h1 { font-size: 2.6rem; }
 
+  .about-grid { padding: 0 1.5rem; margin: 2rem auto; }
+  .about-grid .text-1 { padding: 2rem 1.6rem !important; }
+  .about-grid .text-1 h1 { font-size: 2.2rem !important; }
+  .about-section-events { padding: 4rem 1.5rem; }
+  .about-section-events h2 { font-size: 2.2rem; }
+
   .achievement div p::after { height: 100%; }
+}
+
+@media (max-width: 360px) {
+  .page-banner { padding: 8rem 1.2rem 3rem; }
+  .page-banner h1 { font-size: 2.2rem; }
+  .about-grid .text-1 { padding: 1.6rem 1.2rem !important; }
+  .about-grid .text-1 h1 { font-size: 1.9rem !important; }
 }

@@ -16,7 +16,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on resize
+  // Close mobile menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 998) setShowMediaIcons(false);
@@ -25,11 +25,20 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setShowMediaIcons(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <>
       <nav className={`main-nav${scrolled ? " scrolled" : ""}`}>
         <div className="logo">
-          <NavLink to="/" style={{ textDecoration: 'none' }}>
+          <NavLink to="/" style={{ textDecoration: 'none' }} onClick={() => setShowMediaIcons(false)}>
             <h2>
               <img
                 src="https://res.cloudinary.com/diyw5ilre/image/upload/v1714587159/nss-logo_wecruv.png"
@@ -65,45 +74,71 @@ const Navbar = () => {
               <NavLink to="/contact" onClick={() => setShowMediaIcons(false)}>Contact</NavLink>
             </li>
           </ul>
+
+          <div className="mobile-social-wrap">
+            <span className="mobile-social-label">Connect With Us</span>
+            <div className="mobile-social-icons">
+              <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Facebook">
+                <FaFacebookF className="facebook" />
+              </a>
+              <a href="https://www.instagram.com/nss.viit.pune/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
+                <FaInstagram className="instagram" />
+              </a>
+              <a href="https://www.youtube.com/@nssviit8764" target="_blank" rel="noreferrer" aria-label="NSS VIIT YouTube">
+                <FaYoutube className="youtube" />
+              </a>
+              <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer" aria-label="NSS VIIT LinkedIn">
+                <FaLinkedinIn className="linkedin" />
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="social-media">
           <ul className="social-media-desktop">
             <li>
-              <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer">
+              <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Facebook">
                 <FaFacebookF className="facebook" />
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/nss.viit.pune/" target="_blank" rel="noreferrer">
+              <a href="https://www.instagram.com/nss.viit.pune/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
                 <FaInstagram className="instagram" />
               </a>
             </li>
             <li>
-              <a href="https://www.youtube.com/@nssviit8764" target="_blank" rel="noreferrer">
+              <a href="https://www.youtube.com/@nssviit8764" target="_blank" rel="noreferrer" aria-label="NSS VIIT YouTube">
                 <FaYoutube className="youtube" />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer" aria-label="NSS VIIT LinkedIn">
                 <FaLinkedinIn className="linkedin" />
               </a>
             </li>
           </ul>
 
           <div className="hamburger-menu">
-            {showMediaIcons ? (
-              <a href="#" onClick={(e) => { e.preventDefault(); setShowMediaIcons(false); }}>
-                <FiX />
-              </a>
-            ) : (
-              <a href="#" onClick={(e) => { e.preventDefault(); setShowMediaIcons(true); }}>
-                <FiMenu />
-              </a>
-            )}
+            <button
+              className="hamburger-btn"
+              onClick={() => setShowMediaIcons((prev) => !prev)}
+              aria-label={showMediaIcons ? "Close menu" : "Open menu"}
+              aria-expanded={showMediaIcons}
+            >
+              {showMediaIcons ? <FiX /> : <FiMenu />}
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* Backdrop overlay for mobile menu */}
+      {showMediaIcons && (
+        <div
+          className="mobile-nav-backdrop"
+          onClick={() => setShowMediaIcons(false)}
+          aria-hidden="true"
+        />
+      )}
     </>
   );
 };
