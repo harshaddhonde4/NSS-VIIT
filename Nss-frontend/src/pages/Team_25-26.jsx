@@ -1,22 +1,10 @@
+import RoleGroup from "../components/RoleGroup";
 import TeamCard from "./TeamCard";
 import "./css/Team.css";
 import {
-  FaCrown, FaUsers, FaStar, FaFileAlt, FaUniversity,
+  FaCrown, FaUsers, FaStar, FaFileAlt,
   FaBullhorn, FaLeaf, FaCalendarAlt, FaBuilding, FaCoins, FaLaptopCode
 } from "react-icons/fa";
-
-/* ── Reusable group header with a React icon ── */
-const RoleGroup = ({ icon: Icon, title, subtitle, accent }) => (
-  <div className="role-group-header" style={{ "--accent": accent }}>
-    <div className="role-group-icon">
-      <Icon />
-    </div>
-    <div className="role-group-text">
-      <h3>{title}</h3>
-      {subtitle && <p>{subtitle}</p>}
-    </div>
-  </div>
-);
 
 const Team_25_26 = () => {
   return (

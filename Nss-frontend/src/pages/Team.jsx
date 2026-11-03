@@ -1,19 +1,14 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import TeamCard from "./TeamCard";
 import "./css/Team.css";
-import Team_24_25 from "./Team_24-25";
-import Team_23_24 from "./Team_23-24";
-import Team_25_26 from "./Team_25-26";
-import Aos from "aos";
-import "aos/dist/aos.css";
+
+const Team_24_25 = lazy(() => import("./Team_24-25"));
+const Team_23_24 = lazy(() => import("./Team_23-24"));
+const Team_25_26 = lazy(() => import("./Team_25-26"));
 
 const Team = () => {
   useEffect(() => {
     document.title = "NSS VIIT Pune | Our Team";
-  });
-
-  useEffect(() => {
-    Aos.init({ duration: 800, once: true, offset: 60 });
   }, []);
 
   const [Batch, SetBatch] = useState("2025-26");
@@ -57,6 +52,7 @@ const Team = () => {
             {batches.map((b) => (
               <button
                 key={b}
+                type="button"
                 className={`batch-pill${Batch === b ? " active" : ""}`}
                 onClick={() => SetBatch(b)}
               >
@@ -67,7 +63,9 @@ const Team = () => {
         </div>
 
         <div className="batch-content">
-          {renderBatchChange()}
+          <Suspense fallback={<div className="text-center py-5 text-muted">Loading batch details...</div>}>
+            {renderBatchChange()}
+          </Suspense>
         </div>
 
         {/* Divider */}

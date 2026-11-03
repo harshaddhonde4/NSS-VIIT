@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 import './css/GramSetu.css';
-import { FaMapMarkerAlt, FaCalendarAlt, FaUsers, FaMedal, FaLeaf, FaHeart, FaGraduationCap, FaHandsHelping } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaCalendarAlt, FaUsers, FaMedal, FaLeaf, FaHeart, FaGraduationCap } from 'react-icons/fa';
 import { MdVolunteerActivism, MdWater } from 'react-icons/md';
 
 /* ============================================================
@@ -10,26 +8,21 @@ import { MdVolunteerActivism, MdWater } from 'react-icons/md';
    Upload to cloud: dmokljnng | Folder: Nss_Website/GramSetu_2026/
    ============================================================ */
 const PHOTOS = {
-  // → Upload: Nss_Website/GramSetu_2026/hero/gram_setu_hero_banner.jpg
   hero: 'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/1_iuv2k5.png',
-
-  // → Guest headshots: Nss_Website/GramSetu_2026/guests/[filename]
-  pawar:       'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',   // → pawar_popatrao.jpg
-  yagnaraman:  'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',   // → yagnaraman_mm.jpg
-  tapkir:      'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',   // → tapkir_shrihari.jpg
-  ugale:       'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',   // → ugale_omkar.jpg
-  patil:       'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',   // → patil_deepankar.jpg
-
-  // → Gallery: Nss_Website/GramSetu_2026/gallery/[filename]
+  pawar: 'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',
+  yagnaraman: 'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',
+  tapkir: 'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',
+  ugale: 'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',
+  patil: 'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',
   gallery: [
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/1_iuv2k5.png',   // → day1_inauguration.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/2_jdwzpv.png',   // → day2_teaching.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/3_h4lntl.png',   // → day3_yoga.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328283/4_bikubx.png',   // → day4_dindi.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715019790/nss/Events/1_trmyhl.jpg', // → day5_street_play.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715023958/nss/Events/2_dkekcc.jpg', // → day6_cleanliness.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715024431/nss/Events/IMG_20230815_130457_syk6ka.jpg', // → day7_cultural.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715024956/nss/Events/IMG_3285_stbwpb.jpg', // → day8_closing.jpg
+    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/1_iuv2k5.png',
+    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/2_jdwzpv.png',
+    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/3_h4lntl.png',
+    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328283/4_bikubx.png',
+    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715019790/nss/Events/1_trmyhl.jpg',
+    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715023958/nss/Events/2_dkekcc.jpg',
+    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715024431/nss/Events/IMG_20230815_130457_syk6ka.jpg',
+    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715024956/nss/Events/IMG_3285_stbwpb.jpg',
   ],
 };
 
@@ -48,9 +41,7 @@ const outcomes = [
   { icon: FaGraduationCap, title: 'Education Impact', desc: '100% Class 10 result in Jamgaon for 5 consecutive years — attributed to NSS doorstep teaching', color: '#6366F1' },
   { icon: MdWater, title: 'Infrastructure', desc: 'Technical Shramdaan: drainage management & ground leveling at Disali School by engineering volunteers', color: '#0EA5E9' },
   { icon: FaLeaf, title: 'Sustainability', desc: 'Watershed management, vegetable gardening habits & environmental awareness instilled in the community', color: '#10B981' },
-  { icon: FaHeart, title: 'Health Awareness', desc: 'Sessions on menstrual hygiene, financial literacy & road safety reached every household in Jamgaon', color: '#EC4899' },
-  { icon: FaUsers, title: 'Urban-Rural Bond', desc: '60+ engineering volunteers immersed for 8 days — building lifelong understanding of rural realities', color: '#F59E0B' },
-  { icon: MdVolunteerActivism, title: 'Volunteer Growth', desc: 'Each volunteer returned with expanded perspective, empathy & a commitment to social responsibility', color: '#8B5CF6' },
+  { icon: MdVolunteerActivism, title: 'Community Bonding', desc: 'Street play "Paristhitichi Janiv", Dindi procession & health sessions bridged urban-rural divide', color: '#EC4899' },
 ];
 
 const GramSetu = () => {
@@ -58,69 +49,109 @@ const GramSetu = () => {
     document.title = 'Gram-Setu 2026 | NSS VIIT Pune Residential Camp';
   }, []);
 
-  useEffect(() => {
-    Aos.init({ duration: 800, once: true, offset: 60 });
-  }, []);
-
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="gs-hero" style={{ backgroundImage: `url(${PHOTOS.hero})` }}>
-        <div className="gs-hero-overlay" />
-        <div className="gs-hero-content" data-aos="fade-up">
-          <span className="gs-flag-tag">NSS Flagship Residential Camp</span>
-          <h1>Gram-Setu 2026</h1>
-          <p className="gs-hero-sub">Bridging Engineering Minds with Rural Hearts</p>
-          <div className="gs-hero-meta">
-            <span><FaCalendarAlt /> 21–28 January 2026</span>
-            <span><FaMapMarkerAlt /> Jamgaon Village, Mulshi, Pune</span>
-            <span><FaUsers /> 60+ Volunteers</span>
-          </div>
-        </div>
-        <div className="gs-hero-scroll-hint">▼</div>
-      </section>
+      <div className="gram-setu-page">
 
-      {/* ── OVERVIEW STRIP ── */}
-      <section className="gs-overview-strip">
-        {[
-          { num: '60+', label: 'Volunteers Deployed' },
-          { num: '8', label: 'Days of Service' },
-          { num: '100%', label: '10th Result (5 yrs)' },
-          { num: '1', label: 'Padma Shri Guest' },
-          { num: '5', label: 'Distinguished Guests' },
-        ].map((s, i) => (
-          <div className="gs-strip-stat" key={i}>
-            <span className="gs-strip-num">{s.num}</span>
-            <span className="gs-strip-label">{s.label}</span>
+        {/* ── HERO BANNER ── */}
+        <section className="gs-hero" style={{ backgroundImage: `url(${PHOTOS.hero})` }}>
+          <div className="gs-hero-overlay" />
+          <div className="gs-hero-content" data-aos="fade-up">
+            <div className="gs-hero-eyebrow">
+              <span className="gs-hero-badge">★ Flagship Residential Camp</span>
+              <span className="gs-hero-unit">NSS VIIT Pune · Unit A-70</span>
+            </div>
+            <h1>Gram-Setu 2026</h1>
+            <p className="gs-hero-tagline">
+              Connecting Engineering, Empathy, and Rural Transformation
+            </p>
+            <div className="gs-hero-meta">
+              <span><FaCalendarAlt /> 21–28 January 2026</span>
+              <span><FaMapMarkerAlt /> Jamgaon Village, Mulshi, Pune</span>
+              <span><FaUsers /> 60+ Engineering Volunteers</span>
+              <span><FaMedal /> 8 Days of Service</span>
+            </div>
           </div>
-        ))}
-      </section>
+        </section>
 
-      <div className="gs-main">
-
-        {/* ── PADMA SHRI PAWAR SPOTLIGHT ── */}
-        <section className="gs-pawar-spotlight" data-aos="fade-up">
-          <div className="gs-pawar-flag">
-            <FaMedal /> Keynote Speaker · Special Guest of Honour
+        {/* ── HIGHLIGHT BAR ── */}
+        <section className="gs-stat-bar" data-aos="fade-up">
+          <div className="gs-stat-item">
+            <span className="gs-stat-num">60+</span>
+            <span className="gs-stat-lbl">Student Volunteers</span>
           </div>
-          <div className="gs-pawar-inner">
+          <div className="gs-stat-divider" />
+          <div className="gs-stat-item">
+            <span className="gs-stat-num">8</span>
+            <span className="gs-stat-lbl">Days Immersed</span>
+          </div>
+          <div className="gs-stat-divider" />
+          <div className="gs-stat-item">
+            <span className="gs-stat-num">5</span>
+            <span className="gs-stat-lbl">Distinguished Guests</span>
+          </div>
+          <div className="gs-stat-divider" />
+          <div className="gs-stat-item">
+            <span className="gs-stat-num">100%</span>
+            <span className="gs-stat-lbl">10th Result (5 Consecutive Yrs)</span>
+          </div>
+          <div className="gs-stat-divider" />
+          <div className="gs-stat-item">
+            <span className="gs-stat-num">2008</span>
+            <span className="gs-stat-lbl">Jamgaon Adopted Since</span>
+          </div>
+        </section>
+
+        {/* ── ABOUT CAMP ── */}
+        <section className="gs-overview" data-aos="fade-up">
+          <div className="gs-section-head">
+            <span className="label-tag">The Experience</span>
+            <h2>What is Gram-Setu?</h2>
+            <p className="gs-section-lead">
+              NSS VIIT Pune&apos;s annual flagship residential camp deploys engineering volunteers into rural
+              Maharashtra for 8 days of living, learning, and working alongside villagers.
+            </p>
+          </div>
+          <div className="gs-overview-grid">
+            <div className="gs-overview-card" data-aos="fade-up" data-aos-delay="0">
+              <div className="gs-card-icon"><FaLeaf /></div>
+              <h3>Watershed &amp; Infrastructure</h3>
+              <p>Technical Shramdaan addressing village drainage, ground leveling at Disali School, and eco-friendly practices that protect natural resources.</p>
+            </div>
+            <div className="gs-overview-card" data-aos="fade-up" data-aos-delay="80">
+              <div className="gs-card-icon"><FaGraduationCap /></div>
+              <h3>Children&apos;s Education</h3>
+              <p>Doorstep teaching in Mathematics and English for local school children — directly responsible for Jamgaon&apos;s 100% Class 10 pass rate for 5 consecutive years.</p>
+            </div>
+            <div className="gs-overview-card" data-aos="fade-up" data-aos-delay="160">
+              <div className="gs-card-icon"><MdVolunteerActivism /></div>
+              <h3>Cultural &amp; Social Awareness</h3>
+              <p>Dindi procession, street play &quot;Paristhitichi Janiv&quot; on social challenges, menstrual hygiene workshops, and financial literacy sessions for women.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── KEYNOTE: POPATRAO PAWAR ── */}
+        <section className="gs-keynote" data-aos="fade-up">
+          <div className="gs-keynote-inner">
             <div className="gs-pawar-photo-col">
-              {/* → PHOTO SLOT: Upload pawar_popatrao.jpg to Nss_Website/GramSetu_2026/guests/ */}
-              <div className="gs-pawar-img-wrap">
-                <img src={PHOTOS.pawar} alt="Padma Shri Popatrao Pawar" className="gs-pawar-img" />
-                <div className="gs-pawar-img-note">⚠ Real photo needed — upload pawar_popatrao.jpg</div>
-              </div>
-              <div className="gs-pawar-award-badge">
-                <FaMedal />
+              <img
+                src={PHOTOS.pawar}
+                alt="Padma Shri Popatrao Pawar"
+                className="gs-pawar-photo"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="gs-pawar-badge">
                 <span>Padma Shri Awardee</span>
               </div>
             </div>
             <div className="gs-pawar-content-col">
               <span className="gs-pawar-label">Distinguished Keynote · Gram-Setu 2026</span>
               <h2>Padma Shri Popatrao Pawar</h2>
-              <p className="gs-pawar-credential">Architect of Hiware Bazar — India's Model Village</p>
+              <p className="gs-pawar-credential">Architect of Hiware Bazar — India&apos;s Model Village</p>
               <blockquote className="gs-pawar-quote">
-                "Mentored NSS VIIT volunteers on bridging administration and people — showing how selfless service, when organized with purpose, can eliminate poverty and transform communities."
+                &quot;Mentored NSS VIIT volunteers on bridging administration and people — showing how selfless service, when organized with purpose, can eliminate poverty and transform communities.&quot;
               </blockquote>
               <div className="gs-pawar-facts">
                 <div className="gs-pawar-fact">
@@ -129,7 +160,7 @@ const GramSetu = () => {
                 </div>
                 <div className="gs-pawar-fact">
                   <strong>Model</strong>
-                  <span>India's benchmark rural transformation</span>
+                  <span>India&apos;s benchmark rural transformation</span>
                 </div>
                 <div className="gs-pawar-fact">
                   <strong>Impact</strong>
@@ -151,7 +182,6 @@ const GramSetu = () => {
             {[
               {
                 photo: PHOTOS.yagnaraman,
-                slot: 'yagnaraman_mm.jpg',
                 name: 'Wing Cdr M.M. Yagnaraman (Retd.)',
                 tag: 'Indian Air Force',
                 theme: 'Discipline & Service Before Self',
@@ -159,7 +189,6 @@ const GramSetu = () => {
               },
               {
                 photo: PHOTOS.tapkir,
-                slot: 'tapkir_shrihari.jpg',
                 name: 'Shrihari Tapkir',
                 tag: 'Everest Summiteer',
                 theme: 'Resilience & Never Giving Up',
@@ -167,7 +196,6 @@ const GramSetu = () => {
               },
               {
                 photo: PHOTOS.ugale,
-                slot: 'ugale_omkar.jpg',
                 name: 'Omkar Ugale',
                 tag: 'MGVS — NGO Leader',
                 theme: 'Ground Realities of Social Work',
@@ -175,7 +203,6 @@ const GramSetu = () => {
               },
               {
                 photo: PHOTOS.patil,
-                slot: 'patil_deepankar.jpg',
                 name: 'Deepankar Patil',
                 tag: 'Corporate-to-Service Leader',
                 theme: 'Purpose Over Paycheck',
@@ -183,14 +210,13 @@ const GramSetu = () => {
               },
             ].map((g, i) => (
               <div className="gs-guest-card" key={i} data-aos="fade-up" data-aos-delay={i * 80}>
-                {/* → PHOTO SLOT: Upload {g.slot} to Nss_Website/GramSetu_2026/guests/ */}
                 <div className="gs-guest-photo-wrap">
-                  <img src={g.photo} alt={g.name} className="gs-guest-photo" />
+                  <img src={g.photo} alt={g.name} className="gs-guest-photo" loading="lazy" decoding="async" />
                   <div className="gs-guest-tag-pill">{g.tag}</div>
                 </div>
                 <div className="gs-guest-body">
                   <h3>{g.name}</h3>
-                  <p className="gs-guest-theme">"{g.theme}"</p>
+                  <p className="gs-guest-theme">&quot;{g.theme}&quot;</p>
                   <p className="gs-guest-desc">{g.desc}</p>
                 </div>
               </div>
@@ -255,7 +281,7 @@ const GramSetu = () => {
               <h2>Omkar Gengaje</h2>
               <p className="gs-omkar-dept">Computer Engineering, NSS VIIT Pune</p>
               <p className="gs-omkar-story">
-                In an act of extraordinary compassion, Omkar Gengaje donated his stem cells through a 4-hour medical procedure to save a young girl's life from cancer — entirely free of cost. No event, no award, no publicity — just a quiet, selfless act that defines what "Not Me But You" truly means.
+                In an act of extraordinary compassion, Omkar Gengaje donated his stem cells through a 4-hour medical procedure to save a young girl&apos;s life from cancer — entirely free of cost. No event, no award, no publicity — just a quiet, selfless act that defines what &quot;Not Me But You&quot; truly means.
               </p>
               <div className="gs-omkar-badges">
                 <span>Stem Cell Donor</span>
@@ -276,11 +302,9 @@ const GramSetu = () => {
           <div className="gs-gallery-grid">
             {PHOTOS.gallery.map((src, i) => {
               const labels = ['Inauguration — Day 1', 'Children\'s Education — Day 2', 'Morning Yoga — Day 3', 'Dindi Procession — Day 4', 'Street Play "Paristhitichi Janiv" — Day 5', 'Cleanliness Drive — Day 6', 'Cultural Programme — Day 7', 'Valedictory Ceremony — Day 8'];
-              const slots = ['day1_inauguration.jpg', 'day2_teaching.jpg', 'day3_yoga.jpg', 'day4_dindi.jpg', 'day5_street_play.jpg', 'day6_cleanliness.jpg', 'day7_cultural.jpg', 'day8_closing.jpg'];
               return (
                 <div className={`gs-gallery-item${i === 0 ? ' gs-gallery-featured' : ''}`} key={i}>
-                  {/* → Upload {slots[i]} to Nss_Website/GramSetu_2026/gallery/ */}
-                  <img src={src} alt={labels[i]} />
+                  <img src={src} alt={labels[i]} loading="lazy" decoding="async" />
                   <div className="gs-gallery-caption">{labels[i]}</div>
                 </div>
               );
