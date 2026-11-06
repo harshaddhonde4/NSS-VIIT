@@ -1,4 +1,5 @@
-import { useEffect, useState, useCallback, useMemo } from 'react';
+import { useEffect, useState, useCallback, useMemo, useRef } from 'react';
+import { toAssetUrl } from '../utils/assetHelper';
 import campManifest from '../data/camp_photos_manifest.json';
 import './css/GramSetu.css';
 import {
@@ -26,7 +27,7 @@ import useSEO from '../components/useSEO';
    CLOUDINARY PHOTO SLOTS — replace URLs after upload
    Upload to cloud: dmokljnng | Folder: Nss_Website/GramSetu_2026/
    ============================================================ */
-const PHOTOS = {
+const rawPhotos = {
   hero: '/images/GramSetu_2026/hero_banner.webp',
   pawar: '/images/featured_highlights/pawar_sir_visit_.webp',
   yagnaraman: '/images/featured_highlights/wg._crd_yugnaraman.webp',
@@ -39,23 +40,11 @@ const PHOTOS = {
   movie_night: '/images/featured_highlights/movie_night_at_camp_.webp',
   news1: '/images/featured_highlights/gramsetu_in_news_2.webp',
   news2: '/images/featured_highlights/gramsetu_in_news_.webp',
-  gallery: [
-    '/images/GramSetu_2026/day1_photo1.jpg',
-    '/images/GramSetu_2026/day1_photo2.jpg',
-    '/images/GramSetu_2026/day2_photo1.jpg',
-    '/images/GramSetu_2026/day2_photo2.jpg',
-    '/images/GramSetu_2026/day3_photo1.jpg',
-    '/images/GramSetu_2026/day3_photo2.jpg',
-    '/images/GramSetu_2026/day4_photo1.jpg',
-    '/images/GramSetu_2026/day4_photo2.jpg',
-    '/images/GramSetu_2026/day5_photo1.jpg',
-    '/images/GramSetu_2026/day5_photo2.jpg',
-    '/images/GramSetu_2026/day6_photo1.jpg',
-    '/images/GramSetu_2026/day6_photo2.jpg',
-    '/images/GramSetu_2026/day7_photo1.jpg',
-    '/images/GramSetu_2026/day7_photo2.jpg',
-  ],
 };
+
+const PHOTOS = Object.fromEntries(
+  Object.entries(rawPhotos).map(([k, v]) => [k, toAssetUrl(v)])
+);
 
 
 /* ============================================================
@@ -288,6 +277,13 @@ const GramSetu = () => {
   const [visibleCount, setVisibleCount] = useState(24);
   const [activeReelIndex, setActiveReelIndex] = useState(null);
   const [reelDisplayMode, setReelDisplayMode] = useState('player'); // 'player' or 'embed'
+  const theaterVideoRef = useRef(null);
+
+  useEffect(() => {
+    if (activeReelIndex !== null && theaterVideoRef.current) {
+      theaterVideoRef.current.play().catch(() => {});
+    }
+  }, [activeReelIndex]);
 
   // Flatten all 364 day photos into a single master list
   const allPhotos = useMemo(() => {
@@ -708,8 +704,8 @@ const GramSetu = () => {
                   {reelDisplayMode === 'player' ? (
                     <div className="gs-reel-video-container">
                       <video
-                        src={reel.videoSrc}
-                        poster={reel.poster}
+                        src={toAssetUrl(reel.videoSrc)}
+                        poster={toAssetUrl(reel.poster)}
                         controls
                         playsInline
                         preload="metadata"
@@ -782,8 +778,8 @@ const GramSetu = () => {
               <div className="gs-extra-card">
                 <div className="gs-extra-video-wrap">
                   <video
-                    src="/videos/reels/gramsetu_camp_announcement.mp4"
-                    poster="/videos/reels/gramsetu_camp_announcement_poster.jpg"
+                    src={toAssetUrl("/videos/reels/gramsetu_camp_announcement.mp4")}
+                    poster={toAssetUrl("/videos/reels/gramsetu_camp_announcement_poster.jpg")}
                     controls
                     playsInline
                     preload="metadata"
@@ -799,8 +795,8 @@ const GramSetu = () => {
               <div className="gs-extra-card">
                 <div className="gs-extra-video-wrap">
                   <video
-                    src="/videos/reels/gramsetu_camp_highlight.mp4"
-                    poster="/videos/reels/gramsetu_camp_highlight_poster.jpg"
+                    src={toAssetUrl("/videos/reels/gramsetu_camp_highlight.mp4")}
+                    poster={toAssetUrl("/videos/reels/gramsetu_camp_highlight_poster.jpg")}
                     controls
                     playsInline
                     preload="metadata"
@@ -1046,7 +1042,7 @@ const GramSetu = () => {
                 title="Click to view high-resolution photo"
               >
                 <img
-                  src={item.thumb || item.src}
+                  src={toAssetUrl(item.thumb || item.src)}
                   alt={item.title || `Gram-Setu 2026 Photo ${i + 1}`}
                   loading="lazy"
                   decoding="async"
@@ -1094,9 +1090,10 @@ const GramSetu = () => {
 
             <div className="gs-reel-theater-player-box">
               <video
+                ref={theaterVideoRef}
                 key={gramSetuReels[activeReelIndex].videoSrc}
-                src={gramSetuReels[activeReelIndex].videoSrc}
-                poster={gramSetuReels[activeReelIndex].poster}
+                src={toAssetUrl(gramSetuReels[activeReelIndex].videoSrc)}
+                poster={toAssetUrl(gramSetuReels[activeReelIndex].poster)}
                 controls
                 playsInline
                 className="gs-reel-theater-video"
@@ -1159,7 +1156,7 @@ const GramSetu = () => {
               <FaTimes />
             </button>
             <img
-              src={activePhotos[lightboxIndex].src}
+              src={toAssetUrl(activePhotos[lightboxIndex].src)}
               alt={activePhotos[lightboxIndex].title}
               className="lightbox-img"
             />

@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
-import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp, FaExpand, FaArrowDown, FaCrown } from "react-icons/fa";
+import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp, FaExpand, FaArrowDown, FaCrown, FaInstagram } from "react-icons/fa";
+import { toAssetUrl } from "../utils/assetHelper";
 import "./CoreTeamReel.css";
 
 const CoreTeamReel = () => {
@@ -7,13 +8,38 @@ const CoreTeamReel = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  const [playbackError, setPlaybackError] = useState(false);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
     if (videoRef.current.paused) {
-      videoRef.current.play();
-      setIsPlaying(true);
-      setHasStarted(true);
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+            setHasStarted(true);
+            setPlaybackError(false);
+          })
+          .catch((err) => {
+            console.warn("Unmuted autoplay restricted, attempting muted playback:", err);
+            if (videoRef.current) {
+              videoRef.current.muted = true;
+              setIsMuted(true);
+              videoRef.current
+                .play()
+                .then(() => {
+                  setIsPlaying(true);
+                  setHasStarted(true);
+                  setPlaybackError(false);
+                })
+                .catch((e) => {
+                  console.error("Direct playback error:", e);
+                  setPlaybackError(true);
+                });
+            }
+          });
+      }
     } else {
       videoRef.current.pause();
       setIsPlaying(false);
@@ -62,19 +88,24 @@ const CoreTeamReel = () => {
         <div className="core-reel-viewport">
           <video
             ref={videoRef}
-            src="/videos/core_team_reveal.mp4"
-            poster="/videos/core_team_reveal_poster.jpg"
+            src={toAssetUrl("/videos/core_team_reveal.mp4")}
+            poster={toAssetUrl("/videos/core_team_reveal_poster.jpg")}
             preload="metadata"
             playsInline
             controls
             onPlay={() => {
               setIsPlaying(true);
               setHasStarted(true);
+              setPlaybackError(false);
             }}
             onPause={() => setIsPlaying(false)}
             onEnded={() => {
               setIsPlaying(false);
               setHasStarted(false);
+            }}
+            onError={() => {
+              console.warn("Video failed to decode or load.");
+              setPlaybackError(true);
             }}
             className="core-reel-video"
           >
@@ -82,13 +113,59 @@ const CoreTeamReel = () => {
           </video>
 
           {/* Custom Cinematic Overlay when video hasn't started or is paused */}
-          {!isPlaying && !hasStarted && (
-            <div className="core-reel-splash-overlay" onClick={togglePlay} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && togglePlay()}>
+          {!isPlaying && !hasStarted && !playbackError && (
+            <div
+              className="core-reel-splash-overlay"
+              onClick={togglePlay}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === "Enter" && togglePlay()}
+            >
               <div className="splash-play-btn">
                 <FaPlay className="play-triangle" />
               </div>
               <span className="splash-label">Watch Reveal Reel</span>
-              <span className="splash-duration">0:32 · Full HD · H.264</span>
+              <span className="splash-duration">0:32 · Full HD · H.264 FastStart</span>
+            </div>
+          )}
+
+          {/* Fallback banner if browser blocks local video */}
+          {playbackError && (
+            <div className="core-reel-error-fallback" style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'rgba(15, 23, 42, 0.92)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '1rem',
+              padding: '2rem',
+              textAlign: 'center',
+              zIndex: 15
+            }}>
+              <p style={{ color: '#F1F5F9', fontSize: '1.4rem', margin: 0 }}>
+                Unable to stream in your browser directly.
+              </p>
+              <a
+                href="https://www.instagram.com/nss.a_70/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.8rem',
+                  background: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)',
+                  color: '#FFFFFF',
+                  padding: '0.8rem 1.6rem',
+                  borderRadius: '30px',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  fontSize: '1.3rem'
+                }}
+              >
+                <FaInstagram /> Watch on Official Instagram ↗
+              </a>
             </div>
           )}
         </div>
