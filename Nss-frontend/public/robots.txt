@@ -1,5 +1,5 @@
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
-Sitemap: https://nss-viit.vercel.app/sitemap.xml
-
+Sitemap: https://nss.viit.ac.in/sitemap.xml
