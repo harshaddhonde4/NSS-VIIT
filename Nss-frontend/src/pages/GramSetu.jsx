@@ -71,6 +71,7 @@ const gramSetuReels = [
     caption: 'From campus to community, the journey of service begins! Day 1 at Jamgaon was all about setting the foundation, Fort group allocations, and our first village survey.',
     tags: ['#NSSVIIT', '#GramSetu2026', '#Day1', '#NotMeButYou', '#VillageSurvey'],
     videoSrc: '/videos/reels/gramsetu_day1_reel.mp4',
+    poster: '/videos/reels/gramsetu_day1_reel_poster.jpg',
     reelUrl: 'https://www.instagram.com/reel/DUfb59XjOoH/',
     embedId: 'DUfb59XjOoH',
     color: '#F59E0B',
@@ -84,6 +85,7 @@ const gramSetuReels = [
     caption: 'Shramdaan, Spirituality, and Shiv Charitra. Morning temple cleaning, yoga sessions, community dinner (Bhandara) with villagers, and an inspiring bonfire lecture.',
     tags: ['#GaneshJayanti', '#Shramdaan', '#ShivCharitra', '#NSSCamp', '#CommunityBonding'],
     videoSrc: '/videos/reels/gramsetu_day2_reel.mp4',
+    poster: '/videos/reels/gramsetu_day2_reel_poster.jpg',
     reelUrl: 'https://www.instagram.com/reel/DU2JweNjFSN/',
     embedId: 'DU2JweNjFSN',
     color: '#10B981',
@@ -97,6 +99,7 @@ const gramSetuReels = [
     caption: 'Real hands, real work, real impact. Tackling village school drainage, an intense inter-group Tug of War, and an outdoor movie night screening "Chhava" with the villagers.',
     tags: ['#ProblemSolvers', '#TugOfWar', '#Chhava', '#NSSDiaries', '#HardWork'],
     videoSrc: '/videos/reels/gramsetu_day3_reel.mp4',
+    poster: '/videos/reels/gramsetu_day3_reel_poster.jpg',
     reelUrl: 'https://www.instagram.com/reel/DVOffFcjNPa/',
     embedId: 'DVOffFcjNPa',
     color: '#0EA5E9',
@@ -110,6 +113,7 @@ const gramSetuReels = [
     caption: 'Culture, devotion, and discipline. Traditional Dindi procession & Lazim through Jamgaon with the Palkhi, Pravachan by H.B.P. Datta Maharaj, and Road Safety with RTO Pune.',
     tags: ['#DindiSohala', '#Culture', '#Tradition', '#RoadSafety', '#NSSVIIT', '#Palkhi'],
     videoSrc: '/videos/reels/gramsetu_day4_reel.mp4',
+    poster: '/videos/reels/gramsetu_day4_reel_poster.jpg',
     reelUrl: 'https://www.instagram.com/reel/DV5HswQjLNa/',
     embedId: 'DV5HswQjLNa',
     color: '#EC4899',
@@ -123,6 +127,7 @@ const gramSetuReels = [
     caption: 'Testing our limits and aiming for the summit! Hard physical labor leveling ground at Disali School and learning the journey of Everest Summiteer Shrihari Tapkir Sir.',
     tags: ['#Shramdaan', '#Everest', '#TreasureHunt', '#Resilience', '#Motivation'],
     videoSrc: '/videos/reels/gramsetu_day5_reel.mp4',
+    poster: '/videos/reels/gramsetu_day5_reel_poster.jpg',
     reelUrl: 'https://www.instagram.com/reel/DYhFgMotKKw/',
     embedId: 'DYhFgMotKKw',
     color: '#8B5CF6',
@@ -136,6 +141,7 @@ const gramSetuReels = [
     caption: 'A Republic Day etched in history! Tricolor flying high, Mega Health Check-up Camp, Alumni Sneh Milan, and distinguished keynote address by Padmashree Popatrao Pawar Sir.',
     tags: ['#RepublicDay', '#PopatraoPawar', '#SustainableDevelopment', '#AlumniMeet', '#JaiHind'],
     videoSrc: '/videos/reels/gramsetu_day6_reel.mp4',
+    poster: '/videos/reels/gramsetu_day6_reel_poster.jpg',
     reelUrl: 'https://www.instagram.com/reel/DYkSPJfMsON/',
     embedId: 'DYkSPJfMsON',
     color: '#EF4444',
@@ -703,6 +709,7 @@ const GramSetu = () => {
                     <div className="gs-reel-video-container">
                       <video
                         src={reel.videoSrc}
+                        poster={reel.poster}
                         controls
                         playsInline
                         preload="metadata"
@@ -776,6 +783,7 @@ const GramSetu = () => {
                 <div className="gs-extra-video-wrap">
                   <video
                     src="/videos/reels/gramsetu_camp_announcement.mp4"
+                    poster="/videos/reels/gramsetu_camp_announcement_poster.jpg"
                     controls
                     playsInline
                     preload="metadata"
@@ -792,6 +800,7 @@ const GramSetu = () => {
                 <div className="gs-extra-video-wrap">
                   <video
                     src="/videos/reels/gramsetu_camp_highlight.mp4"
+                    poster="/videos/reels/gramsetu_camp_highlight_poster.jpg"
                     controls
                     playsInline
                     preload="metadata"
@@ -1087,8 +1096,8 @@ const GramSetu = () => {
               <video
                 key={gramSetuReels[activeReelIndex].videoSrc}
                 src={gramSetuReels[activeReelIndex].videoSrc}
+                poster={gramSetuReels[activeReelIndex].poster}
                 controls
-                autoPlay
                 playsInline
                 className="gs-reel-theater-video"
               />
