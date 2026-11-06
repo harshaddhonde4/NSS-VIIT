@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import { useState } from 'react';
+import useSEO from '../components/useSEO';
+import PropTypes from 'prop-types';
 import './css/Achievements.css';
 import { FaHome, FaHeartbeat, FaTrophy, FaStar, FaUsers, FaLeaf, FaGraduationCap, FaHandshake, FaMedal } from 'react-icons/fa';
 import { MdVolunteerActivism } from 'react-icons/md';
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
-import useSEO from '../components/useSEO';
 
 /* ── Reusable Achievement Card ── */
 const AchCard = ({ icon: Icon, title, desc, accent }) => (
@@ -19,6 +18,13 @@ const AchCard = ({ icon: Icon, title, desc, accent }) => (
   </div>
 );
 
+AchCard.propTypes = {
+  icon: PropTypes.elementType.isRequired,
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  accent: PropTypes.string.isRequired,
+};
+
 const Achievements = () => {
   useSEO({
     title: 'Achievements & Milestones | NSS VIIT Pune',
@@ -26,10 +32,6 @@ const Achievements = () => {
     keywords: 'NSS VIIT achievements, NSS awards Pune, blood donation record VIIT, Gram Setu achievements, volunteer milestones',
     canonical: 'https://nss-viit.vercel.app/achievements',
   });
-
-  useEffect(() => {
-    Aos.init({ duration: 800, once: true, offset: 60 });
-  }, []);
 
   const [counterOn, setCounterOn] = useState(false);
 
@@ -171,7 +173,7 @@ const Achievements = () => {
         {/* ── CLOSING QUOTE ── */}
         <div className="ach-closing-quote" data-aos="fade-up">
           <blockquote>
-            "It was never about the output; it was always about the journey and the experiences we shared."
+            &quot;It was never about the output; it was always about the journey and the experiences we shared.&quot;
           </blockquote>
           <cite>— NSS VIIT Pune · Batch 2025–26</cite>
         </div>

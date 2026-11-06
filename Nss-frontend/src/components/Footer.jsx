@@ -26,8 +26,12 @@ function Footer() {
           <Link to="/team">Our Team</Link>
           <Link to="/contact">Contact</Link>
         </div>
-        <p className="footer-company-name">
-          © 2026 <strong>NSS VIIT Pune</strong>. All rights reserved.
+        <p className="footer-unit-name" style={{ lineHeight: 1.6 }}>
+          © 2026 <strong>NSS VIIT Pune · Unit A-70 (2008–2026)</strong>.
+          <br />
+          <span style={{ fontSize: "1.2rem", color: "#94A3B8", display: "inline-block", marginTop: "0.4rem" }}>
+            Institutional Merger: 18-year legacy continues under <a href="https://swd.vit.edu/nss/nss.html" target="_blank" rel="noopener noreferrer" style={{ color: "#F59E0B", fontWeight: 700, textDecoration: "underline" }}>NSS VIT Unit A-65</a>, Vishwakarma Institute of Technology, Pune.
+          </span>
         </p>
       </div>
 
@@ -65,7 +69,7 @@ function Footer() {
 
       <div className="footer-right">
         <div className="footer-right-title">About NSS VIIT Pune</div>
-        <p className="footer-company-about">
+        <p className="footer-unit-about">
           The National Service Scheme (NSS) at Vishwakarma Institute of
           Information Technology (VIIT), Pune, embodies a commitment to
           community engagement and social responsibility among its students.
@@ -75,7 +79,7 @@ function Footer() {
           <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Facebook">
             <FaFacebookF />
           </a>
-          <a href="https://www.instagram.com/nss.viit.pune?igsh=MXZ5MXU3eGhsMzlteg==" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
+          <a href="https://www.instagram.com/nss.a_70/" target="_blank" rel="noreferrer">
             <FaInstagram />
           </a>
           <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer" aria-label="NSS VIIT LinkedIn">

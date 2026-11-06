@@ -38,15 +38,15 @@ const Navbar = () => {
     <>
       <nav className={`main-nav${scrolled ? " scrolled" : ""}`}>
         <div className="logo">
-          <NavLink to="/" style={{ textDecoration: 'none' }} onClick={() => setShowMediaIcons(false)}>
-            <h2>
-              <img
-                src="https://res.cloudinary.com/diyw5ilre/image/upload/v1714587159/nss-logo_wecruv.png"
-                alt="NSS VIIT Pune Logo"
-                className="nav-logo-img"
-              />
-              NSS VIIT <span>Pune</span>
-            </h2>
+          <NavLink to="/" className="nav-brand-link">
+            <img
+              src="/images/img/nss-logo.png"
+              alt="NSS VIIT Logo"
+              className="nav-logo-img"
+            />
+            <span className="brand-text">
+              NSS VIIT <span className="brand-accent">Pune</span>
+            </span>
           </NavLink>
         </div>
 
@@ -102,7 +102,7 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/nss.viit.pune/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
+              <a href="https://www.instagram.com/nss.a_70/" target="_blank" rel="noreferrer">
                 <FaInstagram className="instagram" />
               </a>
             </li>

@@ -14,7 +14,7 @@ function TeamCard({ name, role, imgSrc, twitter, email, linkedin, highlight }) {
           </div>
         )}
         <div className="imbBx">
-          <img src={imgSrc} alt={name} />
+          <img src={imgSrc} alt={name} loading="lazy" decoding="async" />
         </div>
         <div className="content">
           <div className="contentBx">
@@ -25,17 +25,17 @@ function TeamCard({ name, role, imgSrc, twitter, email, linkedin, highlight }) {
           </div>
           <ul className="sci">
             <li style={{ "--i": 1 }}>
-              <a href={twitter} target="_blank" rel="noreferrer">
+              <a href={twitter} target="_blank" rel="noopener noreferrer" aria-label={`${name}'s Twitter / X`}>
                 <FaXTwitter />
               </a>
             </li>
             <li style={{ "--i": 2 }}>
-              <a href={`mailto:${email}`}>
+              <a href={`mailto:${email}`} aria-label={`Email ${name}`}>
                 <MdEmail />
               </a>
             </li>
             <li style={{ "--i": 3 }}>
-              <a href={linkedin} target="_blank" rel="noreferrer">
+              <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${name}'s LinkedIn`}>
                 <FaLinkedinIn />
               </a>
             </li>

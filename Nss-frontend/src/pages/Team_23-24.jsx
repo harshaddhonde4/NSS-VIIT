@@ -347,7 +347,7 @@ const Team_23_24 = () => {
         <TeamCard
           name="Sarang Kulkarni"
           role="AIDS Dept Head "
-          imgSrc="/images/Team/aids-1.png"
+          imgSrc="/images/Team/aids-1.jpg"
           twitter="#"
           email="#"
           linkedin="#"

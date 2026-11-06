@@ -1,0 +1,364 @@
+
+==========================================
+REPORT: 10_E Waste Collection Report  (Pages: 2)
+  --- Page 1 (Introduction | The National Service Scheme (NSS) Unit of VIIT, in coll) ---
+    xref 53: 424x425 (LOGO / EMBLEM)
+    xref 54: 143x150 (LOGO / EMBLEM)
+    xref 56: 204x204 (LOGO / EMBLEM)
+    xref 57: 2322x3347 (REAL PHOTO)
+  --- Page 2 (Impact | - The drive successfully spread awareness on e-waste manageme) ---
+    xref 62: 424x425 (LOGO / EMBLEM)
+    xref 63: 143x150 (LOGO / EMBLEM)
+    xref 65: 204x204 (LOGO / EMBLEM)
+    xref 66: 111x59 (LOGO / EMBLEM)
+    xref 67: 112x59 (LOGO / EMBLEM)
+    xref 68: 968x1459 (REAL PHOTO)
+
+==========================================
+REPORT: 11_Blood Donation Camp  (Pages: 6)
+  --- Page 1 (NATIONAL SERVICE SCHEME | रक्तसेेतुु | Introduction) ---
+    xref 16: 88x90 (LOGO / EMBLEM)
+    xref 17: 93x94 (LOGO / EMBLEM)
+    xref 18: 863x1132 (REAL PHOTO)
+    xref 19: 863x1132 (REAL PHOTO)
+    xref 20: 158x158 (LOGO / EMBLEM)
+    xref 21: 100x101 (LOGO / EMBLEM)
+    xref 153: 299x299 (REAL PHOTO)
+  --- Page 2 (Check-ups Available: | 1. Eye Checkup | 2. Dental Checkup) ---
+    xref 35: 968x1459 (REAL PHOTO)
+  --- Page 3 (Some Glimpse of the Program: | The रक्तसेतु– Blood Donation & Health C) ---
+    xref 39: 554x738 (REAL PHOTO)
+    xref 44: 968x1459 (REAL PHOTO)
+  --- Page 4 (Some Glimpse of the Program:) ---
+    xref 48: 908x1613 (REAL PHOTO)
+    xref 49: 1452x818 (REAL PHOTO)
+    xref 50: 968x1459 (REAL PHOTO)
+  --- Page 5 () ---
+    xref 54: 430x763 (REAL PHOTO)
+    xref 55: 872x491 (REAL PHOTO)
+    xref 56: 276x368 (REAL PHOTO)
+    xref 57: 562x749 (REAL PHOTO)
+    xref 58: 461x346 (REAL PHOTO)
+    xref 59: 968x1459 (REAL PHOTO)
+  --- Page 6 (Regards, | NSS VIIT | Prepared By,) ---
+    xref 62: 111x59 (LOGO / EMBLEM)
+    xref 63: 112x59 (LOGO / EMBLEM)
+    xref 64: 968x1459 (REAL PHOTO)
+
+==========================================
+REPORT: 12_CAMP (Pages: 26)
+  --- Page 1 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+  --- Page 2 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+  --- Page 3 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 44: 924x1237 (REAL PHOTO)
+    xref 45: 913x1227 (REAL PHOTO)
+  --- Page 4 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+  --- Page 5 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 52: 736x981 (REAL PHOTO)
+    xref 53: 744x983 (REAL PHOTO)
+  --- Page 6 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 57: 857x1152 (REAL PHOTO)
+    xref 58: 868x1157 (REAL PHOTO)
+  --- Page 7 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 62: 1882x944 (REAL PHOTO)
+    xref 63: 1882x471 (REAL PHOTO)
+  --- Page 8 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 67: 1882x946 (REAL PHOTO)
+    xref 68: 1882x471 (REAL PHOTO)
+  --- Page 9 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 72: 758x1017 (REAL PHOTO)
+    xref 73: 762x1018 (REAL PHOTO)
+  --- Page 10 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 77: 1580x1179 (REAL PHOTO)
+  --- Page 11 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 97: 730x836 (REAL PHOTO)
+    xref 98: 1120x833 (REAL PHOTO)
+  --- Page 12 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 102: 758x813 (REAL PHOTO)
+    xref 103: 1077x808 (REAL PHOTO)
+  --- Page 13 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+  --- Page 14 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 110: 3024x672 (REAL PHOTO)
+    xref 111: 3024x672 (REAL PHOTO)
+    xref 112: 3024x672 (REAL PHOTO)
+    xref 113: 3024x672 (REAL PHOTO)
+    xref 114: 3024x672 (REAL PHOTO)
+    xref 115: 3024x672 (REAL PHOTO)
+    xref 116: 596x447 (REAL PHOTO)
+  --- Page 15 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 120: 497x63 (SMALL ICON / THUMBNAIL)
+    xref 121: 497x63 (SMALL ICON / THUMBNAIL)
+    xref 122: 497x63 (SMALL ICON / THUMBNAIL)
+    xref 123: 497x63 (SMALL ICON / THUMBNAIL)
+    xref 124: 497x63 (SMALL ICON / THUMBNAIL)
+    xref 125: 497x63 (SMALL ICON / THUMBNAIL)
+    xref 126: 597x438 (REAL PHOTO)
+  --- Page 16 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+  --- Page 17 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 133: 653x544 (REAL PHOTO)
+    xref 134: 672x557 (REAL PHOTO)
+  --- Page 18 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 138: 599x507 (REAL PHOTO)
+    xref 139: 647x486 (REAL PHOTO)
+    xref 140: 903x523 (REAL PHOTO)
+  --- Page 19 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 144: 656x487 (REAL PHOTO)
+    xref 145: 592x487 (REAL PHOTO)
+    xref 146: 1210x611 (REAL PHOTO)
+  --- Page 20 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+  --- Page 21 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 153: 4032x504 (REAL PHOTO)
+    xref 154: 4032x504 (REAL PHOTO)
+    xref 155: 4032x504 (REAL PHOTO)
+    xref 156: 4032x504 (REAL PHOTO)
+    xref 157: 4032x504 (REAL PHOTO)
+    xref 158: 4032x504 (REAL PHOTO)
+  --- Page 22 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 162: 682x511 (REAL PHOTO)
+    xref 163: 1184x592 (REAL PHOTO)
+    xref 164: 682x511 (REAL PHOTO)
+  --- Page 23 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 168: 1061x428 (REAL PHOTO)
+    xref 169: 645x446 (REAL PHOTO)
+    xref 170: 662x464 (REAL PHOTO)
+  --- Page 24 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 174: 609x724 (REAL PHOTO)
+    xref 175: 634x733 (REAL PHOTO)
+    xref 176: 640x853 (REAL PHOTO)
+    xref 177: 662x850 (REAL PHOTO)
+  --- Page 25 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+  --- Page 26 (Bansilal Ramnath Agarwal Charitable Trusts | Vishwakarma InsƟtute of I) ---
+    xref 28: 279x293 (LOGO / EMBLEM)
+    xref 29: 282x271 (LOGO / EMBLEM)
+    xref 184: 764x735 (REAL PHOTO)
+    xref 185: 644x409 (REAL PHOTO)
+    xref 186: 1413x794 (REAL PHOTO)
+
+==========================================
+REPORT: 1_Rakhi-With-Khaki (Pages: 4)
+  --- Page 1 (Rakhi-With-Khaki | Event Setup: | The event preparations were complete) ---
+    xref 14: 76x77 (LOGO / EMBLEM)
+    xref 15: 81x81 (LOGO / EMBLEM)
+    xref 16: 1197x1571 (REAL PHOTO)
+  --- Page 2 (Some Glimpse of the program: | Location: Swargate Police Station, Pune) ---
+    xref 24: 874x492 (REAL PHOTO)
+    xref 25: 874x492 (REAL PHOTO)
+  --- Page 3 (Our Volunteers tying rakhis to the Police Officers) ---
+    xref 29: 432x576 (REAL PHOTO)
+    xref 30: 384x512 (REAL PHOTO)
+    xref 31: 422x749 (REAL PHOTO)
+    xref 32: 384x512 (REAL PHOTO)
+  --- Page 4 (The event commenced with a warm and heartfelt interaction between our ) ---
+    xref 36: 1196x1571 (REAL PHOTO)
+    xref 37: 111x59 (LOGO / EMBLEM)
+    xref 38: 112x59 (LOGO / EMBLEM)
+
+==========================================
+REPORT: 2_Personality Development & Menstrual Hygiene  3 TIME (Pages: 4)
+  --- Page 1 (Personality Development & | Menstrual Hygiene | Date: 12th August 2025) ---
+    xref 14: 76x77 (LOGO / EMBLEM)
+    xref 15: 81x81 (LOGO / EMBLEM)
+    xref 16: 1197x1571 (REAL PHOTO)
+  --- Page 2 (Some Glimpse of the Seminar:) ---
+    xref 20: 1042x1119 (REAL PHOTO)
+    xref 21: 968x1459 (REAL PHOTO)
+  --- Page 3 (Photos while Distributing Goodies.) ---
+    xref 25: 963x1126 (REAL PHOTO)
+    xref 26: 968x1459 (REAL PHOTO)
+  --- Page 4 (3. Event Highlights Certified Female Trainer conducted the session for) ---
+    xref 30: 1196x1571 (REAL PHOTO)
+    xref 31: 111x59 (LOGO / EMBLEM)
+    xref 32: 112x59 (LOGO / EMBLEM)
+
+==========================================
+REPORT: 3_Independence Day Documentation (Pages: 4)
+  --- Page 1 (Independence Day | NATIONAL SERVICE SCHEME | Date: 15th August 2025) ---
+    xref 14: 76x77 (LOGO / EMBLEM)
+    xref 15: 81x81 (LOGO / EMBLEM)
+    xref 16: 958x1257 (REAL PHOTO)
+  --- Page 2 (Some Glimpse of the program at college :) ---
+    xref 23: 896x672 (REAL PHOTO)
+    xref 24: 468x624 (REAL PHOTO)
+    xref 25: 432x576 (REAL PHOTO)
+    xref 26: 968x1459 (REAL PHOTO)
+  --- Page 3 (At Jamgaon:) ---
+    xref 30: 422x749 (REAL PHOTO)
+    xref 31: 562x999 (REAL PHOTO)
+    xref 32: 409x726 (REAL PHOTO)
+    xref 33: 847x477 (REAL PHOTO)
+    xref 34: 968x1459 (REAL PHOTO)
+  --- Page 4 (Outreach Celebration at Jamgaon Village | To extend the celebration be) ---
+    xref 38: 957x1257 (REAL PHOTO)
+    xref 42: 111x59 (LOGO / EMBLEM)
+    xref 43: 112x59 (LOGO / EMBLEM)
+
+==========================================
+REPORT: 4_Debate competition  (Pages: 4)
+  --- Page 1 (Debate Competition | Organized by: National Service Scheme (NSS), VIIT) ---
+    xref 14: 76x77 (LOGO / EMBLEM)
+    xref 15: 81x81 (LOGO / EMBLEM)
+    xref 16: 958x1257 (REAL PHOTO)
+  --- Page 2 (The debate was graced by respected guests: | Mr. Sourabh Sahare | Mr. ) ---
+    xref 23: 957x1257 (REAL PHOTO)
+  --- Page 3 (Some Glimpse of the Compitition:) ---
+    xref 33: 542x960 (REAL PHOTO)
+    xref 34: 960x542 (REAL PHOTO)
+    xref 35: 960x542 (REAL PHOTO)
+    xref 36: 968x1459 (REAL PHOTO)
+  --- Page 4 (NSS Team & Guests Photo With Winners : | Regards, | NSS VIIT) ---
+    xref 40: 1165x874 (REAL PHOTO)
+    xref 41: 111x59 (LOGO / EMBLEM)
+    xref 42: 112x59 (LOGO / EMBLEM)
+    xref 43: 968x1459 (REAL PHOTO)
+
+==========================================
+REPORT: 5_Srujanrang Cultural Competition  (Pages: 3)
+  --- Page 1 (NATIONAL SERVICE SCHEME | Event: Srujanrang – Cultural Competition | D) ---
+    xref 75: 424x425 (LOGO / EMBLEM)
+    xref 76: 143x150 (LOGO / EMBLEM)
+    xref 78: 204x204 (LOGO / EMBLEM)
+    xref 79: 2322x3347 (REAL PHOTO)
+  --- Page 2 (NATIONAL SERVICE SCHEME | Kanishka Nitin Bhombe | Jagdev Hake) ---
+    xref 84: 424x425 (LOGO / EMBLEM)
+    xref 85: 143x150 (LOGO / EMBLEM)
+    xref 87: 204x204 (LOGO / EMBLEM)
+    xref 88: 2322x3347 (REAL PHOTO)
+  --- Page 3 (NATIONAL SERVICE SCHEME | Conclusion | The Srujanrang Cultural Competi) ---
+    xref 93: 424x425 (LOGO / EMBLEM)
+    xref 94: 143x150 (LOGO / EMBLEM)
+    xref 96: 204x204 (LOGO / EMBLEM)
+    xref 97: 2322x3347 (REAL PHOTO)
+    xref 98: 89x48 (LOGO / EMBLEM)
+    xref 99: 90x48 (LOGO / EMBLEM)
+
+==========================================
+REPORT: 6_SPO (Pages: 3)
+  --- Page 1 (SPO (Police Mitra) | NATIONAL SERVICE SCHEME | Bansilal Ramnath Agarwa) ---
+    xref 13: 76x77 (LOGO / EMBLEM)
+    xref 14: 81x81 (LOGO / EMBLEM)
+    xref 15: 863x1132 (REAL PHOTO)
+  --- Page 2 (Some Glimpse of the program:) ---
+    xref 21: 882x662 (REAL PHOTO)
+    xref 22: 840x474 (REAL PHOTO)
+    xref 23: 840x474 (REAL PHOTO)
+    xref 24: 968x1459 (REAL PHOTO)
+  --- Page 3 (Instructions for Volunteers | Meals: Breakfast & Lunch will be provide) ---
+    xref 31: 968x1459 (REAL PHOTO)
+    xref 32: 111x59 (LOGO / EMBLEM)
+    xref 33: 112x59 (LOGO / EMBLEM)
+
+==========================================
+REPORT: 7_Naam Foundation Report  (Pages: 3)
+  --- Page 1 (Objective of the Event: | The main objective of this event was to comm) ---
+    xref 69: 424x425 (LOGO / EMBLEM)
+    xref 70: 143x150 (LOGO / EMBLEM)
+    xref 72: 204x204 (LOGO / EMBLEM)
+    xref 73: 2322x3347 (REAL PHOTO)
+  --- Page 2 () ---
+    xref 79: 756x551 (REAL PHOTO)
+    xref 80: 756x427 (REAL PHOTO)
+    xref 81: 756x555 (REAL PHOTO)
+    xref 82: 968x1459 (REAL PHOTO)
+  --- Page 3 (NSS Volunteers’ Contribution: | NSS volunteers from our college attend) ---
+    xref 86: 424x425 (LOGO / EMBLEM)
+    xref 87: 143x150 (LOGO / EMBLEM)
+    xref 89: 204x204 (LOGO / EMBLEM)
+    xref 90: 2322x3347 (REAL PHOTO)
+    xref 91: 90x48 (LOGO / EMBLEM)
+    xref 92: 89x48 (LOGO / EMBLEM)
+
+==========================================
+REPORT: 8_FDP Report  (Pages: 4)
+  --- Page 1 (2. Objectives | The FDP was designed to achieve the following key obje) ---
+    xref 136: 424x425 (LOGO / EMBLEM)
+    xref 137: 143x150 (LOGO / EMBLEM)
+    xref 139: 204x204 (LOGO / EMBLEM)
+    xref 177: 2322x3347 (REAL PHOTO)
+  --- Page 2 (NATIONAL SERVICE SCHEME | 4. Resource Persons & Session Schedule | The) ---
+    xref 145: 424x425 (LOGO / EMBLEM)
+    xref 146: 143x150 (LOGO / EMBLEM)
+    xref 148: 204x204 (LOGO / EMBLEM)
+    xref 149: 2322x3347 (REAL PHOTO)
+  --- Page 3 (NATIONAL SERVICE SCHEME | Conclusion | This FDPon"Recent Trends in Com) ---
+    xref 154: 424x425 (LOGO / EMBLEM)
+    xref 155: 143x150 (LOGO / EMBLEM)
+    xref 157: 204x204 (LOGO / EMBLEM)
+    xref 158: 2359x3403 (REAL PHOTO)
+  --- Page 4 (NATIONAL SERVICE SCHEME | Regards, | NSS VIIT) ---
+    xref 163: 424x425 (LOGO / EMBLEM)
+    xref 164: 143x150 (LOGO / EMBLEM)
+    xref 166: 204x204 (LOGO / EMBLEM)
+    xref 167: 111x59 (LOGO / EMBLEM)
+    xref 168: 112x59 (LOGO / EMBLEM)
+    xref 169: 968x1459 (REAL PHOTO)
+
+==========================================
+REPORT: 9_Swachata hi seva (Pages: 4)
+  --- Page 1 (Swachata Hi Seva | NATIONAL SERVICE SCHEME | Bansilal Ramnath Agarwal ) ---
+    xref 14: 76x77 (LOGO / EMBLEM)
+    xref 15: 81x81 (LOGO / EMBLEM)
+    xref 16: 958x1257 (REAL PHOTO)
+  --- Page 2 (Some Glimpse of the program:) ---
+    xref 23: 1130x636 (REAL PHOTO)
+    xref 24: 847x477 (REAL PHOTO)
+    xref 25: 968x1459 (REAL PHOTO)
+  --- Page 3 () ---
+    xref 29: 474x840 (REAL PHOTO)
+    xref 30: 477x847 (REAL PHOTO)
+    xref 31: 477x847 (REAL PHOTO)
+    xref 32: 474x840 (REAL PHOTO)
+    xref 33: 968x1459 (REAL PHOTO)
+  --- Page 4 (Acknowledgment | Activities Conducte | A total of around **50-60 NSS v) ---
+    xref 36: 957x1257 (REAL PHOTO)
+    xref 39: 111x59 (LOGO / EMBLEM)
+    xref 40: 112x59 (LOGO / EMBLEM)
