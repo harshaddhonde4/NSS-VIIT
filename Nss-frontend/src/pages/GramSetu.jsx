@@ -1,8 +1,24 @@
-import { useEffect } from 'react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import { useEffect, useState, useCallback, useMemo } from 'react';
+import campManifest from '../data/camp_photos_manifest.json';
 import './css/GramSetu.css';
-import { FaMapMarkerAlt, FaCalendarAlt, FaUsers, FaMedal, FaLeaf, FaHeart, FaGraduationCap, FaHandsHelping } from 'react-icons/fa';
+import {
+  FaMapMarkerAlt,
+  FaCalendarAlt,
+  FaUsers,
+  FaMedal,
+  FaCamera,
+  FaLeaf,
+  FaHeart,
+  FaGraduationCap,
+  FaLinkedin,
+  FaTimes,
+  FaChevronLeft,
+  FaChevronRight,
+  FaInstagram,
+  FaPlay,
+  FaExpand,
+  FaVideo,
+} from 'react-icons/fa';
 import { MdVolunteerActivism, MdWater } from 'react-icons/md';
 import useSEO from '../components/useSEO';
 
@@ -11,121 +27,454 @@ import useSEO from '../components/useSEO';
    Upload to cloud: dmokljnng | Folder: Nss_Website/GramSetu_2026/
    ============================================================ */
 const PHOTOS = {
-  // → Upload: Nss_Website/GramSetu_2026/hero/gram_setu_hero_banner.jpg
-  hero: 'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/1_iuv2k5.png',
-
-  // → Guest headshots: Nss_Website/GramSetu_2026/guests/[filename]
-  pawar:       'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',   // → pawar_popatrao.jpg
-  yagnaraman:  'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',   // → yagnaraman_mm.jpg
-  tapkir:      'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',   // → tapkir_shrihari.jpg
-  ugale:       'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',   // → ugale_omkar.jpg
-  patil:       'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',   // → patil_deepankar.jpg
-
-  // → Gallery: Nss_Website/GramSetu_2026/gallery/[filename]
+  hero: '/images/GramSetu_2026/hero_banner.webp',
+  pawar: '/images/featured_highlights/pawar_sir_visit_.webp',
+  yagnaraman: '/images/featured_highlights/wg._crd_yugnaraman.webp',
+  tapkir: '/images/featured_highlights/shrihari_tapkir_.webp',
+  ugale: 'https://res.cloudinary.com/dmokljnng/image/upload/v1726580036/male_eioalo.png',
+  patil: '/images/featured_highlights/deepankar_sir_.webp',
+  pantoji: '/images/featured_highlights/rto_pune_.webp',
+  nik: '/images/featured_highlights/podcastbynik.webp',
+  camps_best: '/images/featured_highlights/camps_best_photo_.jpeg',
+  movie_night: '/images/featured_highlights/movie_night_at_camp_.webp',
+  news1: '/images/featured_highlights/gramsetu_in_news_2.webp',
+  news2: '/images/featured_highlights/gramsetu_in_news_.webp',
   gallery: [
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/1_iuv2k5.png',   // → day1_inauguration.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/2_jdwzpv.png',   // → day2_teaching.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328262/3_h4lntl.png',   // → day3_yoga.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715328283/4_bikubx.png',   // → day4_dindi.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715019790/nss/Events/1_trmyhl.jpg', // → day5_street_play.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715023958/nss/Events/2_dkekcc.jpg', // → day6_cleanliness.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715024431/nss/Events/IMG_20230815_130457_syk6ka.jpg', // → day7_cultural.jpg
-    'https://res.cloudinary.com/diyw5ilre/image/upload/v1715024956/nss/Events/IMG_3285_stbwpb.jpg', // → day8_closing.jpg
+    '/images/GramSetu_2026/day1_photo1.jpg',
+    '/images/GramSetu_2026/day1_photo2.jpg',
+    '/images/GramSetu_2026/day2_photo1.jpg',
+    '/images/GramSetu_2026/day2_photo2.jpg',
+    '/images/GramSetu_2026/day3_photo1.jpg',
+    '/images/GramSetu_2026/day3_photo2.jpg',
+    '/images/GramSetu_2026/day4_photo1.jpg',
+    '/images/GramSetu_2026/day4_photo2.jpg',
+    '/images/GramSetu_2026/day5_photo1.jpg',
+    '/images/GramSetu_2026/day5_photo2.jpg',
+    '/images/GramSetu_2026/day6_photo1.jpg',
+    '/images/GramSetu_2026/day6_photo2.jpg',
+    '/images/GramSetu_2026/day7_photo1.jpg',
+    '/images/GramSetu_2026/day7_photo2.jpg',
   ],
 };
 
+
+/* ============================================================
+   GRAM-SETU 2026 OFFICIAL INSTAGRAM REELS (DAYS 1 TO 6)
+   Official Channel: https://www.instagram.com/nss.a_70/
+   ============================================================ */
+const gramSetuReels = [
+  {
+    id: 'day1',
+    day: 'Day 1',
+    date: '21 Jan 2026',
+    title: 'The Beginning: Arrival & Village Survey 🚌✨',
+    caption: 'From campus to community, the journey of service begins! Day 1 at Jamgaon was all about setting the foundation, Fort group allocations, and our first village survey.',
+    tags: ['#NSSVIIT', '#GramSetu2026', '#Day1', '#NotMeButYou', '#VillageSurvey'],
+    videoSrc: '/videos/reels/gramsetu_day1_reel.mp4',
+    reelUrl: 'https://www.instagram.com/reel/DUfb59XjOoH/',
+    embedId: 'DUfb59XjOoH',
+    color: '#F59E0B',
+    accentClass: 'amber'
+  },
+  {
+    id: 'day2',
+    day: 'Day 2',
+    date: '22 Jan 2026',
+    title: 'Spirit & Service: Ganesh Jayanti Special 🚩🙏',
+    caption: 'Shramdaan, Spirituality, and Shiv Charitra. Morning temple cleaning, yoga sessions, community dinner (Bhandara) with villagers, and an inspiring bonfire lecture.',
+    tags: ['#GaneshJayanti', '#Shramdaan', '#ShivCharitra', '#NSSCamp', '#CommunityBonding'],
+    videoSrc: '/videos/reels/gramsetu_day2_reel.mp4',
+    reelUrl: 'https://www.instagram.com/reel/DU2JweNjFSN/',
+    embedId: 'DU2JweNjFSN',
+    color: '#10B981',
+    accentClass: 'emerald'
+  },
+  {
+    id: 'day3',
+    day: 'Day 3',
+    date: '23 Jan 2026',
+    title: 'Solving Problems & Building Bonds 🛠️💪',
+    caption: 'Real hands, real work, real impact. Tackling village school drainage, an intense inter-group Tug of War, and an outdoor movie night screening "Chhava" with the villagers.',
+    tags: ['#ProblemSolvers', '#TugOfWar', '#Chhava', '#NSSDiaries', '#HardWork'],
+    videoSrc: '/videos/reels/gramsetu_day3_reel.mp4',
+    reelUrl: 'https://www.instagram.com/reel/DVOffFcjNPa/',
+    embedId: 'DVOffFcjNPa',
+    color: '#0EA5E9',
+    accentClass: 'sky'
+  },
+  {
+    id: 'day4',
+    day: 'Day 4',
+    date: '24 Jan 2026',
+    title: 'Tradition & Awareness: Dindi Sohala 🚩🥁',
+    caption: 'Culture, devotion, and discipline. Traditional Dindi procession & Lazim through Jamgaon with the Palkhi, Pravachan by H.B.P. Datta Maharaj, and Road Safety with RTO Pune.',
+    tags: ['#DindiSohala', '#Culture', '#Tradition', '#RoadSafety', '#NSSVIIT', '#Palkhi'],
+    videoSrc: '/videos/reels/gramsetu_day4_reel.mp4',
+    reelUrl: 'https://www.instagram.com/reel/DV5HswQjLNa/',
+    embedId: 'DV5HswQjLNa',
+    color: '#EC4899',
+    accentClass: 'pink'
+  },
+  {
+    id: 'day5',
+    day: 'Day 5',
+    date: '25 Jan 2026',
+    title: 'Resilience & Heights: To Sagarmatha ⛰️🧱',
+    caption: 'Testing our limits and aiming for the summit! Hard physical labor leveling ground at Disali School and learning the journey of Everest Summiteer Shrihari Tapkir Sir.',
+    tags: ['#Shramdaan', '#Everest', '#TreasureHunt', '#Resilience', '#Motivation'],
+    videoSrc: '/videos/reels/gramsetu_day5_reel.mp4',
+    reelUrl: 'https://www.instagram.com/reel/DYhFgMotKKw/',
+    embedId: 'DYhFgMotKKw',
+    color: '#8B5CF6',
+    accentClass: 'violet'
+  },
+  {
+    id: 'day6',
+    day: 'Day 6',
+    date: '26 Jan 2026',
+    title: 'Republic Day & The Legend 🇮🇳✨',
+    caption: 'A Republic Day etched in history! Tricolor flying high, Mega Health Check-up Camp, Alumni Sneh Milan, and distinguished keynote address by Padmashree Popatrao Pawar Sir.',
+    tags: ['#RepublicDay', '#PopatraoPawar', '#SustainableDevelopment', '#AlumniMeet', '#JaiHind'],
+    videoSrc: '/videos/reels/gramsetu_day6_reel.mp4',
+    reelUrl: 'https://www.instagram.com/reel/DYkSPJfMsON/',
+    embedId: 'DYkSPJfMsON',
+    color: '#EF4444',
+    accentClass: 'rose'
+  },
+];
+
 const dailySchedule = [
-  { day: 'Day 1', date: '21 Jan', title: 'Inauguration & Orientation', activities: ['Welcome ceremony with village elders', 'Team orientation & group formation', 'Village survey commencement', 'Evening cultural introduction'] },
-  { day: 'Day 2', date: '22 Jan', title: 'Education & Cleanliness', activities: ['Teaching Math & English to local children', 'Temple & school premises cleaning drive', 'Road safety awareness session', 'Evening yoga & reflection'] },
-  { day: 'Day 3', date: '23 Jan', title: 'Watershed & Infrastructure', activities: ['Drainage management Shramdaan', 'Ground leveling at Disali School', 'Vegetable gardening activity', 'Guest lecture & interaction'] },
-  { day: 'Day 4', date: '24 Jan', title: 'Keynote — Padma Shri Pawar', activities: ['Keynote: Padma Shri Popatrao Pawar', 'Session: Bridging administration & people', 'Menstrual hygiene awareness session', 'Financial literacy workshop'] },
-  { day: 'Day 5', date: '25 Jan', title: 'Service Before Self', activities: ['Wing Cdr Yagnaraman: Discipline & Service', 'Shrihari Tapkir: Resilience from Everest', 'Dindi procession through village', 'Street play "Paristhitichi Janiv"'] },
-  { day: 'Day 6', date: '26 Jan', title: 'Republic Day & Community', activities: ['Republic Day celebration in village', 'Omkar Ugale: NGO ground realities', 'Deepankar Patil: Corporate-to-service', 'Cultural competitions & prizes'] },
-  { day: 'Day 7', date: '27 Jan', title: 'Outreach & Reflection', activities: ['Continued children\'s education sessions', 'Health & hygiene awareness drive', 'Village survey findings review', 'Team presentations & learnings'] },
-  { day: 'Day 8', date: '28 Jan', title: 'Valedictory & Farewell', activities: ['Valedictory ceremony', 'Certificate distribution', 'Community feedback session', 'Farewell with village community'] },
+  {
+    day: 'Day 1',
+    date: '21 Jan 2026',
+    title: 'The Beginning',
+    caption: 'From the campus to the community, the journey of service begins! 🚌✨ Day 1 at Jamgaon was all about setting the foundation. From setting up our "Fort" groups to our very first village survey, the energy is high and the mission is clear. 🏘️🤝',
+    highlights: [
+      '📍 Arrival & Cleaning Drive',
+      '🏰 Fort Group Allocations',
+      '🗣️ Networking Sessions & Village Survey'
+    ],
+    tags: ['#NSSVIIT', '#GramSetu2026', '#Day1', '#NotMeButYou', '#VillageLife', '#Service'],
+    dayKey: 'day1',
+    photoCount: 11,
+    reelUrl: 'https://www.instagram.com/reel/DUfb59XjOoH/',
+    reelId: 'day1'
+  },
+  {
+    day: 'Day 2',
+    date: '22 Jan 2026',
+    title: 'Spirit & Service (Ganesh Jayanti Special)',
+    caption: 'Shramdaan, Spirituality, and Shiv Charitra. 🚩🙏 Started our morning with temple cleaning and ended the night with the inspiring history of Chhatrapati Shivaji Maharaj. Celebrating Ganesh Jayanti with the villagers through a community dinner was the highlight of the day! 🍛🔥',
+    highlights: [
+      '🧹 Temple Area Shramdaan',
+      '🧘‍♂️ Yoga & Networking Sessions',
+      '🥘 Community Dinner (Bhandara)',
+      '⚔️ Shiv Charitra Lecture & Bonfire'
+    ],
+    tags: ['#GaneshJayanti', '#Shramdaan', '#ShivCharitra', '#NSSCamp', '#CommunityBonding'],
+    dayKey: 'day2',
+    photoCount: 20,
+    reelUrl: 'https://www.instagram.com/reel/DU2JweNjFSN/',
+    reelId: 'day2'
+  },
+  {
+    day: 'Day 3',
+    date: '23 Jan 2026',
+    title: 'Solving Problems & Building Bonds',
+    caption: 'Real hands, real work, real impact. 🛠️💪 Today we tackled a major drainage issue in the village, channeling stagnant water away from the school. But it wasn’t all work—the Tug of War battle was INTENSE! 🔥🎬',
+    highlights: [
+      '🚧 Drainage Management Shramdaan',
+      '🧘 Art of Living Session',
+      '🏆 Inter-group Tug of War',
+      '🎥 Movie Night: "Chhava" with the villagers'
+    ],
+    tags: ['#ProblemSolvers', '#TugOfWar', '#NSSDiaries', '#Chhava', '#HardWork'],
+    dayKey: 'day3',
+    photoCount: 49,
+    reelUrl: 'https://www.instagram.com/reel/DVOffFcjNPa/',
+    reelId: 'day3'
+  },
+  {
+    day: 'Day 4',
+    date: '24 Jan 2026',
+    title: 'Tradition & Awareness',
+    caption: 'Culture, devotion, and discipline. 🚩🥁 A day filled with the rhythm of the Dindi Sohala! Walking through the village with the Palkhi, performing Lazim, and feeling the \'Josh\' was unforgettable. We also learned crucial lessons on road safety and the value of hard work. 🛑🚶‍♂️',
+    highlights: [
+      '🛑 Road Safety Awareness Session',
+      '🥁 Traditional Dindi Procession & Lazim',
+      '🙏 Pravachan by H.B.P. Datta Maharaj',
+      '🔥 Antakshari by the Bonfire'
+    ],
+    tags: ['#DindiSohala', '#Culture', '#Tradition', '#RoadSafety', '#NSSVIIT', '#Palkhi'],
+    dayKey: 'day4',
+    photoCount: 59,
+    reelUrl: 'https://www.instagram.com/reel/DV5HswQjLNa/',
+    reelId: 'day4'
+  },
+  {
+    day: 'Day 5',
+    date: '25 Jan 2026',
+    title: 'Resilience & Heights',
+    caption: 'Testing our limits and aiming for the summit! ⛰️🧱 We pushed through hard labor leveling the ground at Disali School and wrapped up the day listening to the incredible journey of an Everester. From the ground to the peak, inspiration was everywhere. 🐍⚒️',
+    highlights: [
+      '🏗️ Shramdaan at Disali School',
+      '🗺️ Treasure Hunt Challenge',
+      '🏔️ "Journey to Sagarmatha" with Shri Hari Tapkir Sir',
+      '🇮🇳 Pre-Republic Day Prep'
+    ],
+    tags: ['#Shramdaan', '#Everest', '#TreasureHunt', '#Resilience', '#Motivation'],
+    dayKey: 'day5',
+    photoCount: 4,
+    reelUrl: 'https://www.instagram.com/reel/DYhFgMotKKw/',
+    reelId: 'day5'
+  },
+  {
+    day: 'Day 6',
+    date: '26 Jan 2026',
+    title: 'Republic Day & The Legend',
+    caption: '🇮🇳 A Republic Day etched in history! 🇮🇳 We celebrated the nation with the tricolor flying high and had the absolute honor of hosting Padmashree Popatrao Pawar Sir. His words on sustainable development fueled our fire. Plus, a massive shoutout to our Alumni for the Sneh Milan! ❤️🏥',
+    highlights: [
+      '🇮🇳 Republic Day Flag Hoisting & Street Play',
+      '🎓 Sneh Milan (Alumni Meet)',
+      '🩺 Mega Health Check-up Camp',
+      '🗣️ Guest Session: Padmashree Popatrao Pawar'
+    ],
+    tags: ['#RepublicDay', '#PopatraoPawar', '#SustainableDevelopment', '#AlumniMeet', '#JaiHind'],
+    dayKey: 'day6',
+    photoCount: 147,
+    reelUrl: 'https://www.instagram.com/reel/DYkSPJfMsON/',
+    reelId: 'day6'
+  },
+  {
+    day: 'Day 7',
+    date: '27–28 Jan 2026',
+    title: 'The Grand Finale',
+    caption: 'Seven days of memories, a lifetime of lessons. ❤️🏕️ From military discipline to women’s empowerment, our final day was packed with learning. As the campfire burned one last time, we celebrated our bond, our service, and the spirit of NSS. Until next time, Jamgaon! 👋🔥',
+    highlights: [
+      '🚺 Menstrual Hygiene & Financial Literacy Sessions',
+      '🎖️ Military Discipline Session with Wing Cmdr. Gunchandran Sir',
+      '🧘‍♀️ Meditation & Rural Development',
+      '🎤 Valedictory & Maharajancha Powada'
+    ],
+    tags: ['#CampClosure', '#NSSFamily', '#MilitaryDiscipline', '#Empowerment', '#MemoriesForLife'],
+    dayKey: 'day7',
+    photoCount: 21,
+    reelUrl: 'https://www.instagram.com/nss.a_70/'
+  }
 ];
 
 const outcomes = [
   { icon: FaGraduationCap, title: 'Education Impact', desc: '100% Class 10 result in Jamgaon for 5 consecutive years — attributed to NSS doorstep teaching', color: '#6366F1' },
   { icon: MdWater, title: 'Infrastructure', desc: 'Technical Shramdaan: drainage management & ground leveling at Disali School by engineering volunteers', color: '#0EA5E9' },
   { icon: FaLeaf, title: 'Sustainability', desc: 'Watershed management, vegetable gardening habits & environmental awareness instilled in the community', color: '#10B981' },
-  { icon: FaHeart, title: 'Health Awareness', desc: 'Sessions on menstrual hygiene, financial literacy & road safety reached every household in Jamgaon', color: '#EC4899' },
-  { icon: FaUsers, title: 'Urban-Rural Bond', desc: '60+ engineering volunteers immersed for 8 days — building lifelong understanding of rural realities', color: '#F59E0B' },
-  { icon: MdVolunteerActivism, title: 'Volunteer Growth', desc: 'Each volunteer returned with expanded perspective, empathy & a commitment to social responsibility', color: '#8B5CF6' },
+  { icon: MdVolunteerActivism, title: 'Community Bonding', desc: 'Street play "Paristhitichi Janiv", Dindi procession & health sessions bridged urban-rural divide', color: '#EC4899' },
 ];
 
 const GramSetu = () => {
   useSEO({
-    title: 'Gram-Setu 2026 | NSS VIIT Pune Residential Rural Camp',
-    description: 'Gram-Setu 2026: 8-day flagship annual rural residential camp at Jamgaon, Mulshi by NSS VIIT Unit A-70. Watershed management, health camps, education & village transformation.',
-    keywords: 'Gram Setu 2026, NSS residential camp, Jamgaon Mulshi camp, rural development VIIT, NSS VIIT annual camp',
+    title: 'Gram-Setu 2026 Special Camp | Jamgaon | NSS VIIT Pune',
+    description: 'Explore the 7-day annual special camp Gram-Setu 2026 at Jamgaon by NSS VIIT Unit A-70. Village surveys, health camps, watershed development, and youth leadership.',
+    keywords: 'Gram Setu 2026, NSS VIIT Jamgaon, special camp NSS, rural development Pune',
     canonical: 'https://nss-viit.vercel.app/gram-setu',
-    ogImage: PHOTOS.hero,
   });
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [selectedDay, setSelectedDay] = useState('all');
+  const [visibleCount, setVisibleCount] = useState(24);
+  const [activeReelIndex, setActiveReelIndex] = useState(null);
+  const [reelDisplayMode, setReelDisplayMode] = useState('player'); // 'player' or 'embed'
+
+  // Flatten all 364 day photos into a single master list
+  const allPhotos = useMemo(() => {
+    const list = [];
+    Object.keys(campManifest).forEach((k) => {
+      const d = campManifest[k];
+      d.photos.forEach((ph) => {
+        list.push({
+          ...ph,
+          dayKey: k,
+          dayTitle: d.title,
+          dayDate: d.date,
+        });
+      });
+    });
+    return list;
+  }, []);
+
+  // Filtered photos based on active day tab
+  const activePhotos = useMemo(() => {
+    if (selectedDay === 'all') return allPhotos;
+    const d = campManifest[selectedDay];
+    if (!d) return [];
+    return d.photos.map((ph) => ({
+      ...ph,
+      dayKey: selectedDay,
+      dayTitle: d.title,
+      dayDate: d.date,
+    }));
+  }, [selectedDay, allPhotos]);
+
+    const jumpToDayPhotos = (dayKey) => {
+    setSelectedDay(dayKey);
+    setVisibleCount(24);
+    setLightboxIndex(null);
+    const el = document.getElementById('camp-photo-gallery');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleSelectDay = (dayKey) => {
+    setSelectedDay(dayKey);
+    setVisibleCount(24);
+    setLightboxIndex(null);
+  };
+
+  const prevLightbox = useCallback(() => {
+    if (lightboxIndex !== null) {
+      setLightboxIndex((prev) => (prev > 0 ? prev - 1 : activePhotos.length - 1));
+    }
+  }, [lightboxIndex, activePhotos.length]);
+
+  const nextLightbox = useCallback(() => {
+    if (lightboxIndex !== null) {
+      setLightboxIndex((prev) => (prev < activePhotos.length - 1 ? prev + 1 : 0));
+    }
+  }, [lightboxIndex, activePhotos.length]);
 
   useEffect(() => {
-    Aos.init({ duration: 800, once: true, offset: 60 });
+    document.title = 'Gram-Setu 2026 | NSS VIIT Pune Residential Camp';
   }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (activeReelIndex !== null) {
+        if (e.key === 'Escape') setActiveReelIndex(null);
+        if (e.key === 'ArrowLeft') setActiveReelIndex((prev) => (prev > 0 ? prev - 1 : gramSetuReels.length - 1));
+        if (e.key === 'ArrowRight') setActiveReelIndex((prev) => (prev < gramSetuReels.length - 1 ? prev + 1 : 0));
+        return;
+      }
+      if (lightboxIndex === null) return;
+      if (e.key === 'Escape') setLightboxIndex(null);
+      if (e.key === 'ArrowLeft') prevLightbox();
+      if (e.key === 'ArrowRight') nextLightbox();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxIndex, prevLightbox, nextLightbox, activeReelIndex]);
 
   return (
     <>
-      {/* ── HERO ── */}
-      <section className="gs-hero" style={{ backgroundImage: `url(${PHOTOS.hero})` }}>
-        <div className="gs-hero-overlay" />
-        <div className="gs-hero-content" data-aos="fade-up">
-          <span className="gs-flag-tag">NSS Flagship Residential Camp</span>
-          <h1>Gram-Setu 2026</h1>
-          <p className="gs-hero-sub">Bridging Engineering Minds with Rural Hearts</p>
-          <div className="gs-hero-meta">
-            <span><FaCalendarAlt /> 21–28 January 2026</span>
-            <span><FaMapMarkerAlt /> Jamgaon Village, Mulshi, Pune</span>
-            <span><FaUsers /> 60+ Volunteers</span>
+      <div className="gram-setu-page">
+
+        {/* ── HERO BANNER ── */}
+        <section className="gs-hero" style={{ backgroundImage: `url(${PHOTOS.hero})` }}>
+          <div className="gs-hero-overlay" />
+          <div className="gs-hero-content" data-aos="fade-up">
+            <div className="gs-hero-eyebrow" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
+              <span className="gs-hero-badge">★ Flagship Residential Camp</span>
+              <span className="gs-hero-unit">Unit A-70 (2008–2026) · Historic Final Camp</span>
+              <a href="https://swd.vit.edu/nss/nss.html" target="_blank" rel="noopener noreferrer" style={{ background: 'rgba(59, 130, 246, 0.25)', border: '1px solid rgba(59, 130, 246, 0.5)', color: '#93C5FD', padding: '0.4rem 1.2rem', borderRadius: '20px', fontSize: '1.25rem', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                Legacy Continues under NSS VIT Unit A-65 ↗
+              </a>
+            </div>
+            <h1>Gram-Setu 2026</h1>
+            <p className="gs-hero-tagline">
+              Connecting Engineering, Empathy, and Rural Transformation
+            </p>
+            <div className="gs-hero-meta">
+              <span><FaCalendarAlt /> 21–28 January 2026</span>
+              <span><FaMapMarkerAlt /> Jamgaon Village, Mulshi, Pune</span>
+              <span><FaUsers /> 60+ Engineering Volunteers</span>
+              <span><FaMedal /> 7 Days of Service</span>
+            </div>
           </div>
-        </div>
-        <div className="gs-hero-scroll-hint">▼</div>
-      </section>
+        </section>
 
-      {/* ── OVERVIEW STRIP ── */}
-      <section className="gs-overview-strip">
-        {[
-          { num: '60+', label: 'Volunteers Deployed' },
-          { num: '8', label: 'Days of Service' },
-          { num: '100%', label: '10th Result (5 yrs)' },
-          { num: '1', label: 'Padma Shri Guest' },
-          { num: '5', label: 'Distinguished Guests' },
-        ].map((s, i) => (
-          <div className="gs-strip-stat" key={i}>
-            <span className="gs-strip-num">{s.num}</span>
-            <span className="gs-strip-label">{s.label}</span>
+        {/* ── HIGHLIGHT BAR ── */}
+        <section className="gs-stat-bar" data-aos="fade-up">
+          <div className="gs-stat-item">
+            <span className="gs-stat-num">60+</span>
+            <span className="gs-stat-lbl">Student Volunteers</span>
           </div>
-        ))}
-      </section>
+          <div className="gs-stat-divider" />
+          <div className="gs-stat-item">
+            <span className="gs-stat-num">8</span>
+            <span className="gs-stat-lbl">Days Immersed</span>
+          </div>
+          <div className="gs-stat-divider" />
+          <div className="gs-stat-item">
+            <span className="gs-stat-num">5</span>
+            <span className="gs-stat-lbl">Distinguished Guests</span>
+          </div>
+          <div className="gs-stat-divider" />
+          <div className="gs-stat-item">
+            <span className="gs-stat-num">100%</span>
+            <span className="gs-stat-lbl">10th Result (5 Consecutive Yrs)</span>
+          </div>
+          <div className="gs-stat-divider" />
+          <div className="gs-stat-item">
+            <span className="gs-stat-num">2008</span>
+            <span className="gs-stat-lbl">Jamgaon Adopted Since</span>
+          </div>
+        </section>
 
-      <div className="gs-main">
+        {/* ── ABOUT CAMP ── */}
+        <section className="gs-overview" data-aos="fade-up">
+          <div className="gs-section-head">
+            <span className="label-tag">The Experience</span>
+            <h2>What is Gram-Setu?</h2>
+            <p className="gs-section-lead">
+              NSS VIIT Pune&apos;s annual flagship residential camp deploys engineering volunteers into rural
+              Maharashtra for 7 days of living, learning, and working alongside villagers.
+            </p>
+          </div>
+          <div className="gs-overview-grid">
+            <div className="gs-overview-card" data-aos="fade-up" data-aos-delay="0">
+              <div className="gs-card-icon"><FaLeaf /></div>
+              <h3>Watershed &amp; Infrastructure</h3>
+              <p>Technical Shramdaan addressing village drainage, ground leveling at Disali School, and eco-friendly practices that protect natural resources.</p>
+            </div>
+            <div className="gs-overview-card" data-aos="fade-up" data-aos-delay="80">
+              <div className="gs-card-icon"><FaGraduationCap /></div>
+              <h3>Children&apos;s Education</h3>
+              <p>Doorstep teaching in Mathematics and English for local school children — directly responsible for Jamgaon&apos;s 100% Class 10 pass rate for 5 consecutive years.</p>
+            </div>
+            <div className="gs-overview-card" data-aos="fade-up" data-aos-delay="160">
+              <div className="gs-card-icon"><MdVolunteerActivism /></div>
+              <h3>Cultural &amp; Social Awareness</h3>
+              <p>Dindi procession, street play &quot;Paristhitichi Janiv&quot; on social challenges, menstrual hygiene workshops, and financial literacy sessions for women.</p>
+            </div>
+          </div>
+        </section>
 
-        {/* ── PADMA SHRI PAWAR SPOTLIGHT ── */}
+        {/* ── KEYNOTE: POPATRAO PAWAR ── */}
         <section className="gs-pawar-spotlight" data-aos="fade-up">
           <div className="gs-pawar-flag">
-            <FaMedal /> Keynote Speaker · Special Guest of Honour
+            <FaMedal /> Keynote Dignitary · Gram-Setu 2026
           </div>
           <div className="gs-pawar-inner">
             <div className="gs-pawar-photo-col">
-              {/* → PHOTO SLOT: Upload pawar_popatrao.jpg to Nss_Website/GramSetu_2026/guests/ */}
               <div className="gs-pawar-img-wrap">
-                <img src={PHOTOS.pawar} alt="Padma Shri Popatrao Pawar" className="gs-pawar-img" />
-                <div className="gs-pawar-img-note">⚠ Real photo needed — upload pawar_popatrao.jpg</div>
+                <img
+                  src={PHOTOS.pawar}
+                  alt="Padma Shri Popatrao Pawar"
+                  className="gs-pawar-img"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="gs-pawar-img-note">Hiware Bazar Keynote</div>
               </div>
               <div className="gs-pawar-award-badge">
-                <FaMedal />
-                <span>Padma Shri Awardee</span>
+                <FaMedal /> Padma Shri Awardee
               </div>
             </div>
             <div className="gs-pawar-content-col">
               <span className="gs-pawar-label">Distinguished Keynote · Gram-Setu 2026</span>
               <h2>Padma Shri Popatrao Pawar</h2>
-              <p className="gs-pawar-credential">Architect of Hiware Bazar — India's Model Village</p>
+              <p className="gs-pawar-credential">Architect of Hiware Bazar — India&apos;s Model Village</p>
               <blockquote className="gs-pawar-quote">
-                "Mentored NSS VIIT volunteers on bridging administration and people — showing how selfless service, when organized with purpose, can eliminate poverty and transform communities."
+                &quot;Mentored NSS VIIT volunteers on bridging administration and people — showing how selfless service, when organized with purpose, can eliminate poverty and transform communities.&quot;
               </blockquote>
               <div className="gs-pawar-facts">
                 <div className="gs-pawar-fact">
@@ -134,12 +483,37 @@ const GramSetu = () => {
                 </div>
                 <div className="gs-pawar-fact">
                   <strong>Model</strong>
-                  <span>India's benchmark rural transformation</span>
+                  <span>India&apos;s benchmark rural transformation</span>
                 </div>
                 <div className="gs-pawar-fact">
                   <strong>Impact</strong>
                   <span>Water conservation, drought elimination</span>
                 </div>
+              </div>
+              <div style={{ marginTop: '2.5rem' }}>
+                <a
+                  href="https://www.linkedin.com/posts/alumni-relations-of-vishwakarma-institutes-8ab33238b_padmashree-leadership-gramsetu2026-ugcPost-7427905347924672512-xytp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gs-alumni-endorsement"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.9rem',
+                    padding: '0.9rem 1.8rem',
+                    background: 'rgba(10, 102, 194, 0.15)',
+                    border: '1px solid rgba(10, 102, 194, 0.5)',
+                    borderRadius: '50px',
+                    color: '#93C5FD',
+                    fontSize: '1.3rem',
+                    fontWeight: '600',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  <FaLinkedin style={{ fontSize: '1.7rem', color: '#60A5FA' }} />
+                  <span>Featured by Alumni Relations of Vishwakarma Institutes on LinkedIn ↗</span>
+                </a>
               </div>
             </div>
           </div>
@@ -156,7 +530,6 @@ const GramSetu = () => {
             {[
               {
                 photo: PHOTOS.yagnaraman,
-                slot: 'yagnaraman_mm.jpg',
                 name: 'Wing Cdr M.M. Yagnaraman (Retd.)',
                 tag: 'Indian Air Force',
                 theme: 'Discipline & Service Before Self',
@@ -164,7 +537,6 @@ const GramSetu = () => {
               },
               {
                 photo: PHOTOS.tapkir,
-                slot: 'tapkir_shrihari.jpg',
                 name: 'Shrihari Tapkir',
                 tag: 'Everest Summiteer',
                 theme: 'Resilience & Never Giving Up',
@@ -172,7 +544,6 @@ const GramSetu = () => {
               },
               {
                 photo: PHOTOS.ugale,
-                slot: 'ugale_omkar.jpg',
                 name: 'Omkar Ugale',
                 tag: 'MGVS — NGO Leader',
                 theme: 'Ground Realities of Social Work',
@@ -180,7 +551,6 @@ const GramSetu = () => {
               },
               {
                 photo: PHOTOS.patil,
-                slot: 'patil_deepankar.jpg',
                 name: 'Deepankar Patil',
                 tag: 'Corporate-to-Service Leader',
                 theme: 'Purpose Over Paycheck',
@@ -188,14 +558,13 @@ const GramSetu = () => {
               },
             ].map((g, i) => (
               <div className="gs-guest-card" key={i} data-aos="fade-up" data-aos-delay={i * 80}>
-                {/* → PHOTO SLOT: Upload {g.slot} to Nss_Website/GramSetu_2026/guests/ */}
                 <div className="gs-guest-photo-wrap">
-                  <img src={g.photo} alt={g.name} className="gs-guest-photo" />
+                  <img src={g.photo} alt={g.name} className="gs-guest-photo" loading="lazy" decoding="async" />
                   <div className="gs-guest-tag-pill">{g.tag}</div>
                 </div>
                 <div className="gs-guest-body">
                   <h3>{g.name}</h3>
-                  <p className="gs-guest-theme">"{g.theme}"</p>
+                  <p className="gs-guest-theme">&quot;{g.theme}&quot;</p>
                   <p className="gs-guest-desc">{g.desc}</p>
                 </div>
               </div>
@@ -203,12 +572,247 @@ const GramSetu = () => {
           </div>
         </section>
 
+        {/* ── STATE PRESS & NEWSPAPER COVERAGE ── */}
+        <section className="gs-press-coverage" data-aos="fade-up" style={{ padding: '6rem 2rem', background: '#0F172A', color: '#FFFFFF', textAlign: 'center' }}>
+          <div className="gs-section-head" style={{ maxWidth: '85rem', margin: '0 auto 4rem' }}>
+            <span className="label-tag" style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#F59E0B', border: '1px solid rgba(245, 158, 11, 0.3)', padding: '0.6rem 1.6rem', borderRadius: '30px', fontSize: '1.25rem', fontWeight: 700, textTransform: 'uppercase' }}>
+              State Media Recognition
+            </span>
+            <h2 style={{ fontSize: '3.2rem', fontWeight: 900, color: '#FFFFFF', marginTop: '1.5rem', marginBottom: '1rem' }}>
+              Gram-Setu in the Headlines
+            </h2>
+            <p style={{ color: '#94A3B8', fontSize: '1.5rem', lineHeight: 1.7 }}>
+              Published in Nashik Express and state Marathi dailies, documenting our volunteers&apos; transformative community Shramdaan at Jamgaon
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(32rem, 1fr))', gap: '3rem', maxWidth: '110rem', margin: '0 auto', textAlign: 'left' }}>
+            <div style={{ background: '#1E293B', borderRadius: '18px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 12px 32px rgba(0,0,0,0.3)' }}>
+              <div style={{ height: '32rem', overflow: 'hidden', background: '#0B1120' }}>
+                <img src={PHOTOS.news1} alt="Nashik Express Gram-Setu News" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
+              </div>
+              <div style={{ padding: '2.4rem' }}>
+                <span style={{ color: '#F59E0B', fontSize: '1.2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04rem' }}>
+                  नाशिक एक्सप्रेस (Nashik Express)
+                </span>
+                <h3 style={{ color: '#FFFFFF', fontSize: '1.9rem', fontWeight: 800, margin: '0.8rem 0 1rem', lineHeight: 1.4 }}>
+                  VIIT च्या &apos;एनएसएस&apos; शिबिरातून जामगावचा कायापालट: विद्यार्थ्यांचा &apos;श्रमयज्ञ&apos;
+                </h3>
+                <p style={{ color: '#94A3B8', fontSize: '1.35rem', lineHeight: 1.6 }}>
+                  Detailed front-page coverage on Padmashree Popatrao Pawar Sir&apos;s keynote visit, school renovation at Disali, Granth Dindi, and comprehensive rural health checkup camps.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ background: '#1E293B', borderRadius: '18px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 12px 32px rgba(0,0,0,0.3)' }}>
+              <div style={{ height: '32rem', overflow: 'hidden', background: '#0B1120' }}>
+                <img src={PHOTOS.news2} alt="NSS Camp News Coverage" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
+              </div>
+              <div style={{ padding: '2.4rem' }}>
+                <span style={{ color: '#10B981', fontSize: '1.2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04rem' }}>
+                  दैनिक वृत्तपत्र (Regional Daily)
+                </span>
+                <h3 style={{ color: '#FFFFFF', fontSize: '1.9rem', fontWeight: 800, margin: '0.8rem 0 1rem', lineHeight: 1.4 }}>
+                  राष्ट्रीय सेवा योजनेच्या शिबीरात विद्यार्थ्यांची समाजसेवा
+                </h3>
+                <p style={{ color: '#94A3B8', fontSize: '1.35rem', lineHeight: 1.6 }}>
+                  Commending student leaders Sushant Gade, Namit More, Prem Shinde, Omkar Sakore, Utkarsha Ahire, Pratiksha Deshmukh, and faculty coordinators for 7 days of grassroots impact.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+                {/* ── JAMGAON LIVE: OFFICIAL INSTAGRAM REELS (DAYS 1 TO 6) ── */}
+        <section className="gs-reels-section" id="jamgaon-reels" data-aos="fade-up">
+          <div className="gs-reels-header">
+            <div className="gs-reels-badge">
+              <FaInstagram className="insta-icon" />
+              <span>Official Instagram Video Chronicles · @nss.a_70</span>
+            </div>
+            <h2>Live from Jamgaon: Gram-Setu 2026 Reels</h2>
+            <p className="gs-reels-subhead">
+              Watch all official field reels documenting Shramdaan, rural culture, youth leadership, and community transformation across Days 1 through 6.
+            </p>
+
+            <div className="gs-reels-top-actions">
+              <a
+                href="https://www.instagram.com/nss.a_70/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gs-insta-follow-btn"
+              >
+                <FaInstagram />
+                <span>Visit Official Instagram Page (@nss.a_70) ↗</span>
+              </a>
+
+              <div className="gs-reels-mode-toggle">
+                <span className="mode-label">Viewing Mode:</span>
+                <button
+                  type="button"
+                  className={`mode-btn ${reelDisplayMode === 'player' ? 'active' : ''}`}
+                  onClick={() => setReelDisplayMode('player')}
+                  title="Watch smooth instant HD local video player"
+                >
+                  <FaPlay /> Ultra-HD Player
+                </button>
+                <button
+                  type="button"
+                  className={`mode-btn ${reelDisplayMode === 'embed' ? 'active' : ''}`}
+                  onClick={() => setReelDisplayMode('embed')}
+                  title="Load official Instagram live web embed"
+                >
+                  <FaInstagram /> Live Insta Embed
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Reels Interactive Grid */}
+          <div className="gs-reels-grid">
+            {gramSetuReels.map((reel, idx) => (
+              <div
+                className={`gs-reel-card ${reel.accentClass}`}
+                key={reel.id}
+                id={`reel-card-${reel.id}`}
+                data-aos="fade-up"
+                data-aos-delay={idx * 70}
+              >
+                {/* Reel Header Pill */}
+                <div className="gs-reel-header-bar">
+                  <div className="gs-reel-meta-left">
+                    <span className="gs-reel-day-pill" style={{ backgroundColor: reel.color }}>
+                      {reel.day}
+                    </span>
+                    <span className="gs-reel-date-pill">{reel.date}</span>
+                  </div>
+                  <a
+                    href={reel.reelUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="gs-reel-handle-tag"
+                    title="View on Instagram"
+                  >
+                    <FaInstagram /> @nss.a_70
+                  </a>
+                </div>
+
+                {/* Media Container: Live Video Player or Live Instagram Embed */}
+                <div className="gs-reel-media-wrapper">
+                  {reelDisplayMode === 'player' ? (
+                    <div className="gs-reel-video-container">
+                      <video
+                        src={reel.videoSrc}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="gs-reel-video-player"
+                        aria-label={`${reel.day} Gram-Setu 2026 Video Reel`}
+                      />
+                      <button
+                        type="button"
+                        className="gs-reel-expand-btn"
+                        onClick={() => setActiveReelIndex(idx)}
+                        title="Expand to Fullscreen Theater"
+                        aria-label={`Open ${reel.day} in theater modal`}
+                      >
+                        <FaExpand />
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="gs-reel-embed-container">
+                      <iframe
+                        src={`https://www.instagram.com/reel/${reel.embedId}/embed/`}
+                        className="gs-reel-iframe"
+                        title={`${reel.day} Instagram Reel`}
+                        allowFullScreen
+                        scrolling="no"
+                      />
+                    </div>
+                  )}
+                </div>
+
+                {/* Card Details & Caption */}
+                <div className="gs-reel-body">
+                  <h3 className="gs-reel-title">{reel.title}</h3>
+                  <p className="gs-reel-caption">{reel.caption}</p>
+
+                  <div className="gs-reel-tags">
+                    {reel.tags.map((tg, tIdx) => (
+                      <span key={tIdx} className="gs-reel-tag-chip">{tg}</span>
+                    ))}
+                  </div>
+
+                  <div className="gs-reel-footer-actions">
+                    <button
+                      type="button"
+                      className="gs-reel-theater-btn"
+                      onClick={() => setActiveReelIndex(idx)}
+                    >
+                      <FaPlay /> Watch Theater
+                    </button>
+                    <a
+                      href={reel.reelUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="gs-reel-link-btn"
+                    >
+                      <FaInstagram /> Open Reel ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bonus Cinematic Teasers */}
+          <div className="gs-reels-extras" data-aos="fade-up">
+            <div className="gs-extras-header">
+              <FaVideo style={{ color: '#F59E0B' }} />
+              <h3>Camp Teasers &amp; Cinematic Highlights</h3>
+            </div>
+            <div className="gs-extras-grid">
+              <div className="gs-extra-card">
+                <div className="gs-extra-video-wrap">
+                  <video
+                    src="/videos/reels/gramsetu_camp_announcement.mp4"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="gs-extra-video"
+                  />
+                </div>
+                <div className="gs-extra-info">
+                  <h4>Gram-Setu 2026: Official Camp Announcement 🏕️</h4>
+                  <p>The call to action that rallied 60+ engineering volunteers to Jamgaon, Mulshi.</p>
+                </div>
+              </div>
+
+              <div className="gs-extra-card">
+                <div className="gs-extra-video-wrap">
+                  <video
+                    src="/videos/reels/gramsetu_camp_highlight.mp4"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="gs-extra-video"
+                  />
+                </div>
+                <div className="gs-extra-info">
+                  <h4>Camp Cinematic Moments &amp; Volunteer Energy ⚡</h4>
+                  <p>7 days of Shramdaan, rural camaraderie, and purposeful youth leadership summarized.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── DAILY SCHEDULE TIMELINE ── */}
         <section className="gs-schedule" data-aos="fade-up">
           <div className="gs-section-head">
-            <span className="label-tag label-light" style={{ background: 'rgba(245,158,11,0.1)', color: '#F59E0B', border: '1px solid rgba(245,158,11,0.25)' }}>8-Day Programme</span>
-            <h2>Daily Schedule</h2>
-            <p>Every day at Jamgaon — purposeful, structured, and transformative</p>
+            <span className="label-tag label-light" style={{ background: 'rgba(245,158,11,0.1)', color: '#F59E0B', border: '1px solid rgba(245,158,11,0.25)' }}>7-Day Official Itinerary</span>
+            <h2>Daily Schedule &amp; Field Chronicles</h2>
+            <p>Every single day at Jamgaon — purposeful, structured, community-rooted, and transformative</p>
           </div>
           <div className="gs-timeline">
             {dailySchedule.map((d, i) => (
@@ -221,9 +825,44 @@ const GramSetu = () => {
                     <span className="gs-day-chip">{d.day} · {d.date}</span>
                     <h3>{d.title}</h3>
                   </div>
-                  <ul className="gs-timeline-list">
-                    {d.activities.map((a, j) => <li key={j}>{a}</li>)}
-                  </ul>
+
+                  <p className="gs-timeline-caption">&ldquo;{d.caption}&rdquo;</p>
+
+                  <div className="gs-timeline-highlights-block">
+                    <span className="gs-highlights-label">★ Daily Highlights</span>
+                    <ul className="gs-timeline-list">
+                      {d.highlights.map((h, j) => <li key={j}>{h}</li>)}
+                    </ul>
+                  </div>
+
+                  <div className="gs-tag-list">
+                    {d.tags.map((t, k) => <span className="gs-tag-chip" key={k}>{t}</span>)}
+                  </div>
+
+                  <div className="gs-timeline-action-row">
+                    <button
+                      type="button"
+                      className="gs-day-photos-btn"
+                      onClick={() => jumpToDayPhotos(d.dayKey)}
+                      aria-label={`View ${campManifest[d.dayKey]?.photos?.length || d.photoCount} photos from ${d.day}`}
+                    >
+                      <FaCamera />
+                      <span>View {d.day} Photos ({campManifest[d.dayKey]?.photos?.length || d.photoCount})</span>
+                    </button>
+
+                    {d.reelUrl && (
+                      <a
+                        href={d.reelUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="gs-day-reel-btn"
+                        aria-label={`Watch ${d.day} reel on Instagram`}
+                      >
+                        <FaInstagram />
+                        <span>Watch {d.day} Reel ↗</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -260,7 +899,7 @@ const GramSetu = () => {
               <h2>Omkar Gengaje</h2>
               <p className="gs-omkar-dept">Computer Engineering, NSS VIIT Pune</p>
               <p className="gs-omkar-story">
-                In an act of extraordinary compassion, Omkar Gengaje donated his stem cells through a 4-hour medical procedure to save a young girl's life from cancer — entirely free of cost. No event, no award, no publicity — just a quiet, selfless act that defines what "Not Me But You" truly means.
+                In an act of extraordinary compassion, Omkar Gengaje donated his stem cells through a 4-hour medical procedure to save a young girl&apos;s life from cancer — entirely free of cost. No event, no award, no publicity — just a quiet, selfless act that defines what &quot;Not Me But You&quot; truly means.
               </p>
               <div className="gs-omkar-badges">
                 <span>Stem Cell Donor</span>
@@ -271,29 +910,279 @@ const GramSetu = () => {
           </div>
         </section>
 
-        {/* ── GALLERY ── */}
-        <section className="gs-gallery" data-aos="fade-up">
+        {/* ── DAY-WISE CAMP PHOTO ARCHIVE ── */}
+        <section className="gs-gallery" id="camp-photo-gallery" data-aos="fade-up">
           <div className="gs-section-head">
-            <span className="label-tag label-light" style={{ background: 'rgba(245,158,11,0.1)', color: '#F59E0B', border: '1px solid rgba(245,158,11,0.25)' }}>Photo Gallery</span>
-            <h2>Moments from Jamgaon</h2>
-            <p>8 days of service — captured in glimpses</p>
+            <span
+              className="label-tag label-light"
+              style={{
+                background: 'rgba(245,158,11,0.1)',
+                color: '#F59E0B',
+                border: '1px solid rgba(245,158,11,0.25)',
+              }}
+            >
+              ★ 7-Day Field Archive · {allPhotos.length} Photographs
+            </span>
+            <h2>Jamgaon Day-by-Day Photo Gallery</h2>
+            <p>
+              Explore authentic high-resolution moments, Shramdaan activities, village surveys, teaching modules,
+              Dindi processions, and keynote addresses from all 7 residential camp days.
+            </p>
           </div>
-          <div className="gs-gallery-grid">
-            {PHOTOS.gallery.map((src, i) => {
-              const labels = ['Inauguration — Day 1', 'Children\'s Education — Day 2', 'Morning Yoga — Day 3', 'Dindi Procession — Day 4', 'Street Play "Paristhitichi Janiv" — Day 5', 'Cleanliness Drive — Day 6', 'Cultural Programme — Day 7', 'Valedictory Ceremony — Day 8'];
-              const slots = ['day1_inauguration.jpg', 'day2_teaching.jpg', 'day3_yoga.jpg', 'day4_dindi.jpg', 'day5_street_play.jpg', 'day6_cleanliness.jpg', 'day7_cultural.jpg', 'day8_closing.jpg'];
-              return (
-                <div className={`gs-gallery-item${i === 0 ? ' gs-gallery-featured' : ''}`} key={i}>
-                  {/* → Upload {slots[i]} to Nss_Website/GramSetu_2026/gallery/ */}
-                  <img src={src} alt={labels[i]} />
-                  <div className="gs-gallery-caption">{labels[i]}</div>
+
+          {/* Day Navigation Tabs */}
+          <div className="gs-day-filter-wrapper">
+            <div className="gs-day-filter-bar">
+              <button
+                type="button"
+                className={`gs-day-filter-btn${selectedDay === 'all' ? ' active' : ''}`}
+                onClick={() => handleSelectDay('all')}
+              >
+                All Days
+                <span className="gs-day-count-badge">{allPhotos.length}</span>
+              </button>
+              <button
+                type="button"
+                className={`gs-day-filter-btn${selectedDay === 'day1' ? ' active' : ''}`}
+                onClick={() => handleSelectDay('day1')}
+              >
+                Day 1: The Beginning
+                <span className="gs-day-count-badge">{campManifest.day1?.photos?.length || 0}</span>
+              </button>
+              <button
+                type="button"
+                className={`gs-day-filter-btn${selectedDay === 'day2' ? ' active' : ''}`}
+                onClick={() => handleSelectDay('day2')}
+              >
+                Day 2: Spirit &amp; Service
+                <span className="gs-day-count-badge">{campManifest.day2?.photos?.length || 0}</span>
+              </button>
+              <button
+                type="button"
+                className={`gs-day-filter-btn${selectedDay === 'day3' ? ' active' : ''}`}
+                onClick={() => handleSelectDay('day3')}
+              >
+                Day 3: Solving Problems
+                <span className="gs-day-count-badge">{campManifest.day3?.photos?.length || 0}</span>
+              </button>
+              <button
+                type="button"
+                className={`gs-day-filter-btn${selectedDay === 'day4' ? ' active' : ''}`}
+                onClick={() => handleSelectDay('day4')}
+              >
+                Day 4: Tradition &amp; Dindi
+                <span className="gs-day-count-badge">{campManifest.day4?.photos?.length || 0}</span>
+              </button>
+              <button
+                type="button"
+                className={`gs-day-filter-btn${selectedDay === 'day5' ? ' active' : ''}`}
+                onClick={() => handleSelectDay('day5')}
+              >
+                Day 5: Resilience &amp; Everest
+                <span className="gs-day-count-badge">{campManifest.day5?.photos?.length || 0}</span>
+              </button>
+              <button
+                type="button"
+                className={`gs-day-filter-btn${selectedDay === 'day6' ? ' active' : ''}`}
+                onClick={() => handleSelectDay('day6')}
+              >
+                Day 6: Republic Day &amp; Legend
+                <span className="gs-day-count-badge">{campManifest.day6?.photos?.length || 0}</span>
+              </button>
+              <button
+                type="button"
+                className={`gs-day-filter-btn${selectedDay === 'day7' ? ' active' : ''}`}
+                onClick={() => handleSelectDay('day7')}
+              >
+                Day 7: The Grand Finale
+                <span className="gs-day-count-badge">{campManifest.day7?.photos?.length || 0}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Active Day Info Header */}
+          <div className="gs-day-active-header">
+            <div className="gs-day-active-info">
+              <h3>
+                {selectedDay === 'all'
+                  ? 'Complete 7-Day Camp Photo Record (364 Verified Photos)'
+                  : campManifest[selectedDay]?.title || 'Jamgaon Daily Log'}
+              </h3>
+              <p className="gs-day-active-desc">
+                {selectedDay === 'all'
+                  ? 'Showing verified field photographs across all 7 days of Gram-Setu 2026 at Jamgaon Village, Mulshi.'
+                  : campManifest[selectedDay]?.caption || ''}
+              </p>
+              {selectedDay !== 'all' && campManifest[selectedDay]?.tags && (
+                <div className="gs-tag-list" style={{ marginTop: '0.8rem' }}>
+                  {campManifest[selectedDay].tags.map((t, idx) => (
+                    <span className="gs-tag-chip" key={idx}>{t}</span>
+                  ))}
                 </div>
-              );
-            })}
+              )}
+            </div>
+            <span className="gs-day-badge-pill">
+              Showing {Math.min(visibleCount, activePhotos.length)} of {activePhotos.length} Photos
+            </span>
           </div>
+
+          {/* Photos Grid */}
+          <div className="gs-gallery-grid">
+            {activePhotos.slice(0, visibleCount).map((item, i) => (
+              <div
+                className={`gs-gallery-item${i === 0 && selectedDay === 'all' ? ' gs-gallery-featured' : ''}`}
+                key={item.id || i}
+                onClick={() => setLightboxIndex(i)}
+                style={{ cursor: 'zoom-in' }}
+                title="Click to view high-resolution photo"
+              >
+                <img
+                  src={item.thumb || item.src}
+                  alt={item.title || `Gram-Setu 2026 Photo ${i + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="gs-gallery-caption">{item.title}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Load More Controls */}
+          {visibleCount < activePhotos.length && (
+            <div className="gs-load-more-container">
+              <button
+                type="button"
+                className="gs-load-more-btn"
+                onClick={() => setVisibleCount((prev) => Math.min(prev + 24, activePhotos.length))}
+              >
+                Load More Photos (+24)
+              </button>
+              <button
+                type="button"
+                className="gs-show-all-btn"
+                onClick={() => setVisibleCount(activePhotos.length)}
+              >
+                Show All ({activePhotos.length})
+              </button>
+            </div>
+          )}
         </section>
 
       </div>
+
+      {/* Fullscreen Reel Theater Modal */}
+      {activeReelIndex !== null && gramSetuReels[activeReelIndex] && (
+        <div className="lightbox-backdrop gs-reel-theater-backdrop" onClick={() => setActiveReelIndex(null)}>
+          <div className="gs-reel-theater-container" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="lightbox-close gs-reel-close"
+              onClick={() => setActiveReelIndex(null)}
+              aria-label="Close reel theater"
+            >
+              <FaTimes />
+            </button>
+
+            <div className="gs-reel-theater-player-box">
+              <video
+                key={gramSetuReels[activeReelIndex].videoSrc}
+                src={gramSetuReels[activeReelIndex].videoSrc}
+                controls
+                autoPlay
+                playsInline
+                className="gs-reel-theater-video"
+              />
+            </div>
+
+            <div className="gs-reel-theater-sidebar">
+              <div className="gs-theater-badge" style={{ backgroundColor: gramSetuReels[activeReelIndex].color }}>
+                {gramSetuReels[activeReelIndex].day} · {gramSetuReels[activeReelIndex].date}
+              </div>
+              <h3 className="gs-theater-title">{gramSetuReels[activeReelIndex].title}</h3>
+              <p className="gs-theater-caption">{gramSetuReels[activeReelIndex].caption}</p>
+
+              <div className="gs-theater-tags">
+                {gramSetuReels[activeReelIndex].tags.map((t, idx) => (
+                  <span key={idx} className="gs-tag-chip">{t}</span>
+                ))}
+              </div>
+
+              <div className="gs-theater-nav-controls">
+                <button
+                  type="button"
+                  className="gs-theater-nav-btn prev"
+                  onClick={() => setActiveReelIndex((prev) => (prev > 0 ? prev - 1 : gramSetuReels.length - 1))}
+                >
+                  <FaChevronLeft /> Previous Day
+                </button>
+                <button
+                  type="button"
+                  className="gs-theater-nav-btn next"
+                  onClick={() => setActiveReelIndex((prev) => (prev < gramSetuReels.length - 1 ? prev + 1 : 0))}
+                >
+                  Next Day <FaChevronRight />
+                </button>
+              </div>
+
+              <a
+                href={gramSetuReels[activeReelIndex].reelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gs-theater-insta-link"
+              >
+                <FaInstagram /> Watch Official Reel on @nss.a_70 ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Fullscreen Lightbox Modal */}
+      {lightboxIndex !== null && activePhotos[lightboxIndex] && (
+        <div className="lightbox-backdrop" onClick={() => setLightboxIndex(null)}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="lightbox-close"
+              onClick={() => setLightboxIndex(null)}
+              aria-label="Close lightbox"
+            >
+              <FaTimes />
+            </button>
+            <img
+              src={activePhotos[lightboxIndex].src}
+              alt={activePhotos[lightboxIndex].title}
+              className="lightbox-img"
+            />
+            {activePhotos.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  className="lightbox-arrow prev"
+                  onClick={prevLightbox}
+                  aria-label="Previous photo"
+                >
+                  <FaChevronLeft />
+                </button>
+                <button
+                  type="button"
+                  className="lightbox-arrow next"
+                  onClick={nextLightbox}
+                  aria-label="Next photo"
+                >
+                  <FaChevronRight />
+                </button>
+              </>
+            )}
+            <div className="lightbox-caption">
+              {activePhotos[lightboxIndex].title}
+            </div>
+            <div className="lightbox-counter">
+              Photo {lightboxIndex + 1} of {activePhotos.length}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

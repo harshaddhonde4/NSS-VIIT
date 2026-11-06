@@ -2,4 +2,7 @@ node_modules
 dist
 .DS_Store
 *.log
-
+scratch/
+scratch/*
+Nss-frontend/public/videos/*.mp4
+Nss-frontend/public/videos/reels/*.mp4

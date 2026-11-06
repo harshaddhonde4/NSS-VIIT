@@ -1,0 +1,917 @@
+{
+  "10_E_Waste_Collection_Report": [
+    {
+      "file": "img_01.png",
+      "web_path": "/images/reports/10_E_Waste_Collection_Report/img_01.png",
+      "width": 424,
+      "height": 425,
+      "ar": 1.0,
+      "size_kb": 153.8,
+      "stddev": 15.9
+    }
+  ],
+  "11_Blood_Donation_Camp": [
+    {
+      "file": "img_03.jpeg",
+      "web_path": "/images/reports/11_Blood_Donation_Camp/img_03.jpeg",
+      "width": 299,
+      "height": 299,
+      "ar": 1.0,
+      "size_kb": 53.0,
+      "stddev": 93.1
+    },
+    {
+      "file": "img_05.jpeg",
+      "web_path": "/images/reports/11_Blood_Donation_Camp/img_05.jpeg",
+      "width": 554,
+      "height": 738,
+      "ar": 0.75,
+      "size_kb": 182.2,
+      "stddev": 76.6
+    },
+    {
+      "file": "img_06.jpeg",
+      "web_path": "/images/reports/11_Blood_Donation_Camp/img_06.jpeg",
+      "width": 908,
+      "height": 1613,
+      "ar": 0.56,
+      "size_kb": 958.8,
+      "stddev": 78.4
+    },
+    {
+      "file": "img_07.jpeg",
+      "web_path": "/images/reports/11_Blood_Donation_Camp/img_07.jpeg",
+      "width": 1452,
+      "height": 818,
+      "ar": 1.78,
+      "size_kb": 595.7,
+      "stddev": 57.4
+    },
+    {
+      "file": "img_08.jpeg",
+      "web_path": "/images/reports/11_Blood_Donation_Camp/img_08.jpeg",
+      "width": 430,
+      "height": 763,
+      "ar": 0.56,
+      "size_kb": 176.6,
+      "stddev": 64.4
+    },
+    {
+      "file": "img_09.jpeg",
+      "web_path": "/images/reports/11_Blood_Donation_Camp/img_09.jpeg",
+      "width": 872,
+      "height": 491,
+      "ar": 1.78,
+      "size_kb": 238.2,
+      "stddev": 70.9
+    },
+    {
+      "file": "img_10.jpeg",
+      "web_path": "/images/reports/11_Blood_Donation_Camp/img_10.jpeg",
+      "width": 276,
+      "height": 368,
+      "ar": 0.75,
+      "size_kb": 63.7,
+      "stddev": 59.2
+    },
+    {
+      "file": "img_11.jpeg",
+      "web_path": "/images/reports/11_Blood_Donation_Camp/img_11.jpeg",
+      "width": 562,
+      "height": 749,
+      "ar": 0.75,
+      "size_kb": 153.7,
+      "stddev": 54.4
+    },
+    {
+      "file": "img_12.jpeg",
+      "web_path": "/images/reports/11_Blood_Donation_Camp/img_12.jpeg",
+      "width": 461,
+      "height": 346,
+      "ar": 1.33,
+      "size_kb": 116.0,
+      "stddev": 66.2
+    }
+  ],
+  "12_CAMP": [
+    {
+      "file": "img_03.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_03.jpeg",
+      "width": 924,
+      "height": 1237,
+      "ar": 0.75,
+      "size_kb": 104.6,
+      "stddev": 69.8
+    },
+    {
+      "file": "img_04.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_04.jpeg",
+      "width": 913,
+      "height": 1227,
+      "ar": 0.74,
+      "size_kb": 125.7,
+      "stddev": 70.8
+    },
+    {
+      "file": "img_05.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_05.jpeg",
+      "width": 736,
+      "height": 981,
+      "ar": 0.75,
+      "size_kb": 113.8,
+      "stddev": 61.9
+    },
+    {
+      "file": "img_06.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_06.jpeg",
+      "width": 744,
+      "height": 983,
+      "ar": 0.76,
+      "size_kb": 137.6,
+      "stddev": 63.2
+    },
+    {
+      "file": "img_07.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_07.jpeg",
+      "width": 857,
+      "height": 1152,
+      "ar": 0.74,
+      "size_kb": 94.2,
+      "stddev": 53.7
+    },
+    {
+      "file": "img_08.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_08.jpeg",
+      "width": 868,
+      "height": 1157,
+      "ar": 0.75,
+      "size_kb": 99.4,
+      "stddev": 57.7
+    },
+    {
+      "file": "img_09.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_09.jpeg",
+      "width": 1882,
+      "height": 944,
+      "ar": 1.99,
+      "size_kb": 195.4,
+      "stddev": 52.7
+    },
+    {
+      "file": "img_10.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_10.jpeg",
+      "width": 1882,
+      "height": 471,
+      "ar": 4.0,
+      "size_kb": 66.3,
+      "stddev": 55.1
+    },
+    {
+      "file": "img_11.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_11.jpeg",
+      "width": 1882,
+      "height": 946,
+      "ar": 1.99,
+      "size_kb": 178.2,
+      "stddev": 70.5
+    },
+    {
+      "file": "img_12.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_12.jpeg",
+      "width": 1882,
+      "height": 471,
+      "ar": 4.0,
+      "size_kb": 97.9,
+      "stddev": 74.8
+    },
+    {
+      "file": "img_13.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_13.jpeg",
+      "width": 758,
+      "height": 1017,
+      "ar": 0.75,
+      "size_kb": 88.1,
+      "stddev": 54.5
+    },
+    {
+      "file": "img_14.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_14.jpeg",
+      "width": 762,
+      "height": 1018,
+      "ar": 0.75,
+      "size_kb": 106.0,
+      "stddev": 60.1
+    },
+    {
+      "file": "img_15.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_15.jpeg",
+      "width": 1580,
+      "height": 1179,
+      "ar": 1.34,
+      "size_kb": 172.1,
+      "stddev": 62.2
+    },
+    {
+      "file": "img_16.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_16.jpeg",
+      "width": 730,
+      "height": 836,
+      "ar": 0.87,
+      "size_kb": 109.0,
+      "stddev": 74.1
+    },
+    {
+      "file": "img_17.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_17.jpeg",
+      "width": 1120,
+      "height": 833,
+      "ar": 1.34,
+      "size_kb": 95.3,
+      "stddev": 54.3
+    },
+    {
+      "file": "img_18.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_18.jpeg",
+      "width": 758,
+      "height": 813,
+      "ar": 0.93,
+      "size_kb": 77.1,
+      "stddev": 68.7
+    },
+    {
+      "file": "img_19.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_19.jpeg",
+      "width": 1077,
+      "height": 808,
+      "ar": 1.33,
+      "size_kb": 150.7,
+      "stddev": 66.3
+    },
+    {
+      "file": "img_20.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_20.jpeg",
+      "width": 3024,
+      "height": 672,
+      "ar": 4.5,
+      "size_kb": 60.9,
+      "stddev": 69.9
+    },
+    {
+      "file": "img_21.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_21.jpeg",
+      "width": 3024,
+      "height": 672,
+      "ar": 4.5,
+      "size_kb": 106.9,
+      "stddev": 76.2
+    },
+    {
+      "file": "img_22.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_22.jpeg",
+      "width": 3024,
+      "height": 672,
+      "ar": 4.5,
+      "size_kb": 259.5,
+      "stddev": 81.8
+    },
+    {
+      "file": "img_23.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_23.jpeg",
+      "width": 3024,
+      "height": 672,
+      "ar": 4.5,
+      "size_kb": 269.0,
+      "stddev": 51.9
+    },
+    {
+      "file": "img_24.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_24.jpeg",
+      "width": 3024,
+      "height": 672,
+      "ar": 4.5,
+      "size_kb": 233.6,
+      "stddev": 27.8
+    },
+    {
+      "file": "img_25.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_25.jpeg",
+      "width": 3024,
+      "height": 672,
+      "ar": 4.5,
+      "size_kb": 217.9,
+      "stddev": 15.7
+    },
+    {
+      "file": "img_26.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_26.jpeg",
+      "width": 596,
+      "height": 447,
+      "ar": 1.33,
+      "size_kb": 60.2,
+      "stddev": 69.6
+    },
+    {
+      "file": "img_27.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_27.jpeg",
+      "width": 597,
+      "height": 438,
+      "ar": 1.36,
+      "size_kb": 61.6,
+      "stddev": 74.8
+    },
+    {
+      "file": "img_28.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_28.jpeg",
+      "width": 653,
+      "height": 544,
+      "ar": 1.2,
+      "size_kb": 76.7,
+      "stddev": 74.9
+    },
+    {
+      "file": "img_29.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_29.jpeg",
+      "width": 672,
+      "height": 557,
+      "ar": 1.21,
+      "size_kb": 67.2,
+      "stddev": 70.2
+    },
+    {
+      "file": "img_30.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_30.jpeg",
+      "width": 599,
+      "height": 507,
+      "ar": 1.18,
+      "size_kb": 54.5,
+      "stddev": 77.6
+    },
+    {
+      "file": "img_31.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_31.jpeg",
+      "width": 647,
+      "height": 486,
+      "ar": 1.33,
+      "size_kb": 72.0,
+      "stddev": 73.5
+    },
+    {
+      "file": "img_32.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_32.jpeg",
+      "width": 903,
+      "height": 523,
+      "ar": 1.73,
+      "size_kb": 80.1,
+      "stddev": 71.0
+    },
+    {
+      "file": "img_33.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_33.jpeg",
+      "width": 656,
+      "height": 487,
+      "ar": 1.35,
+      "size_kb": 56.4,
+      "stddev": 62.1
+    },
+    {
+      "file": "img_34.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_34.jpeg",
+      "width": 592,
+      "height": 487,
+      "ar": 1.22,
+      "size_kb": 42.7,
+      "stddev": 54.8
+    },
+    {
+      "file": "img_35.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_35.jpeg",
+      "width": 1210,
+      "height": 611,
+      "ar": 1.98,
+      "size_kb": 124.2,
+      "stddev": 70.3
+    },
+    {
+      "file": "img_36.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_36.jpeg",
+      "width": 4032,
+      "height": 504,
+      "ar": 8.0,
+      "size_kb": 150.1,
+      "stddev": 54.5
+    },
+    {
+      "file": "img_37.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_37.jpeg",
+      "width": 4032,
+      "height": 504,
+      "ar": 8.0,
+      "size_kb": 187.7,
+      "stddev": 49.8
+    },
+    {
+      "file": "img_38.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_38.jpeg",
+      "width": 4032,
+      "height": 504,
+      "ar": 8.0,
+      "size_kb": 180.1,
+      "stddev": 62.7
+    },
+    {
+      "file": "img_39.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_39.jpeg",
+      "width": 4032,
+      "height": 504,
+      "ar": 8.0,
+      "size_kb": 230.6,
+      "stddev": 65.2
+    },
+    {
+      "file": "img_40.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_40.jpeg",
+      "width": 4032,
+      "height": 504,
+      "ar": 8.0,
+      "size_kb": 224.0,
+      "stddev": 56.1
+    },
+    {
+      "file": "img_41.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_41.jpeg",
+      "width": 4032,
+      "height": 504,
+      "ar": 8.0,
+      "size_kb": 202.2,
+      "stddev": 39.6
+    },
+    {
+      "file": "img_42.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_42.jpeg",
+      "width": 682,
+      "height": 511,
+      "ar": 1.33,
+      "size_kb": 63.2,
+      "stddev": 66.9
+    },
+    {
+      "file": "img_43.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_43.jpeg",
+      "width": 1184,
+      "height": 592,
+      "ar": 2.0,
+      "size_kb": 125.3,
+      "stddev": 67.7
+    },
+    {
+      "file": "img_44.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_44.jpeg",
+      "width": 682,
+      "height": 511,
+      "ar": 1.33,
+      "size_kb": 63.9,
+      "stddev": 73.4
+    },
+    {
+      "file": "img_45.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_45.jpeg",
+      "width": 1061,
+      "height": 428,
+      "ar": 2.48,
+      "size_kb": 58.8,
+      "stddev": 57.6
+    },
+    {
+      "file": "img_46.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_46.jpeg",
+      "width": 645,
+      "height": 446,
+      "ar": 1.45,
+      "size_kb": 41.5,
+      "stddev": 56.3
+    },
+    {
+      "file": "img_47.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_47.jpeg",
+      "width": 662,
+      "height": 464,
+      "ar": 1.43,
+      "size_kb": 42.9,
+      "stddev": 54.7
+    },
+    {
+      "file": "img_48.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_48.jpeg",
+      "width": 609,
+      "height": 724,
+      "ar": 0.84,
+      "size_kb": 54.4,
+      "stddev": 54.7
+    },
+    {
+      "file": "img_49.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_49.jpeg",
+      "width": 634,
+      "height": 733,
+      "ar": 0.86,
+      "size_kb": 56.6,
+      "stddev": 52.2
+    },
+    {
+      "file": "img_50.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_50.jpeg",
+      "width": 640,
+      "height": 853,
+      "ar": 0.75,
+      "size_kb": 64.2,
+      "stddev": 56.6
+    },
+    {
+      "file": "img_51.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_51.jpeg",
+      "width": 662,
+      "height": 850,
+      "ar": 0.78,
+      "size_kb": 60.0,
+      "stddev": 50.8
+    },
+    {
+      "file": "img_52.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_52.jpeg",
+      "width": 764,
+      "height": 735,
+      "ar": 1.04,
+      "size_kb": 66.7,
+      "stddev": 60.2
+    },
+    {
+      "file": "img_53.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_53.jpeg",
+      "width": 644,
+      "height": 409,
+      "ar": 1.57,
+      "size_kb": 41.7,
+      "stddev": 67.4
+    },
+    {
+      "file": "img_54.jpeg",
+      "web_path": "/images/reports/12_CAMP/img_54.jpeg",
+      "width": 1413,
+      "height": 794,
+      "ar": 1.78,
+      "size_kb": 142.6,
+      "stddev": 78.2
+    }
+  ],
+  "1_Rakhi-With-Khaki": [
+    {
+      "file": "img_02.jpeg",
+      "web_path": "/images/reports/1_Rakhi-With-Khaki/img_02.jpeg",
+      "width": 874,
+      "height": 492,
+      "ar": 1.78,
+      "size_kb": 261.3,
+      "stddev": 67.0
+    },
+    {
+      "file": "img_03.jpeg",
+      "web_path": "/images/reports/1_Rakhi-With-Khaki/img_03.jpeg",
+      "width": 874,
+      "height": 492,
+      "ar": 1.78,
+      "size_kb": 301.5,
+      "stddev": 66.4
+    },
+    {
+      "file": "img_04.jpeg",
+      "web_path": "/images/reports/1_Rakhi-With-Khaki/img_04.jpeg",
+      "width": 432,
+      "height": 576,
+      "ar": 0.75,
+      "size_kb": 109.0,
+      "stddev": 72.5
+    },
+    {
+      "file": "img_05.jpeg",
+      "web_path": "/images/reports/1_Rakhi-With-Khaki/img_05.jpeg",
+      "width": 384,
+      "height": 512,
+      "ar": 0.75,
+      "size_kb": 94.9,
+      "stddev": 76.7
+    },
+    {
+      "file": "img_06.jpeg",
+      "web_path": "/images/reports/1_Rakhi-With-Khaki/img_06.jpeg",
+      "width": 422,
+      "height": 749,
+      "ar": 0.56,
+      "size_kb": 141.3,
+      "stddev": 71.1
+    },
+    {
+      "file": "img_07.jpeg",
+      "web_path": "/images/reports/1_Rakhi-With-Khaki/img_07.jpeg",
+      "width": 384,
+      "height": 512,
+      "ar": 0.75,
+      "size_kb": 94.2,
+      "stddev": 63.1
+    }
+  ],
+  "2_Personality_Development___Menstrual_Hygiene__3_TIME": [
+    {
+      "file": "img_02.png",
+      "web_path": "/images/reports/2_Personality_Development___Menstrual_Hygiene__3_TIME/img_02.png",
+      "width": 1042,
+      "height": 1119,
+      "ar": 0.93,
+      "size_kb": 2322.8,
+      "stddev": 78.3
+    },
+    {
+      "file": "img_04.png",
+      "web_path": "/images/reports/2_Personality_Development___Menstrual_Hygiene__3_TIME/img_04.png",
+      "width": 963,
+      "height": 1126,
+      "ar": 0.86,
+      "size_kb": 2721.5,
+      "stddev": 64.8
+    }
+  ],
+  "3_Independence_Day_Documentation": [
+    {
+      "file": "img_02.jpeg",
+      "web_path": "/images/reports/3_Independence_Day_Documentation/img_02.jpeg",
+      "width": 896,
+      "height": 672,
+      "ar": 1.33,
+      "size_kb": 439.3,
+      "stddev": 72.3
+    },
+    {
+      "file": "img_03.jpeg",
+      "web_path": "/images/reports/3_Independence_Day_Documentation/img_03.jpeg",
+      "width": 468,
+      "height": 624,
+      "ar": 0.75,
+      "size_kb": 121.0,
+      "stddev": 78.5
+    },
+    {
+      "file": "img_04.jpeg",
+      "web_path": "/images/reports/3_Independence_Day_Documentation/img_04.jpeg",
+      "width": 432,
+      "height": 576,
+      "ar": 0.75,
+      "size_kb": 173.6,
+      "stddev": 72.8
+    },
+    {
+      "file": "img_06.jpeg",
+      "web_path": "/images/reports/3_Independence_Day_Documentation/img_06.jpeg",
+      "width": 422,
+      "height": 749,
+      "ar": 0.56,
+      "size_kb": 225.1,
+      "stddev": 78.2
+    },
+    {
+      "file": "img_07.jpeg",
+      "web_path": "/images/reports/3_Independence_Day_Documentation/img_07.jpeg",
+      "width": 562,
+      "height": 999,
+      "ar": 0.56,
+      "size_kb": 360.5,
+      "stddev": 59.2
+    },
+    {
+      "file": "img_08.jpeg",
+      "web_path": "/images/reports/3_Independence_Day_Documentation/img_08.jpeg",
+      "width": 409,
+      "height": 726,
+      "ar": 0.56,
+      "size_kb": 151.3,
+      "stddev": 60.9
+    },
+    {
+      "file": "img_09.jpeg",
+      "web_path": "/images/reports/3_Independence_Day_Documentation/img_09.jpeg",
+      "width": 847,
+      "height": 477,
+      "ar": 1.78,
+      "size_kb": 277.6,
+      "stddev": 70.7
+    }
+  ],
+  "4_Debate_competition": [
+    {
+      "file": "img_03.jpeg",
+      "web_path": "/images/reports/4_Debate_competition/img_03.jpeg",
+      "width": 542,
+      "height": 960,
+      "ar": 0.56,
+      "size_kb": 307.0,
+      "stddev": 68.9
+    },
+    {
+      "file": "img_04.jpeg",
+      "web_path": "/images/reports/4_Debate_competition/img_04.jpeg",
+      "width": 960,
+      "height": 542,
+      "ar": 1.77,
+      "size_kb": 343.8,
+      "stddev": 62.2
+    },
+    {
+      "file": "img_05.jpeg",
+      "web_path": "/images/reports/4_Debate_competition/img_05.jpeg",
+      "width": 960,
+      "height": 542,
+      "ar": 1.77,
+      "size_kb": 287.4,
+      "stddev": 64.8
+    },
+    {
+      "file": "img_07.jpeg",
+      "web_path": "/images/reports/4_Debate_competition/img_07.jpeg",
+      "width": 1165,
+      "height": 874,
+      "ar": 1.33,
+      "size_kb": 588.5,
+      "stddev": 82.2
+    }
+  ],
+  "5_Srujanrang_Cultural_Competition": [
+    {
+      "file": "img_01.png",
+      "web_path": "/images/reports/5_Srujanrang_Cultural_Competition/img_01.png",
+      "width": 424,
+      "height": 425,
+      "ar": 1.0,
+      "size_kb": 153.8,
+      "stddev": 15.9
+    }
+  ],
+  "6_SPO": [
+    {
+      "file": "img_02.jpeg",
+      "web_path": "/images/reports/6_SPO/img_02.jpeg",
+      "width": 882,
+      "height": 662,
+      "ar": 1.33,
+      "size_kb": 301.8,
+      "stddev": 52.5
+    },
+    {
+      "file": "img_03.jpeg",
+      "web_path": "/images/reports/6_SPO/img_03.jpeg",
+      "width": 840,
+      "height": 474,
+      "ar": 1.77,
+      "size_kb": 223.4,
+      "stddev": 61.9
+    },
+    {
+      "file": "img_04.jpeg",
+      "web_path": "/images/reports/6_SPO/img_04.jpeg",
+      "width": 840,
+      "height": 474,
+      "ar": 1.77,
+      "size_kb": 236.2,
+      "stddev": 78.8
+    }
+  ],
+  "7_Naam_Foundation_Report": [
+    {
+      "file": "img_01.png",
+      "web_path": "/images/reports/7_Naam_Foundation_Report/img_01.png",
+      "width": 424,
+      "height": 425,
+      "ar": 1.0,
+      "size_kb": 153.8,
+      "stddev": 15.9
+    },
+    {
+      "file": "img_05.png",
+      "web_path": "/images/reports/7_Naam_Foundation_Report/img_05.png",
+      "width": 756,
+      "height": 551,
+      "ar": 1.37,
+      "size_kb": 932.3,
+      "stddev": 60.9
+    },
+    {
+      "file": "img_06.png",
+      "web_path": "/images/reports/7_Naam_Foundation_Report/img_06.png",
+      "width": 756,
+      "height": 427,
+      "ar": 1.77,
+      "size_kb": 757.0,
+      "stddev": 65.1
+    },
+    {
+      "file": "img_07.jpeg",
+      "web_path": "/images/reports/7_Naam_Foundation_Report/img_07.jpeg",
+      "width": 756,
+      "height": 555,
+      "ar": 1.36,
+      "size_kb": 223.0,
+      "stddev": 66.6
+    }
+  ],
+  "8_FDP_Report": [
+    {
+      "file": "img_01.png",
+      "web_path": "/images/reports/8_FDP_Report/img_01.png",
+      "width": 424,
+      "height": 425,
+      "ar": 1.0,
+      "size_kb": 153.8,
+      "stddev": 15.9
+    },
+    {
+      "file": "img_04.png",
+      "web_path": "/images/reports/8_FDP_Report/img_04.png",
+      "width": 2322,
+      "height": 3347,
+      "ar": 0.69,
+      "size_kb": 39.2,
+      "stddev": 113.2
+    },
+    {
+      "file": "img_05.png",
+      "web_path": "/images/reports/8_FDP_Report/img_05.png",
+      "width": 2322,
+      "height": 3347,
+      "ar": 0.69,
+      "size_kb": 48.3,
+      "stddev": 119.1
+    },
+    {
+      "file": "img_06.png",
+      "web_path": "/images/reports/8_FDP_Report/img_06.png",
+      "width": 2359,
+      "height": 3403,
+      "ar": 0.69,
+      "size_kb": 39.6,
+      "stddev": 108.6
+    }
+  ],
+  "9_Swachata_hi_seva": [
+    {
+      "file": "img_02.jpeg",
+      "web_path": "/images/reports/9_Swachata_hi_seva/img_02.jpeg",
+      "width": 1130,
+      "height": 636,
+      "ar": 1.78,
+      "size_kb": 559.2,
+      "stddev": 68.7
+    },
+    {
+      "file": "img_03.jpeg",
+      "web_path": "/images/reports/9_Swachata_hi_seva/img_03.jpeg",
+      "width": 847,
+      "height": 477,
+      "ar": 1.78,
+      "size_kb": 299.7,
+      "stddev": 74.2
+    },
+    {
+      "file": "img_05.jpeg",
+      "web_path": "/images/reports/9_Swachata_hi_seva/img_05.jpeg",
+      "width": 474,
+      "height": 840,
+      "ar": 0.56,
+      "size_kb": 276.7,
+      "stddev": 62.6
+    },
+    {
+      "file": "img_06.jpeg",
+      "web_path": "/images/reports/9_Swachata_hi_seva/img_06.jpeg",
+      "width": 477,
+      "height": 847,
+      "ar": 0.56,
+      "size_kb": 229.7,
+      "stddev": 67.6
+    },
+    {
+      "file": "img_07.jpeg",
+      "web_path": "/images/reports/9_Swachata_hi_seva/img_07.jpeg",
+      "width": 477,
+      "height": 847,
+      "ar": 0.56,
+      "size_kb": 276.3,
+      "stddev": 69.6
+    },
+    {
+      "file": "img_08.jpeg",
+      "web_path": "/images/reports/9_Swachata_hi_seva/img_08.jpeg",
+      "width": 474,
+      "height": 840,
+      "ar": 0.56,
+      "size_kb": 217.0,
+      "stddev": 64.1
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
@@ -91,7 +90,7 @@ const History = () => {
               iconStyle={{ backgroundColor: "#EC4899" }}
             >
               <h2 style={{ fontSize: "2rem", fontWeight: 800, color: "#0A1128" }}>Rakta-Setu — Record Blood Drive</h2>
-              <h4 style={{ color: "#475569", fontWeight: 400, lineHeight: 1.6 }}>On 7–8 October 2025, NSS VIIT Pune's flagship blood donation camp <span style={{ color: "#1B6B3A", fontWeight: 700 }}>Rakta-Setu</span> achieved its largest scale — <span style={{ color: "#1B6B3A", fontWeight: 700 }}>956+ participants, 385 blood donors</span>, 11 free medical check-ups (ECG, Haemoglobin, Dental). Partnered with Adhar Blood Bank. Cancer awareness seminars ran alongside.</h4>
+              <h4 style={{ color: "#475569", fontWeight: 400, lineHeight: 1.6 }}>On 7–8 October 2025, NSS VIIT Pune&apos;s flagship blood donation camp <span style={{ color: "#1B6B3A", fontWeight: 700 }}>Rakta-Setu</span> achieved its largest scale — <span style={{ color: "#1B6B3A", fontWeight: 700 }}>956+ participants, 385 blood donors</span>, 11 free medical check-ups (ECG, Haemoglobin, Dental). Partnered with Adhar Blood Bank. Cancer awareness seminars ran alongside.</h4>
             </VerticalTimelineElement>
 
             <VerticalTimelineElement
@@ -100,7 +99,7 @@ const History = () => {
               iconStyle={{ backgroundColor: "#0284C7" }}
             >
               <h2 style={{ fontSize: "2rem", fontWeight: 800, color: "#0A1128" }}>Suraksha-Setu — 122+ SPO Record</h2>
-              <h4 style={{ color: "#475569", fontWeight: 400, lineHeight: 1.6 }}>On 6–7 September 2025 (Anant Chaturdashi), <span style={{ color: "#1B6B3A", fontWeight: 700 }}>122+ NSS VIIT volunteers</span> served with Swargate Police for Ganpati Visarjan crowd management — the unit's largest Special Police Officer deployment ever, <span style={{ color: "#1B6B3A", fontWeight: 700 }}>recognised by Sakal Media</span>.</h4>
+              <h4 style={{ color: "#475569", fontWeight: 400, lineHeight: 1.6 }}>On 6–7 September 2025 (Anant Chaturdashi), <span style={{ color: "#1B6B3A", fontWeight: 700 }}>122+ NSS VIIT volunteers</span> served with Swargate Police for Ganpati Visarjan crowd management — the unit&apos;s largest Special Police Officer deployment ever, <span style={{ color: "#1B6B3A", fontWeight: 700 }}>recognised by Sakal Media</span>.</h4>
             </VerticalTimelineElement>
 
             <VerticalTimelineElement
@@ -118,7 +117,7 @@ const History = () => {
               iconStyle={{ backgroundColor: "#8B5CF6" }}
             >
               <h2 style={{ fontSize: "2rem", fontWeight: 800, color: "#0A1128" }}>Omkar Gengaje — Stem Cell Donation</h2>
-              <h4 style={{ color: "#475569", fontWeight: 400, lineHeight: 1.6 }}>NSS VIIT volunteer <span style={{ color: "#1B6B3A", fontWeight: 700 }}>Omkar Gengaje</span> (Computer Engineering) underwent a 4-hour medical procedure to donate stem cells and save a young girl's life from cancer — entirely free of cost. The purest expression of <em>"Not Me But You."</em></h4>
+              <h4 style={{ color: "#475569", fontWeight: 400, lineHeight: 1.6 }}>NSS VIIT volunteer <span style={{ color: "#1B6B3A", fontWeight: 700 }}>Omkar Gengaje</span> (Computer Engineering) underwent a 4-hour medical procedure to donate stem cells and save a young girl&apos;s life from cancer — entirely free of cost. The purest expression of <em>&quot;Not Me But You.&quot;</em></h4>
             </VerticalTimelineElement>
 
             <VerticalTimelineElement
@@ -129,7 +128,20 @@ const History = () => {
               <div style={{ position: "absolute", top: 0, right: 0, background: "linear-gradient(90deg, #F59E0B, #D97706)", color: "#0A1128", fontSize: "1.1rem", fontWeight: 800, padding: "0.4rem 1.4rem", borderRadius: "0 0 0 12px", textTransform: "uppercase", letterSpacing: "0.06rem" }}>★ Flagship</div>
               <h2 style={{ fontSize: "2rem", fontWeight: 800, color: "#0A1128" }}>Gram-Setu 2026 — Residential Camp</h2>
               <h4 style={{ color: "#1B6B3A", fontWeight: 700, marginBottom: "0.5rem" }}>21–28 January 2026 · Jamgaon, Mulshi, Pune</h4>
-              <h4 style={{ color: "#475569", fontWeight: 400, lineHeight: 1.6 }}>NSS VIIT Pune's most impactful camp to date — <span style={{ color: "#1B6B3A", fontWeight: 700 }}>60+ volunteers, 8 days</span>, keynoted by <span style={{ color: "#1B6B3A", fontWeight: 700 }}>Padma Shri Popatrao Pawar</span> (Hiware Bazar). Shramdaan, Dindi procession, street play <em>'Paristhitichi Janiv'</em>, drainage management at Disali School. Jamgaon achieves <span style={{ color: "#1B6B3A", fontWeight: 700 }}>100% Class 10 results for 5 consecutive years</span> — the living legacy of NSS VIIT's doorstep education.</h4>
+              <h4 style={{ color: "#475569", fontWeight: 400, lineHeight: 1.6 }}>NSS VIIT Pune&apos;s most impactful camp to date — <span style={{ color: "#1B6B3A", fontWeight: 700 }}>60+ volunteers, 8 days</span>, keynoted by <span style={{ color: "#1B6B3A", fontWeight: 700 }}>Padma Shri Popatrao Pawar</span> (Hiware Bazar). Shramdaan, Dindi procession, street play <em>&apos;Paristhitichi Janiv&apos;</em>, drainage management at Disali School. Jamgaon achieves <span style={{ color: "#1B6B3A", fontWeight: 700 }}>100% Class 10 results for 5 consecutive years</span> — the living legacy of NSS VIIT&apos;s doorstep education.</h4>
+            </VerticalTimelineElement>
+
+            <VerticalTimelineElement
+              contentStyle={{ backgroundColor: "#0A1128", color: "#fff", borderRadius: "14px", boxShadow: "0 10px 30px rgba(0,0,0,0.2)", border: "2px solid #F59E0B", position: "relative", overflow: "hidden" }}
+              icon={<div className="timeline-icon" style={{ fontSize: "1rem", fontWeight: 900, color: "#F59E0B" }}>2026</div>}
+              iconStyle={{ backgroundColor: "#0A1128", border: "2px solid #F59E0B" }}
+            >
+              <div style={{ position: "absolute", top: 0, right: 0, background: "linear-gradient(90deg, #F59E0B, #D97706)", color: "#0A1128", fontSize: "1.1rem", fontWeight: 800, padding: "0.4rem 1.4rem", borderRadius: "0 0 0 12px", textTransform: "uppercase", letterSpacing: "0.06rem" }}>★ Grand Milestone</div>
+              <h2 style={{ fontSize: "2.1rem", fontWeight: 800, color: "#F59E0B" }}>Historic VIIT–VIT Merger & Legacy Transition</h2>
+              <h4 style={{ color: "#93C5FD", fontWeight: 700, marginBottom: "0.5rem" }}>Batch 2025–26 Signing Off · Legacy Continues as NSS VIT Unit A-65</h4>
+              <h4 style={{ color: "#E2E8F0", fontWeight: 400, lineHeight: 1.7 }}>
+                As Vishwakarma Institute of Information Technology (VIIT) and Vishwakarma Institute of Technology (VIT) formally merge into a unified powerhouse institution under BRACT, <strong style={{ color: "#F59E0B" }}>Batch 2025–26 marks the concluding historic tenure of NSS VIIT Unit A-70</strong>. Over 18 golden years (2008–2026), Unit A-70 touched thousands of lives in Jamgaon, collected thousands of blood units, and nurtured generations of civic leaders. With immense pride and gratitude, the sacred torch of &apos;Not Me But You&apos; is formally passed forward and united under <strong style={{ color: "#60A5FA" }}>NSS VIT Unit A-65</strong>. <br /><span style={{ display: 'inline-block', marginTop: '1rem' }}><a href="https://swd.vit.edu/nss/nss.html" target="_blank" rel="noopener noreferrer" style={{ color: "#F59E0B", fontWeight: 700, textDecoration: "underline" }}>Visit NSS VIT Unit A-65 Official Portal ↗</a></span>
+              </h4>
             </VerticalTimelineElement>
           </VerticalTimeline>
           <br />
@@ -137,7 +149,7 @@ const History = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default History
+export default History;

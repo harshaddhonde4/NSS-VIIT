@@ -1,31 +1,58 @@
+import RoleGroup from "../components/RoleGroup";
 import TeamCard from "./TeamCard";
+import CoreTeamReel from "../components/CoreTeamReel";
 import "./css/Team.css";
 import {
-  FaCrown, FaUsers, FaStar, FaFileAlt, FaUniversity,
-  FaBullhorn, FaLeaf, FaCalendarAlt, FaBuilding, FaCoins, FaLaptopCode
+  FaCrown, FaUsers, FaStar, FaFileAlt, FaExternalLinkAlt,
+  FaBullhorn, FaLeaf, FaCalendarAlt, FaBuilding, FaCoins, FaLaptopCode, FaHeart
 } from "react-icons/fa";
-
-/* ── Reusable group header with a React icon ── */
-const RoleGroup = ({ icon: Icon, title, subtitle, accent }) => (
-  <div className="role-group-header" style={{ "--accent": accent }}>
-    <div className="role-group-icon">
-      <Icon />
-    </div>
-    <div className="role-group-text">
-      <h3>{title}</h3>
-      {subtitle && <p>{subtitle}</p>}
-    </div>
-  </div>
-);
 
 const Team_25_26 = () => {
   return (
     <div className="team-structure">
 
+      {/* ── HISTORIC SIGNING OFF TRIBUTE BANNER ── */}
+      <div style={{
+        background: 'linear-gradient(135deg, #0A1128 0%, #1E293B 100%)',
+        border: '2px solid #F59E0B',
+        borderRadius: '24px',
+        padding: '3.5rem 2.5rem',
+        margin: '2rem auto 4rem',
+        maxWidth: '1100px',
+        textAlign: 'center',
+        color: '#FFFFFF',
+        boxShadow: '0 20px 50px rgba(0,0,0,0.35)'
+      }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem', background: 'rgba(245, 158, 11, 0.2)', border: '1px solid rgba(245, 158, 11, 0.5)', padding: '0.6rem 2rem', borderRadius: '50px', marginBottom: '1.8rem' }}>
+          <span style={{ color: '#F59E0B', fontSize: '1.35rem', fontWeight: 800 }}>★ HISTORIC FINAL TENURE · BATCH 2025–26 SIGNING OFF</span>
+        </div>
+        <h2 style={{ fontSize: 'clamp(2.4rem, 3.5vw, 3.6rem)', fontWeight: 900, color: '#FFFFFF', lineHeight: 1.25, marginBottom: '1.5rem' }}>
+          18 Golden Years of Unit A-70 (2008–2026) <br />
+          <span style={{ background: 'linear-gradient(135deg, #F59E0B, #60A5FA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            Passing the Torch Forward to NSS VIT Unit A-65
+          </span>
+        </h2>
+        <p style={{ fontSize: '1.55rem', color: '#CBD5E1', maxWidth: '850px', margin: '0 auto', lineHeight: 1.75 }}>
+          Following the milestone institutional merger between <strong>Vishwakarma Institute of Information Technology (VIIT)</strong> and <strong>Vishwakarma Institute of Technology (VIT Pune)</strong>, Batch 2025–26 proudly marks the concluding chapter of NSS VIIT Unit A-70. With deep gratitude for 18 years of transformative community service at Jamgaon, our volunteering mission continues united under <strong>NSS VIT Unit A-65</strong>.
+        </p>
+        <div style={{ marginTop: '2rem' }}>
+          <a href="https://swd.vit.edu/nss/nss.html" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <button type="button" style={{ background: 'rgba(59, 130, 246, 0.25)', border: '1px solid rgba(59, 130, 246, 0.5)', color: '#93C5FD', padding: '0.9rem 2.4rem', borderRadius: '50px', fontSize: '1.35rem', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.8rem' }}>
+              <span>Visit NSS VIT Unit A-65 Official Portal</span> <FaExternalLinkAlt style={{ fontSize: '1.1rem' }} />
+            </button>
+          </a>
+        </div>
+        
+      </div>
+
       {/* ══════════════════════════════════
           TIER 1 — PRESIDENT
       ══════════════════════════════════ */}
-      <RoleGroup icon={FaCrown} title="President" subtitle="Batch 2025–26" accent="#F59E0B" />
+      <CoreTeamReel />
+
+      <div id="leadership-roster">
+        <RoleGroup icon={FaCrown} title="President" subtitle="Batch 2025–26" accent="#F59E0B" />
+      </div>
       <div className="card_Container president-row">
         <TeamCard
           name="Sushant Gade"
@@ -36,6 +63,22 @@ const Team_25_26 = () => {
           linkedin="https://www.linkedin.com/in/gadesushant1181"
           highlight={true}
         />
+      </div>
+
+      <div style={{ maxWidth: '850px', margin: '2.5rem auto 4rem', padding: '3rem', background: '#0F172A', border: '1px solid rgba(245, 158, 11, 0.4)', borderRadius: '20px', color: '#FFFFFF', boxShadow: '0 15px 35px rgba(0,0,0,0.3)', textAlign: 'center' }}>
+        <div style={{ display: 'inline-block', background: 'rgba(245, 158, 11, 0.15)', color: '#F59E0B', border: '1px solid rgba(245, 158, 11, 0.4)', padding: '0.4rem 1.6rem', borderRadius: '30px', fontSize: '1.2rem', fontWeight: 800, textTransform: 'uppercase', marginBottom: '1.2rem' }}>
+          President&apos;s Valedictory Address · Signing Off Batch
+        </div>
+        <h3 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.4rem', lineHeight: 1.3 }}>
+          &quot;Serving this Unit in its Final Historic Chapter Has Been the Honor of a Lifetime&quot;
+        </h3>
+        <p style={{ fontSize: '1.5rem', color: '#CBD5E1', lineHeight: 1.8, marginBottom: '1.8rem', fontStyle: 'italic' }}>
+          &quot;To every volunteer who toiled with muddy hands at Jamgaon, every student who donated blood at Rakta-Setu, and our faculty coordinators who believed in youth leadership: this 18-year legacy belongs to you. As VIIT and VIT merge into a unified powerhouse, Unit A-70 bows out with highest honors, and our sacred motto &apos;Not Me But You&apos; marches forward under NSS VIT Unit A-65. Jai Hind, Jai NSS!&quot;
+        </p>
+        <div>
+          <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#F59E0B' }}>Sushant Gade</div>
+          <div style={{ fontSize: '1.3rem', color: '#94A3B8' }}>President, NSS VIIT (Batch 2025–26) · Unit A-70</div>
+        </div>
       </div>
 
       {/* ══════════════════════════════════
@@ -294,6 +337,55 @@ const Team_25_26 = () => {
         <TeamCard name="Sakshi Vyavahare" role="CSEAI Dept. Jt. Head"
           imgSrc="https://res.cloudinary.com/dapdhkhle/image/upload/v1757867527/profile-pic_-_SAKSHI_VYAVAHARE_xubh7y.png"
           twitter="#" email="sakshi.22310543@viit.ac.in" linkedin="https://www.linkedin.com/in/sakshi-vyavahare-11b561291" />
+      </div>
+
+      {/* ══════════════════════════════════
+          18-YEAR LEGACY & CORE FAREWELL
+      ══════════════════════════════════ */}
+      <RoleGroup icon={FaHeart} title="18-Year Legacy & Farewell Tribute" subtitle="Not just a team. A family. Celebrating decades of grassroots student leadership." accent="#EC4899" />
+      <div className="legacy-tribute-grid" style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(32rem, 1fr))',
+        gap: '2.5rem',
+        maxWidth: '120rem',
+        margin: '2rem auto 4rem',
+        padding: '0 2rem'
+      }}>
+        <div className="legacy-card" style={{ background: '#FFFFFF', borderRadius: '18px', overflow: 'hidden', boxShadow: '0 8px 30px rgba(0,0,0,0.06)', border: '1px solid #E2E8F0' }}>
+          <div style={{ height: '32rem', overflow: 'hidden', background: '#0F172A' }}>
+            <img src="/images/featured_highlights/farewell.jpeg" alt="NSS VIIT Core Team Farewell" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
+          </div>
+          <div style={{ padding: '2rem' }}>
+            <h3 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#0A1128', marginBottom: '0.6rem' }}>The Perfect Farewell</h3>
+            <p style={{ color: '#64748B', fontSize: '1.35rem', lineHeight: 1.6 }}>
+              &ldquo;Not just a team. A family. An 18-year legacy, wrapped in one final goodbye.&rdquo; A heartfelt tribute honoring the tireless service of our graduating senior coordinators.
+            </p>
+          </div>
+        </div>
+
+        <div className="legacy-card" style={{ background: '#FFFFFF', borderRadius: '18px', overflow: 'hidden', boxShadow: '0 8px 30px rgba(0,0,0,0.06)', border: '1px solid #E2E8F0' }}>
+          <div style={{ height: '32rem', overflow: 'hidden', background: '#0F172A' }}>
+            <img src="/images/featured_highlights/sushant_gade_signing_off_2.jpeg" alt="Signed NSS VIIT A-70 Official Flag" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
+          </div>
+          <div style={{ padding: '2rem' }}>
+            <h3 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#0A1128', marginBottom: '0.6rem' }}>The Heartbeat of Unit A-70</h3>
+            <p style={{ color: '#64748B', fontSize: '1.35rem', lineHeight: 1.6 }}>
+              &ldquo;Beyond the silent stress and heavy decisions, these names were my strength. Every signature is a heartbeat of the 18-year legacy we fought to protect.&rdquo;
+            </p>
+          </div>
+        </div>
+
+        <div className="legacy-card" style={{ background: '#FFFFFF', borderRadius: '18px', overflow: 'hidden', boxShadow: '0 8px 30px rgba(0,0,0,0.06)', border: '1px solid #E2E8F0' }}>
+          <div style={{ height: '32rem', overflow: 'hidden', background: '#0F172A' }}>
+            <img src="/images/featured_highlights/sushant_gade_signing_off_.jpeg" alt="President Sushant Anil Gade Signing Off" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
+          </div>
+          <div style={{ padding: '2rem' }}>
+            <h3 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#0A1128', marginBottom: '0.6rem' }}>President&apos;s Concluding Address</h3>
+            <p style={{ color: '#64748B', fontSize: '1.35rem', lineHeight: 1.6 }}>
+              &ldquo;Leadership is a lonely road—most decisions are made in silence. A title is temporary, but impact is permanent. Grateful for everyone who walked this journey.&rdquo;
+            </p>
+          </div>
+        </div>
       </div>
 
     </div>

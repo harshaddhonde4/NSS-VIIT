@@ -72,16 +72,14 @@ img {
 }
 
 p {
-  font-size: 1.7rem;
+  font-size: 1.55rem;
   text-align: center;
   color: var(--text-muted);
   line-height: 1.8;
   font-family: var(--font-body);
 }
 
-/* ============================================
-   NAVBAR STYLES — Managed in components/navbar.css
-   ============================================ */
+/* Navbar styles managed exclusively in components/navbar.css */
 
 /* ============================================
    COMMON UTILITIES
@@ -374,7 +372,7 @@ p {
 }
 
 .page-banner p {
-  font-size: 1.7rem;
+  font-size: 1.55rem;
   color: rgba(255,255,255,0.7);
   margin-top: 1.2rem;
   text-align: center;
@@ -434,7 +432,7 @@ p {
 }
 
 .about-text-block p {
-  font-size: 1.7rem;
+  font-size: 1.55rem;
   text-align: left;
   color: var(--text-muted);
   line-height: 1.8;
@@ -605,7 +603,6 @@ p {
 /* ============================================
    RESPONSIVE (Navbar responsive rules in components/navbar.css)
    ============================================ */
-
 @media (max-width: 798px) {
   html { font-size: 55%; }
   body { padding-top: 6rem; }
@@ -643,9 +640,97 @@ p {
   .achievement div p::after { height: 100%; }
 }
 
-@media (max-width: 360px) {
-  .page-banner { padding: 8rem 1.2rem 3rem; }
-  .page-banner h1 { font-size: 2.2rem; }
-  .about-grid .text-1 { padding: 1.6rem 1.2rem !important; }
-  .about-grid .text-1 h1 { font-size: 1.9rem !important; }
+
+/* ============================================
+   SHARED GLOBAL UTILITIES & BADGES
+   ============================================ */
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14rem;
+  color: #1B6B3A;
+  background: rgba(27, 107, 58, 0.08);
+  border: 1px solid rgba(27, 107, 58, 0.2);
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  margin-bottom: 1.4rem;
+  font-family: var(--font-body);
 }
+
+.label-tag.label-light {
+  color: #F59E0B;
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.btn-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 3rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  background: linear-gradient(135deg, #1B6B3A, #2D9055);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 18px rgba(27, 107, 58, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  text-decoration: none !important;
+}
+
+.btn-green:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(27, 107, 58, 0.35);
+  background: linear-gradient(135deg, #15552E, #237845);
+}
+
+.social-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.social-icon-wrap:hover {
+  background: var(--green);
+  transform: translateY(-3px);
+  color: #FFFFFF;
+}
+
+.about-section-events-img-1,
+.about-section-events-img-2 {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: contain !important;
+  background: #0B1120;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.about-section-events-img-1:hover,
+.about-section-events-img-2:hover {
+  transform: scale(1.03);
+}
+
+
+/* Bootstrap Utility Helpers Fallback */
+.d-block { display: block !important; }
+.w-100 { width: 100% !important; }
+.text-center { text-align: center !important; }
+.text-muted { color: var(--text-muted) !important; }
+.py-5 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
