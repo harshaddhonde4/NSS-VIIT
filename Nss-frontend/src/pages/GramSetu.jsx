@@ -280,7 +280,6 @@ const GramSetu = () => {
   const [reelDisplayMode, setReelDisplayMode] = useState('player'); // 'player' or 'embed'
   const theaterVideoRef = useRef(null);
   const heroVideoRef = useRef(null);
-  const ambientVideoRef = useRef(null);
   const [heroVideoMuted, setHeroVideoMuted] = useState(false);
 
   const toggleHeroSound = useCallback(() => {
@@ -314,21 +313,7 @@ const GramSetu = () => {
 
   useEffect(() => {
     const main = heroVideoRef.current;
-    const ambient = ambientVideoRef.current;
     if (!main) return;
-
-    if (ambient) {
-      ambient.defaultMuted = true;
-      ambient.muted = true;
-      ambient.play().catch(() => {});
-    }
-
-    const handleSync = () => {
-      if (ambient && Math.abs(main.currentTime - ambient.currentTime) > 0.3) {
-        ambient.currentTime = main.currentTime;
-      }
-    };
-    main.addEventListener('timeupdate', handleSync);
 
     // Attempt unmuted playback first
     main.muted = false;
@@ -362,10 +347,6 @@ const GramSetu = () => {
           window.addEventListener('keydown', handleFirstInteraction, { once: true });
         });
     }
-
-    return () => {
-      main.removeEventListener('timeupdate', handleSync);
-    };
   }, []);
 
   useEffect(() => {
@@ -458,7 +439,7 @@ const GramSetu = () => {
     <>
       <div className="gram-setu-page">
 
-        {/* ── HERO BANNER WITH AMBIENT BACKDROP ── */}
+        {/* ── CINEMATIC FULL-BLEED VIDEO HERO (10/10) ── */}
         <section
           className="gs-hero"
           onClick={() => {
@@ -470,66 +451,36 @@ const GramSetu = () => {
           }}
           title={heroVideoMuted ? "Click anywhere to turn on audio" : undefined}
         >
-          {/* Edge-to-edge ambient glow video that dynamically fills blank sides */}
+          {/* Full-bleed edge-to-edge cinematic video */}
           <video
-            ref={ambientVideoRef}
-            className="gs-hero-ambient-video"
+            ref={heroVideoRef}
+            className="gs-hero-bg-video"
             src={toAssetUrl("/videos/reels/nss_camp_served_not_flexed.mp4")}
             poster={toAssetUrl("/videos/reels/nss_camp_served_not_flexed_poster.jpg")}
             autoPlay
             loop
-            muted
+            muted={heroVideoMuted}
             playsInline
             preload="auto"
-            aria-hidden="true"
           />
 
-          <div className="gs-hero-ambient-overlay" />
-
-          {/* Central 100% uncropped HD main video */}
-          <div className="gs-hero-video-container">
-            <video
-              ref={heroVideoRef}
-              className="gs-hero-bg-video"
-              src={toAssetUrl("/videos/reels/nss_camp_served_not_flexed.mp4")}
-              poster={toAssetUrl("/videos/reels/nss_camp_served_not_flexed_poster.jpg")}
-              autoPlay
-              loop
-              muted={heroVideoMuted}
-              playsInline
-              preload="auto"
-            />
-          </div>
-
+          {/* Cinematic Cinema Vignette Overlay */}
           <div className="gs-hero-overlay" />
 
-          {/* Left Flank Card (Widescreen Desktop) */}
-          <div className="gs-hero-flank gs-hero-flank-left">
-            <span className="gs-hero-flank-title">
-              <FaMapMarkerAlt /> Jamgaon Village
-            </span>
-            <span className="gs-hero-flank-desc">Adopted Rural Base Since 2008</span>
-          </div>
-
-          {/* Right Flank Card (Widescreen Desktop) */}
-          <div className="gs-hero-flank gs-hero-flank-right">
-            <span className="gs-hero-flank-title">
-              <FaMedal /> 18-Year Legacy
-            </span>
-            <span className="gs-hero-flank-desc">60+ Engineers · Unit A-70</span>
-          </div>
-
+          {/* Bottom-anchored Title, Tagline & Controls */}
           <div className="gs-hero-content" data-aos="fade-up">
-            <div className="gs-hero-eyebrow">
-              <span className="gs-hero-badge">★ Flagship Residential Camp · Jamgaon</span>
+            <div className="gs-hero-badge-row">
+              <span className="gs-hero-badge">★ Flagship Residential Camp</span>
+              <span className="gs-hero-sub-badge">NSS VIIT Unit A-70</span>
             </div>
-            <h1>Gram-Setu 2026</h1>
+            <h1 className="gs-hero-title">GRAM-SETU 2026</h1>
             <p className="gs-hero-tagline">
               Connecting Engineering, Empathy, and Rural Transformation
             </p>
-            <div className="gs-hero-meta">
+            <div className="gs-hero-meta-strip">
               <span><FaMapMarkerAlt /> Jamgaon Village, Mulshi, Pune</span>
               <span><FaCalendarAlt /> 21–28 January 2026</span>
+              <span><FaMedal /> 18-Year Rural Legacy (Since 2008)</span>
             </div>
 
             {/* Video sound & fullscreen controls */}
