@@ -610,28 +610,14 @@ const GramSetu = () => {
                   <span>Water conservation, drought elimination</span>
                 </div>
               </div>
-              <div style={{ marginTop: '2.5rem' }}>
+              <div className="gs-alumni-wrap">
                 <a
                   href="https://www.linkedin.com/posts/alumni-relations-of-vishwakarma-institutes-8ab33238b_padmashree-leadership-gramsetu2026-ugcPost-7427905347924672512-xytp"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="gs-alumni-endorsement"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.9rem',
-                    padding: '0.9rem 1.8rem',
-                    background: 'rgba(10, 102, 194, 0.15)',
-                    border: '1px solid rgba(10, 102, 194, 0.5)',
-                    borderRadius: '50px',
-                    color: '#93C5FD',
-                    fontSize: '1.3rem',
-                    fontWeight: '600',
-                    textDecoration: 'none',
-                    transition: 'all 0.2s ease',
-                  }}
                 >
-                  <FaLinkedin style={{ fontSize: '1.7rem', color: '#60A5FA' }} />
+                  <FaLinkedin className="gs-alumni-icon" />
                   <span>Featured by Alumni Relations of Vishwakarma Institutes on LinkedIn ↗</span>
                 </a>
               </div>
@@ -693,49 +679,57 @@ const GramSetu = () => {
         </section>
 
         {/* ── STATE PRESS & NEWSPAPER COVERAGE ── */}
-        <section className="gs-press-coverage" data-aos="fade-up" style={{ padding: '6rem 2rem', background: '#0F172A', color: '#FFFFFF', textAlign: 'center' }}>
-          <div className="gs-section-head" style={{ maxWidth: '85rem', margin: '0 auto 4rem' }}>
-            <span className="label-tag" style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#F59E0B', border: '1px solid rgba(245, 158, 11, 0.3)', padding: '0.6rem 1.6rem', borderRadius: '30px', fontSize: '1.25rem', fontWeight: 700, textTransform: 'uppercase' }}>
-              State Media Recognition
-            </span>
-            <h2 style={{ fontSize: '3.2rem', fontWeight: 900, color: '#FFFFFF', marginTop: '1.5rem', marginBottom: '1rem' }}>
-              Gram-Setu in the Headlines
-            </h2>
-            <p style={{ color: '#94A3B8', fontSize: '1.5rem', lineHeight: 1.7 }}>
+        <section className="gs-press-coverage" data-aos="fade-up">
+          <div className="gs-press-head">
+            <span className="gs-press-tag">State Media Recognition</span>
+            <h2>Gram-Setu in the Headlines</h2>
+            <p>
               Published in Nashik Express and state Marathi dailies, documenting our volunteers&apos; transformative community Shramdaan at Jamgaon
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(32rem, 1fr))', gap: '3rem', maxWidth: '110rem', margin: '0 auto', textAlign: 'left' }}>
-            <div style={{ background: '#1E293B', borderRadius: '18px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 12px 32px rgba(0,0,0,0.3)' }}>
-              <div style={{ height: '32rem', overflow: 'hidden', background: '#0B1120' }}>
-                <img src={PHOTOS.news1} alt="Nashik Express Gram-Setu News" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" decoding="async" />
+          <div className="gs-press-grid">
+            <div className="gs-press-card">
+              <div className="gs-press-media">
+                <img
+                  src={PHOTOS.news1}
+                  alt="Nashik Express Gram-Setu News"
+                  className="gs-press-img"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div style={{ padding: '2.4rem' }}>
-                <span style={{ color: '#F59E0B', fontSize: '1.2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04rem' }}>
+              <div className="gs-press-body">
+                <span className="gs-press-outlet amber">
                   नाशिक एक्सप्रेस (Nashik Express)
                 </span>
-                <h3 style={{ color: '#FFFFFF', fontSize: '1.9rem', fontWeight: 800, margin: '0.8rem 0 1rem', lineHeight: 1.4 }}>
+                <h3 className="gs-press-headline">
                   VIIT च्या &apos;एनएसएस&apos; शिबिरातून जामगावचा कायापालट: विद्यार्थ्यांचा &apos;श्रमयज्ञ&apos;
                 </h3>
-                <p style={{ color: '#94A3B8', fontSize: '1.35rem', lineHeight: 1.6 }}>
+                <p className="gs-press-summary">
                   Detailed front-page coverage on Padmashree Popatrao Pawar Sir&apos;s keynote visit, school renovation at Disali, Granth Dindi, and comprehensive rural health checkup camps.
                 </p>
               </div>
             </div>
 
-            <div style={{ background: '#1E293B', borderRadius: '18px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 12px 32px rgba(0,0,0,0.3)' }}>
-              <div style={{ height: '32rem', overflow: 'hidden', background: '#0B1120' }}>
-                <img src={PHOTOS.news2} alt="NSS Camp News Coverage" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" decoding="async" />
+            <div className="gs-press-card">
+              <div className="gs-press-media">
+                <img
+                  src={PHOTOS.news2}
+                  alt="NSS Camp News Coverage"
+                  className="gs-press-img"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div style={{ padding: '2.4rem' }}>
-                <span style={{ color: '#10B981', fontSize: '1.2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04rem' }}>
+              <div className="gs-press-body">
+                <span className="gs-press-outlet emerald">
                   दैनिक वृत्तपत्र (Regional Daily)
                 </span>
-                <h3 style={{ color: '#FFFFFF', fontSize: '1.9rem', fontWeight: 800, margin: '0.8rem 0 1rem', lineHeight: 1.4 }}>
+                <h3 className="gs-press-headline">
                   राष्ट्रीय सेवा योजनेच्या शिबीरात विद्यार्थ्यांची समाजसेवा
                 </h3>
-                <p style={{ color: '#94A3B8', fontSize: '1.35rem', lineHeight: 1.6 }}>
+                <p className="gs-press-summary">
                   Commending student leaders Sushant Gade, Namit More, Prem Shinde, Omkar Sakore, Utkarsha Ahire, Pratiksha Deshmukh, and faculty coordinators for 7 days of grassroots impact.
                 </p>
               </div>
@@ -966,31 +960,15 @@ const GramSetu = () => {
                   />
                 </div>
                 <div className="gs-extra-info">
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.8rem', gap: '0.8rem', flexWrap: 'wrap' }}>
-                    <span style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.4rem',
-                      background: 'rgba(245, 158, 11, 0.18)',
-                      color: '#F59E0B',
-                      border: '1px solid rgba(245, 158, 11, 0.4)',
-                      padding: '0.3rem 0.9rem',
-                      borderRadius: '20px',
-                      fontSize: '1.1rem',
-                      fontWeight: 700
-                    }}>
+                  <div className="gs-extra-badge-row">
+                    <span className="gs-extra-badge">
                       ★ Camp Hero Background
                     </span>
                     <a
                       href="https://www.instagram.com/reel/DThn17diOxK/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        color: '#93C5FD',
-                        fontSize: '1.2rem',
-                        fontWeight: 600,
-                        textDecoration: 'none'
-                      }}
+                      className="gs-extra-insta-link"
                     >
                       View on Instagram ↗
                     </a>
