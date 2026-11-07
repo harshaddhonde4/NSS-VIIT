@@ -477,7 +477,7 @@ const GramSetu = () => {
               <span><FaCalendarAlt /> 21–28 January 2026</span>
             </div>
 
-            {/* Video sound, fullscreen & source credit pill */}
+            {/* Video sound & fullscreen controls */}
             <div className="gs-hero-video-bar">
               <button
                 type="button"
@@ -501,17 +501,6 @@ const GramSetu = () => {
                 <FaExpand />
                 <span>Fullscreen</span>
               </button>
-              <a
-                href="https://www.instagram.com/reel/DThn17diOxK/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="gs-hero-video-credit"
-                onClick={(e) => e.stopPropagation()}
-                title="Watch full documentary reel on Instagram"
-              >
-                <FaInstagram />
-                <span>@vit_k_diariies ↗</span>
-              </a>
             </div>
           </div>
         </section>
@@ -956,19 +945,6 @@ const GramSetu = () => {
                 </div>
                 <div className="gs-extra-info">
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.8rem', gap: '0.8rem', flexWrap: 'wrap' }}>
-                    <span style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      background: 'rgba(236, 72, 153, 0.15)',
-                      color: '#F472B6',
-                      padding: '0.3rem 0.9rem',
-                      borderRadius: '20px',
-                      fontSize: '1.15rem',
-                      fontWeight: 700
-                    }}>
-                      <FaInstagram /> @vit_k_diariies
-                    </span>
                     <span style={{
                       display: 'inline-flex',
                       alignItems: 'center',
