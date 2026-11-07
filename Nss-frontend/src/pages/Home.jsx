@@ -217,38 +217,38 @@ const Home = () => {
         <div className="gallery-carousel-wrap" data-aos="zoom-in">
           <Carousel className="gallery-carousel" interval={3000} slide controls indicators>
             <Carousel.Item>
-              <img className="d-block w-100 gallery-img" src={img1} alt="NSS VIIT Pune Activity" loading="lazy" decoding="async" />
+              <img className="d-block w-100 gallery-img" src={img1} alt="Gram-Setu Annual Special Residential Camp" loading="lazy" decoding="async" />
               <Carousel.Caption>
-                <h3>Community Outreach</h3>
-                <p>NSS VIIT Pune volunteers engaging with local communities</p>
+                <h3>Gram-Setu Annual Camp</h3>
+                <p>7-day residential rural immersion, shramdaan &amp; community transformation at Jamgaon</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100 gallery-img" src={img2} alt="NSS VIIT Pune Event" loading="lazy" decoding="async" />
+              <img className="d-block w-100 gallery-img" src={img2} alt="Annual Mega Blood Donation Camp" loading="lazy" decoding="async" />
               <Carousel.Caption>
-                <h3>Social Service</h3>
-                <p>Making a difference through collective action</p>
+                <h3>Mega Blood Donation Camp</h3>
+                <p>Annual voluntary blood donation drive saving lives across Pune communities</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100 gallery-img" src={img3} alt="NSS VIIT Pune Camp" loading="lazy" decoding="async" />
+              <img className="d-block w-100 gallery-img" src={img3} alt="Special Police Officer (SPO) Ganesh Festival Bandobast" loading="lazy" decoding="async" />
               <Carousel.Caption>
-                <h3>Annual Camp</h3>
-                <p>A week of service, learning, and transformation</p>
+                <h3>Special Police Officer (SPO) Duty</h3>
+                <p>Volunteers assisting Pune City Police &amp; citizens during Ganesh Festival</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100 gallery-img" src={img4} alt="NSS VIIT Pune Program" loading="lazy" decoding="async" />
+              <img className="d-block w-100 gallery-img" src={img4} alt="Swachhata Hi Seva Cleanliness Campaign" loading="lazy" decoding="async" />
               <Carousel.Caption>
-                <h3>Programs &amp; Drives</h3>
-                <p>Blood donation, plantation, and awareness campaigns</p>
+                <h3>Swachhata Hi Seva Drive</h3>
+                <p>Campus &amp; community sanitation drive for clean surroundings and plastic eradication</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100 gallery-img" src={img5} alt="NSS VIIT Pune Testimonial" loading="lazy" decoding="async" />
+              <img className="d-block w-100 gallery-img" src={img5} alt="Independence Day Celebration at VIIT Campus" loading="lazy" decoding="async" />
               <Carousel.Caption>
-                <h3>Volunteer Testimonials</h3>
-                <p>Stories of growth, service, and impact</p>
+                <h3>Independence Day Celebration</h3>
+                <p>Ceremonial guard of honor, parade march-past &amp; national service tribute</p>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>

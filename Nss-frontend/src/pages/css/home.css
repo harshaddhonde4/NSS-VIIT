@@ -334,7 +334,15 @@
 
 /* Carousel Indicators */
 .gallery-carousel .carousel-indicators {
-  bottom: 1.5rem;
+  position: absolute;
+  right: 3rem;
+  bottom: 2.2rem;
+  left: auto;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 5;
 }
 
 .gallery-carousel .carousel-indicators button {
@@ -343,7 +351,7 @@
   border-radius: 50%;
   border: 2px solid rgba(255,255,255,0.8);
   background: transparent;
-  margin: 0 4px;
+  margin: 0;
   opacity: 0.6;
   transition: all 0.3s ease;
 }
@@ -352,32 +360,36 @@
   background: #F59E0B;
   border-color: #F59E0B;
   opacity: 1;
-  transform: scale(1.2);
+  transform: scale(1.25);
 }
 
 /* Carousel Captions */
 .gallery-carousel .carousel-caption {
-  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  background: linear-gradient(to top, rgba(10, 17, 40, 0.92) 0%, rgba(10, 17, 40, 0.62) 60%, transparent 100%);
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 4rem 2.5rem 2.5rem;
+  padding: 4.5rem 3rem 2.2rem;
   text-align: left;
+  z-index: 2;
 }
 
 .gallery-carousel .carousel-caption h3 {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   font-weight: 800;
   font-family: "Inter", sans-serif;
   color: #FFFFFF;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .gallery-carousel .carousel-caption p {
-  font-size: 1.4rem;
-  color: rgba(255,255,255,0.85);
+  font-size: 1.45rem;
+  color: rgba(255, 255, 255, 0.92);
   text-align: left;
   margin: 0;
+  max-width: calc(100% - 140px);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -889,6 +901,10 @@
   .gsb-stats strong { font-size: 2.4rem; }
   .pillars-section { padding: 5rem 1.5rem; }
   .pillars-inner h2 { font-size: 2.6rem; }
+  .gallery-carousel .carousel-caption { padding: 3rem 1.8rem 3.5rem; }
+  .gallery-carousel .carousel-caption h3 { font-size: 1.8rem; }
+  .gallery-carousel .carousel-caption p { font-size: 1.25rem; max-width: 100%; }
+  .gallery-carousel .carousel-indicators { right: 0; left: 0; bottom: 1.2rem; justify-content: center; }
 }
 
 @media (max-width: 520px) {
