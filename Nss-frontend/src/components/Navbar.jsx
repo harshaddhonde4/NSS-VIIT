@@ -79,23 +79,25 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className="mobile-social-wrap">
-            <span className="mobile-social-label">Connect With Us</span>
-            <div className="mobile-social-icons">
-              <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Facebook">
-                <FaFacebookF className="facebook" />
-              </a>
-              <a href="https://www.instagram.com/nss.a_70/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
-                <FaInstagram className="instagram" />
-              </a>
-              <a href="https://www.youtube.com/@nssviit8764" target="_blank" rel="noreferrer" aria-label="NSS VIIT YouTube">
-                <FaYoutube className="youtube" />
-              </a>
-              <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer" aria-label="NSS VIIT LinkedIn">
-                <FaLinkedinIn className="linkedin" />
-              </a>
+          {showMediaIcons && (
+            <div className="mobile-social-wrap">
+              <span className="mobile-social-label">Connect With Us</span>
+              <div className="mobile-social-icons">
+                <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Facebook">
+                  <FaFacebookF className="facebook" />
+                </a>
+                <a href="https://www.instagram.com/nss.a_70/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
+                  <FaInstagram className="instagram" />
+                </a>
+                <a href="https://www.youtube.com/@nssviit8764" target="_blank" rel="noreferrer" aria-label="NSS VIIT YouTube">
+                  <FaYoutube className="youtube" />
+                </a>
+                <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer" aria-label="NSS VIIT LinkedIn">
+                  <FaLinkedinIn className="linkedin" />
+                </a>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div className="social-media">
@@ -106,7 +108,7 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/nss.a_70/" target="_blank" rel="noreferrer">
+              <a href="https://www.instagram.com/nss.a_70/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
                 <FaInstagram className="instagram" />
               </a>
             </li>
