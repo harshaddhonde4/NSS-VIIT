@@ -294,6 +294,23 @@ const GramSetu = () => {
     }
   }, []);
 
+  const handleToggleFullscreen = useCallback((e) => {
+    e.stopPropagation();
+    if (heroVideoRef.current) {
+      if (!document.fullscreenElement) {
+        if (heroVideoRef.current.requestFullscreen) {
+          heroVideoRef.current.requestFullscreen();
+        } else if (heroVideoRef.current.webkitRequestFullscreen) {
+          heroVideoRef.current.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+  }, []);
+
   useEffect(() => {
     const video = heroVideoRef.current;
     if (!video) return;
@@ -422,8 +439,19 @@ const GramSetu = () => {
     <>
       <div className="gram-setu-page">
 
-        {/* ── HERO BANNER WITH BACKGROUND VIDEO ── */}
-        <section className="gs-hero">
+        {/* ── HERO BANNER WITH WHOLE-FRAME BACKGROUND VIDEO ── */}
+        <section
+          className="gs-hero"
+          onClick={() => {
+            if (heroVideoMuted && heroVideoRef.current) {
+              heroVideoRef.current.muted = false;
+              heroVideoRef.current.volume = 1.0;
+              setHeroVideoMuted(false);
+            }
+          }}
+          title={heroVideoMuted ? "Click anywhere to turn on audio" : undefined}
+        >
+          <div className="gs-hero-ambient" />
           <video
             ref={heroVideoRef}
             className="gs-hero-bg-video"
@@ -449,22 +477,36 @@ const GramSetu = () => {
               <span><FaCalendarAlt /> 21–28 January 2026</span>
             </div>
 
-            {/* Video sound & source credit pill */}
+            {/* Video sound, fullscreen & source credit pill */}
             <div className="gs-hero-video-bar">
               <button
                 type="button"
                 className={`gs-hero-video-toggle ${!heroVideoMuted ? 'active-audio' : ''}`}
-                onClick={toggleHeroSound}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleHeroSound();
+                }}
                 aria-label={heroVideoMuted ? "Turn on audio" : "Mute audio"}
               >
                 {!heroVideoMuted ? <FaVolumeUp /> : <FaVolumeMute />}
                 <span>{!heroVideoMuted ? "🔊 Audio: ON" : "🔇 Tap for Audio"}</span>
+              </button>
+              <button
+                type="button"
+                className="gs-hero-fullscreen-btn"
+                onClick={handleToggleFullscreen}
+                aria-label="View full documentary fullscreen"
+                title="Watch full documentary in fullscreen"
+              >
+                <FaExpand />
+                <span>Fullscreen</span>
               </button>
               <a
                 href="https://www.instagram.com/reel/DThn17diOxK/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gs-hero-video-credit"
+                onClick={(e) => e.stopPropagation()}
                 title="Watch full documentary reel on Instagram"
               >
                 <FaInstagram />
