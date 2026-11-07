@@ -5,7 +5,6 @@ import './css/GramSetu.css';
 import {
   FaMapMarkerAlt,
   FaCalendarAlt,
-  FaUsers,
   FaMedal,
   FaCamera,
   FaLeaf,
@@ -281,21 +280,55 @@ const GramSetu = () => {
   const [reelDisplayMode, setReelDisplayMode] = useState('player'); // 'player' or 'embed'
   const theaterVideoRef = useRef(null);
   const heroVideoRef = useRef(null);
-  const [heroVideoMuted, setHeroVideoMuted] = useState(true);
+  const [heroVideoMuted, setHeroVideoMuted] = useState(false);
 
   const toggleHeroSound = useCallback(() => {
     if (heroVideoRef.current) {
       const nextMuted = !heroVideoRef.current.muted;
       heroVideoRef.current.muted = nextMuted;
+      if (!nextMuted) {
+        heroVideoRef.current.volume = 1.0;
+        heroVideoRef.current.play().catch(() => {});
+      }
       setHeroVideoMuted(nextMuted);
     }
   }, []);
 
   useEffect(() => {
-    if (heroVideoRef.current) {
-      heroVideoRef.current.defaultMuted = true;
-      heroVideoRef.current.muted = true;
-      heroVideoRef.current.play().catch(() => {});
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    // Attempt unmuted playback first
+    video.muted = false;
+    video.volume = 1.0;
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setHeroVideoMuted(false);
+        })
+        .catch(() => {
+          // Browser requires user interaction for audio -> play muted, then unmute on first gesture
+          video.muted = true;
+          setHeroVideoMuted(true);
+          video.play().catch(() => {});
+
+          const handleFirstInteraction = () => {
+            if (heroVideoRef.current) {
+              heroVideoRef.current.muted = false;
+              heroVideoRef.current.volume = 1.0;
+              setHeroVideoMuted(false);
+            }
+            window.removeEventListener('click', handleFirstInteraction);
+            window.removeEventListener('touchstart', handleFirstInteraction);
+            window.removeEventListener('keydown', handleFirstInteraction);
+          };
+
+          window.addEventListener('click', handleFirstInteraction, { once: true });
+          window.addEventListener('touchstart', handleFirstInteraction, { once: true });
+          window.addEventListener('keydown', handleFirstInteraction, { once: true });
+        });
     }
   }, []);
 
@@ -390,7 +423,7 @@ const GramSetu = () => {
       <div className="gram-setu-page">
 
         {/* ── HERO BANNER WITH BACKGROUND VIDEO ── */}
-        <section className="gs-hero" style={{ backgroundImage: `url(${PHOTOS.hero})` }}>
+        <section className="gs-hero">
           <video
             ref={heroVideoRef}
             className="gs-hero-bg-video"
@@ -404,34 +437,28 @@ const GramSetu = () => {
           />
           <div className="gs-hero-overlay" />
           <div className="gs-hero-content" data-aos="fade-up">
-            <div className="gs-hero-eyebrow" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
-              <span className="gs-hero-badge">★ Flagship Residential Camp</span>
-              <span className="gs-hero-unit">Unit A-70 (2008–2026) · Historic Final Camp</span>
-              <a href="https://swd.vit.edu/nss/nss.html" target="_blank" rel="noopener noreferrer" style={{ background: 'rgba(59, 130, 246, 0.25)', border: '1px solid rgba(59, 130, 246, 0.5)', color: '#93C5FD', padding: '0.4rem 1.2rem', borderRadius: '20px', fontSize: '1.25rem', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                Legacy Continues under NSS VIT Unit A-65 ↗
-              </a>
+            <div className="gs-hero-eyebrow">
+              <span className="gs-hero-badge">★ Flagship Residential Camp · Jamgaon</span>
             </div>
             <h1>Gram-Setu 2026</h1>
             <p className="gs-hero-tagline">
               Connecting Engineering, Empathy, and Rural Transformation
             </p>
             <div className="gs-hero-meta">
-              <span><FaCalendarAlt /> 21–28 January 2026</span>
               <span><FaMapMarkerAlt /> Jamgaon Village, Mulshi, Pune</span>
-              <span><FaUsers /> 60+ Engineering Volunteers</span>
-              <span><FaMedal /> 7 Days of Service</span>
+              <span><FaCalendarAlt /> 21–28 January 2026</span>
             </div>
 
             {/* Video sound & source credit pill */}
             <div className="gs-hero-video-bar">
               <button
                 type="button"
-                className="gs-hero-video-toggle"
+                className={`gs-hero-video-toggle ${!heroVideoMuted ? 'active-audio' : ''}`}
                 onClick={toggleHeroSound}
-                aria-label={heroVideoMuted ? "Unmute camp video" : "Mute camp video"}
+                aria-label={heroVideoMuted ? "Turn on audio" : "Mute audio"}
               >
-                {heroVideoMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-                <span>{heroVideoMuted ? "Sound: Off (Click to Unmute)" : "Sound: On"}</span>
+                {!heroVideoMuted ? <FaVolumeUp /> : <FaVolumeMute />}
+                <span>{!heroVideoMuted ? "🔊 Audio: ON" : "🔇 Tap for Audio"}</span>
               </button>
               <a
                 href="https://www.instagram.com/reel/DThn17diOxK/"
@@ -441,7 +468,7 @@ const GramSetu = () => {
                 title="Watch full documentary reel on Instagram"
               >
                 <FaInstagram />
-                <span>Featured Reel: &quot;Served, Not Flexed&quot; · @vit_k_diariies ↗</span>
+                <span>@vit_k_diariies ↗</span>
               </a>
             </div>
           </div>
