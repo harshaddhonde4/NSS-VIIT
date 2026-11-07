@@ -591,7 +591,7 @@ const GramSetu = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(32rem, 1fr))', gap: '3rem', maxWidth: '110rem', margin: '0 auto', textAlign: 'left' }}>
             <div style={{ background: '#1E293B', borderRadius: '18px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 12px 32px rgba(0,0,0,0.3)' }}>
               <div style={{ height: '32rem', overflow: 'hidden', background: '#0B1120' }}>
-                <img src={PHOTOS.news1} alt="Nashik Express Gram-Setu News" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
+                <img src={PHOTOS.news1} alt="Nashik Express Gram-Setu News" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" decoding="async" />
               </div>
               <div style={{ padding: '2.4rem' }}>
                 <span style={{ color: '#F59E0B', fontSize: '1.2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04rem' }}>
@@ -608,7 +608,7 @@ const GramSetu = () => {
 
             <div style={{ background: '#1E293B', borderRadius: '18px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 12px 32px rgba(0,0,0,0.3)' }}>
               <div style={{ height: '32rem', overflow: 'hidden', background: '#0B1120' }}>
-                <img src={PHOTOS.news2} alt="NSS Camp News Coverage" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
+                <img src={PHOTOS.news2} alt="NSS Camp News Coverage" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" decoding="async" />
               </div>
               <div style={{ padding: '2.4rem' }}>
                 <span style={{ color: '#10B981', fontSize: '1.2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04rem' }}>
@@ -1215,6 +1215,7 @@ const GramSetu = () => {
               src={toAssetUrl(activePhotos[lightboxIndex].src)}
               alt={activePhotos[lightboxIndex].title}
               className="lightbox-img"
+              decoding="async"
             />
             {activePhotos.length > 1 && (
               <>

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import './css/Event.css';
+import { toAssetUrl } from '../utils/assetHelper';
 import { Link } from 'react-router-dom';
 import { FaCamera, FaCalendarAlt, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
 
@@ -17,7 +18,7 @@ const EventCard = ({ name, date, venue, imgSrc, text }) => {
     ? imgSrc
     : (imgSrc ? imgSrc.split(',') : []);
 
-  const imageSource = photosList.length > 0 ? photosList[0] : '/images/Events/cleanliness/1.jpg';
+  const imageSource = photosList.length > 0 ? photosList[0] : '/images/Events/cleanliness/1.webp';
   const photoCount = photosList.length;
 
   const eventUrl = `/events/singleevent?name=${encodeURIComponent(name)}`;
@@ -27,10 +28,12 @@ const EventCard = ({ name, date, venue, imgSrc, text }) => {
       <Link to={eventUrl} className="event-img-link" title={`View gallery and brief for ${name}`}>
         <img
           className="event-image"
-          src={imageSource}
+          src={toAssetUrl(imageSource)}
           alt={name}
           loading="lazy"
           decoding="async"
+          width="380"
+          height="240"
         />
         <div className="event-card-media-overlay">
           <div className="event-card-badges">

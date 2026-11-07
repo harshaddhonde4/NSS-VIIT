@@ -51,7 +51,7 @@ const About = () => {
           <div className="about-grid" data-aos="fade-up">
             <div className="img">
               <img
-                src="https://res.cloudinary.com/diyw5ilre/image/upload/v1715024956/nss/Events/IMG_3285_stbwpb.jpg"
+                src="https://res.cloudinary.com/diyw5ilre/image/upload/f_auto,q_auto:eco,w_800/v1715024956/nss/Events/IMG_3285_stbwpb.jpg"
                 className="about-img"
                 alt="NSS VIIT Pune volunteers"
                 loading="lazy"
@@ -204,7 +204,7 @@ const About = () => {
             </div>
             <div className="img">
               <img
-                src="https://res.cloudinary.com/diyw5ilre/image/upload/v1715024431/nss/Events/IMG_20230815_130457_syk6ka.jpg"
+                src="https://res.cloudinary.com/diyw5ilre/image/upload/f_auto,q_auto:eco,w_800/v1715024431/nss/Events/IMG_20230815_130457_syk6ka.jpg"
                 className="about-img"
                 alt="NSS VIIT Pune volunteers in action"
                 loading="lazy"
@@ -319,7 +319,7 @@ const About = () => {
             </div>
             <div className="about-section-events-img-1 img">
               <img
-                src="https://res.cloudinary.com/diyw5ilre/image/upload/v1715019790/nss/Events/1_trmyhl.jpg"
+                src="https://res.cloudinary.com/diyw5ilre/image/upload/f_auto,q_auto:eco,w_800/v1715019790/nss/Events/1_trmyhl.jpg"
                 className="about-img"
                 alt="Gram-Setu NSS Residential Camp"
                 loading="lazy"
@@ -333,7 +333,7 @@ const About = () => {
           <div className="about-grid" data-aos="fade-up">
             <div className="about-section-events-img-2 img">
               <img
-                src="https://res.cloudinary.com/diyw5ilre/image/upload/v1715023958/nss/Events/2_dkekcc.jpg"
+                src="https://res.cloudinary.com/diyw5ilre/image/upload/f_auto,q_auto:eco,w_800/v1715023958/nss/Events/2_dkekcc.jpg"
                 className="about-img"
                 alt="Rakta-Setu Blood Donation Drive"
                 loading="lazy"

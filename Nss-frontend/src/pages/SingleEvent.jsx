@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
+import { toAssetUrl } from '../utils/assetHelper';
 import { eventsData } from '../data/eventsData';
 import {
   FaArrowLeft,
@@ -175,14 +176,14 @@ const SingleEvent = () => {
                   {/* Ambient Blurred Backdrop for studio presentation without cropping */}
                   <div
                     className="singleevent-stage-bg"
-                    style={{ backgroundImage: `url(${img[activeIndex]})` }}
+                    style={{ backgroundImage: `url(${toAssetUrl(img[activeIndex])})` }}
                     aria-hidden="true"
                   />
 
                   {/* Fully Visible Uncropped Photograph */}
                   <img
                     className="singleevent-stage-img"
-                    src={img[activeIndex]}
+                    src={toAssetUrl(img[activeIndex])}
                     alt={`${name} photograph ${activeIndex + 1}`}
                     loading="eager"
                     decoding="async"
@@ -240,7 +241,7 @@ const SingleEvent = () => {
                         aria-label={`Select photograph ${index + 1}`}
                       >
                         <img
-                          src={thumbSrc}
+                          src={toAssetUrl(thumbSrc)}
                           alt={`${name} thumbnail ${index + 1}`}
                           loading="lazy"
                           decoding="async"
@@ -310,7 +311,7 @@ const SingleEvent = () => {
                       <div className="grid-card-media">
                         <img
                           className="grid-card-img"
-                          src={imageSrc}
+                          src={toAssetUrl(imageSrc)}
                           alt={`${name} field record ${index + 1}`}
                           loading="lazy"
                           decoding="async"
@@ -356,9 +357,10 @@ const SingleEvent = () => {
 
             <div className="lightbox-media-wrapper">
               <img
-                src={img[lightboxIndex]}
+                src={toAssetUrl(img[lightboxIndex])}
                 alt={`${name} enlarged preview ${lightboxIndex + 1}`}
                 className="lightbox-img"
+                decoding="async"
               />
             </div>
 

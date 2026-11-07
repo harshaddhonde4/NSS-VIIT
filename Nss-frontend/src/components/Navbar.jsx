@@ -3,6 +3,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/f
 import { FiMenu, FiX } from "react-icons/fi";
 import "./navbar.css";
 import { NavLink } from "react-router-dom";
+import { toAssetUrl } from "../utils/assetHelper";
 
 const Navbar = () => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 60);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -40,9 +41,12 @@ const Navbar = () => {
         <div className="logo">
           <NavLink to="/" className="nav-brand-link">
             <img
-              src="/images/img/nss-logo.png"
+              src={toAssetUrl("/images/img/nss-logo.png")}
               alt="NSS VIIT Logo"
               className="nav-logo-img"
+              width="45"
+              height="45"
+              decoding="async"
             />
             <span className="brand-text">
               NSS VIIT <span className="brand-accent">Pune</span>

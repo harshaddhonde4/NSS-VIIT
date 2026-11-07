@@ -1,5 +1,6 @@
 import RoleGroup from "../components/RoleGroup";
 import TeamCard from "./TeamCard";
+import { toAssetUrl } from "../utils/assetHelper";
 import CoreTeamReel from "../components/CoreTeamReel";
 import "./css/Team.css";
 import {
@@ -353,7 +354,7 @@ const Team_25_26 = () => {
       }}>
         <div className="legacy-card" style={{ background: '#FFFFFF', borderRadius: '18px', overflow: 'hidden', boxShadow: '0 8px 30px rgba(0,0,0,0.06)', border: '1px solid #E2E8F0' }}>
           <div style={{ height: '32rem', overflow: 'hidden', background: '#0F172A' }}>
-            <img src="/images/featured_highlights/farewell.jpeg" alt="NSS VIIT Core Team Farewell" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
+            <img src={toAssetUrl("/images/featured_highlights/farewell.jpeg")} alt="NSS VIIT Core Team Farewell" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" decoding="async" />
           </div>
           <div style={{ padding: '2rem' }}>
             <h3 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#0A1128', marginBottom: '0.6rem' }}>The Perfect Farewell</h3>
@@ -365,7 +366,7 @@ const Team_25_26 = () => {
 
         <div className="legacy-card" style={{ background: '#FFFFFF', borderRadius: '18px', overflow: 'hidden', boxShadow: '0 8px 30px rgba(0,0,0,0.06)', border: '1px solid #E2E8F0' }}>
           <div style={{ height: '32rem', overflow: 'hidden', background: '#0F172A' }}>
-            <img src="/images/featured_highlights/sushant_gade_signing_off_2.jpeg" alt="Signed NSS VIIT A-70 Official Flag" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
+            <img src={toAssetUrl("/images/featured_highlights/sushant_gade_signing_off_2.jpeg")} alt="Signed NSS VIIT A-70 Official Flag" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" decoding="async" />
           </div>
           <div style={{ padding: '2rem' }}>
             <h3 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#0A1128', marginBottom: '0.6rem' }}>The Heartbeat of Unit A-70</h3>
@@ -377,7 +378,7 @@ const Team_25_26 = () => {
 
         <div className="legacy-card" style={{ background: '#FFFFFF', borderRadius: '18px', overflow: 'hidden', boxShadow: '0 8px 30px rgba(0,0,0,0.06)', border: '1px solid #E2E8F0' }}>
           <div style={{ height: '32rem', overflow: 'hidden', background: '#0F172A' }}>
-            <img src="/images/featured_highlights/sushant_gade_signing_off_.jpeg" alt="President Sushant Anil Gade Signing Off" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" />
+            <img src={toAssetUrl("/images/featured_highlights/sushant_gade_signing_off_.jpeg")} alt="President Sushant Anil Gade Signing Off" style={{ width: '100%', height: '100%', objectFit: 'contain' }} loading="lazy" decoding="async" />
           </div>
           <div style={{ padding: '2rem' }}>
             <h3 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#0A1128', marginBottom: '0.6rem' }}>President&apos;s Concluding Address</h3>

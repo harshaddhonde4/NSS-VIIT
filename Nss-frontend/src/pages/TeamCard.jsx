@@ -3,6 +3,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaCrown } from "react-icons/fa";
+import { toAssetUrl } from "../utils/assetHelper";
 
 // Automatically inject high-efficiency WebP/AVIF format and responsive sizing for Cloudinary images
 const optimizeImgUrl = (url) => {
@@ -10,7 +11,7 @@ const optimizeImgUrl = (url) => {
   if (url.includes('res.cloudinary.com') && url.includes('/image/upload/') && !url.includes('f_auto')) {
     return url.replace('/image/upload/', '/image/upload/f_auto,q_auto:eco,w_400,c_limit/');
   }
-  return url;
+  return toAssetUrl(url);
 };
 
 function TeamCard({ name, role, imgSrc, twitter, email, linkedin, highlight }) {
