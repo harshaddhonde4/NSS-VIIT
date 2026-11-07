@@ -19,6 +19,8 @@ import {
   FaPlay,
   FaExpand,
   FaVideo,
+  FaVolumeMute,
+  FaVolumeUp,
 } from 'react-icons/fa';
 import { MdVolunteerActivism, MdWater } from 'react-icons/md';
 import useSEO from '../components/useSEO';
@@ -278,6 +280,24 @@ const GramSetu = () => {
   const [activeReelIndex, setActiveReelIndex] = useState(null);
   const [reelDisplayMode, setReelDisplayMode] = useState('player'); // 'player' or 'embed'
   const theaterVideoRef = useRef(null);
+  const heroVideoRef = useRef(null);
+  const [heroVideoMuted, setHeroVideoMuted] = useState(true);
+
+  const toggleHeroSound = useCallback(() => {
+    if (heroVideoRef.current) {
+      const nextMuted = !heroVideoRef.current.muted;
+      heroVideoRef.current.muted = nextMuted;
+      setHeroVideoMuted(nextMuted);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (heroVideoRef.current) {
+      heroVideoRef.current.defaultMuted = true;
+      heroVideoRef.current.muted = true;
+      heroVideoRef.current.play().catch(() => {});
+    }
+  }, []);
 
   useEffect(() => {
     if (activeReelIndex !== null && theaterVideoRef.current) {
@@ -369,8 +389,19 @@ const GramSetu = () => {
     <>
       <div className="gram-setu-page">
 
-        {/* ── HERO BANNER ── */}
+        {/* ── HERO BANNER WITH BACKGROUND VIDEO ── */}
         <section className="gs-hero" style={{ backgroundImage: `url(${PHOTOS.hero})` }}>
+          <video
+            ref={heroVideoRef}
+            className="gs-hero-bg-video"
+            src={toAssetUrl("/videos/reels/nss_camp_served_not_flexed.mp4")}
+            poster={toAssetUrl("/videos/reels/nss_camp_served_not_flexed_poster.jpg")}
+            autoPlay
+            loop
+            muted={heroVideoMuted}
+            playsInline
+            preload="auto"
+          />
           <div className="gs-hero-overlay" />
           <div className="gs-hero-content" data-aos="fade-up">
             <div className="gs-hero-eyebrow" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
@@ -389,6 +420,29 @@ const GramSetu = () => {
               <span><FaMapMarkerAlt /> Jamgaon Village, Mulshi, Pune</span>
               <span><FaUsers /> 60+ Engineering Volunteers</span>
               <span><FaMedal /> 7 Days of Service</span>
+            </div>
+
+            {/* Video sound & source credit pill */}
+            <div className="gs-hero-video-bar">
+              <button
+                type="button"
+                className="gs-hero-video-toggle"
+                onClick={toggleHeroSound}
+                aria-label={heroVideoMuted ? "Unmute camp video" : "Mute camp video"}
+              >
+                {heroVideoMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+                <span>{heroVideoMuted ? "Sound: Off (Click to Unmute)" : "Sound: On"}</span>
+              </button>
+              <a
+                href="https://www.instagram.com/reel/DThn17diOxK/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gs-hero-video-credit"
+                title="Watch full documentary reel on Instagram"
+              >
+                <FaInstagram />
+                <span>Featured Reel: &quot;Served, Not Flexed&quot; · @vit_k_diariies ↗</span>
+              </a>
             </div>
           </div>
         </section>
@@ -845,6 +899,20 @@ const GramSetu = () => {
                       fontWeight: 700
                     }}>
                       <FaInstagram /> @vit_k_diariies
+                    </span>
+                    <span style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      background: 'rgba(245, 158, 11, 0.18)',
+                      color: '#F59E0B',
+                      border: '1px solid rgba(245, 158, 11, 0.4)',
+                      padding: '0.3rem 0.9rem',
+                      borderRadius: '20px',
+                      fontSize: '1.1rem',
+                      fontWeight: 700
+                    }}>
+                      ★ Camp Hero Background
                     </span>
                     <a
                       href="https://www.instagram.com/reel/DThn17diOxK/"

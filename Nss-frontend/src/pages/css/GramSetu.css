@@ -7,6 +7,7 @@
 .gs-hero {
   min-height: 92vh;
   padding: 11rem 2rem 6rem;
+  background-color: #0A1128;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -17,13 +18,92 @@
   overflow: hidden;
 }
 
+.gs-hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  filter: brightness(0.85) contrast(1.05);
+}
+
 .gs-hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(10, 17, 40, 0.72) 0%, rgba(10, 17, 40, 0.92) 100%),
-              linear-gradient(180deg, rgba(10, 17, 40, 0.82) 0%, rgba(10, 17, 40, 0.58) 50%, rgba(10, 17, 40, 0.95) 100%);
-  backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
+  background: radial-gradient(circle at center, rgba(10, 17, 40, 0.58) 0%, rgba(10, 17, 40, 0.88) 100%),
+              linear-gradient(180deg, rgba(10, 17, 40, 0.72) 0%, rgba(10, 17, 40, 0.38) 50%, rgba(10, 17, 40, 0.94) 100%);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  z-index: 1;
+}
+
+.gs-hero-video-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  margin-top: 2.8rem;
+  flex-wrap: wrap;
+}
+
+.gs-hero-video-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.gs-hero-video-toggle:hover {
+  background: rgba(27, 107, 58, 0.95);
+  border-color: #34D399;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27, 107, 58, 0.45);
+}
+
+.gs-hero-video-toggle svg {
+  font-size: 1.5rem;
+  color: #F59E0B;
+}
+
+.gs-hero-video-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(236, 72, 153, 0.18);
+  border: 1px solid rgba(236, 72, 153, 0.45);
+  color: #F9A8D4;
+  padding: 0.85rem 1.8rem;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.gs-hero-video-credit:hover {
+  background: rgba(236, 72, 153, 0.38);
+  border-color: #EC4899;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.35);
 }
 
 .gs-hero-content {
@@ -809,6 +889,8 @@
   .gs-hero-content h1 { font-size: 4.5rem; }
   .gs-hero-meta { gap: 1.8rem; }
   .gs-hero-meta span { font-size: 1.3rem; }
+  .gs-hero-video-bar { gap: 0.8rem; margin-top: 2rem; }
+  .gs-hero-video-toggle, .gs-hero-video-credit { font-size: 1.15rem; padding: 0.65rem 1.4rem; }
   .gs-pawar-inner { grid-template-columns: 1fr; gap: 3rem; }
   .gs-pawar-photo-col { flex-direction: row; align-items: flex-start; gap: 2rem; }
   .gs-pawar-img-wrap { width: 160px; height: 180px; }
