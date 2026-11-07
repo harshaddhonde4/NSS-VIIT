@@ -880,7 +880,11 @@ const GramSetu = () => {
                 {/* Media Container: Live Video Player or Live Instagram Embed */}
                 <div className="gs-reel-media-wrapper">
                   {reelDisplayMode === 'player' ? (
-                    <div className="gs-reel-video-container">
+                    <div
+                      className="gs-reel-video-container"
+                      style={{ backgroundImage: `url(${toAssetUrl(reel.poster)})` }}
+                    >
+                      <div className="gs-reel-ambient-blur" />
                       <video
                         src={toAssetUrl(reel.videoSrc)}
                         poster={toAssetUrl(reel.poster)}
@@ -954,7 +958,11 @@ const GramSetu = () => {
             </div>
             <div className="gs-extras-grid">
               <div className="gs-extra-card">
-                <div className="gs-extra-video-wrap">
+                <div
+                  className="gs-extra-video-wrap"
+                  style={{ backgroundImage: `url(${toAssetUrl("/videos/reels/gramsetu_camp_announcement_poster.jpg")})` }}
+                >
+                  <div className="gs-extra-ambient-blur" />
                   <video
                     src={toAssetUrl("/videos/reels/gramsetu_camp_announcement.mp4")}
                     poster={toAssetUrl("/videos/reels/gramsetu_camp_announcement_poster.jpg")}
@@ -971,7 +979,11 @@ const GramSetu = () => {
               </div>
 
               <div className="gs-extra-card">
-                <div className="gs-extra-video-wrap">
+                <div
+                  className="gs-extra-video-wrap"
+                  style={{ backgroundImage: `url(${toAssetUrl("/videos/reels/gramsetu_camp_highlight_poster.jpg")})` }}
+                >
+                  <div className="gs-extra-ambient-blur" />
                   <video
                     src={toAssetUrl("/videos/reels/gramsetu_camp_highlight.mp4")}
                     poster={toAssetUrl("/videos/reels/gramsetu_camp_highlight_poster.jpg")}
@@ -988,7 +1000,11 @@ const GramSetu = () => {
               </div>
 
               <div className="gs-extra-card">
-                <div className="gs-extra-video-wrap">
+                <div
+                  className="gs-extra-video-wrap"
+                  style={{ backgroundImage: `url(${toAssetUrl("/videos/reels/nss_camp_served_not_flexed_poster.jpg")})` }}
+                >
+                  <div className="gs-extra-ambient-blur" />
                   <video
                     src={toAssetUrl("/videos/reels/nss_camp_served_not_flexed.mp4")}
                     poster={toAssetUrl("/videos/reels/nss_camp_served_not_flexed_poster.jpg")}
@@ -1302,6 +1318,11 @@ const GramSetu = () => {
       {/* Fullscreen Reel Theater Modal */}
       {activeReelIndex !== null && gramSetuReels[activeReelIndex] && (
         <div className="lightbox-backdrop gs-reel-theater-backdrop" onClick={() => setActiveReelIndex(null)}>
+          {/* Ambient backdrop glow of the active reel poster */}
+          <div
+            className="gs-theater-ambient-backdrop"
+            style={{ backgroundImage: `url(${toAssetUrl(gramSetuReels[activeReelIndex].poster)})` }}
+          />
           <div className="gs-reel-theater-container" onClick={(e) => e.stopPropagation()}>
             <button
               type="button"
@@ -1312,7 +1333,11 @@ const GramSetu = () => {
               <FaTimes />
             </button>
 
-            <div className="gs-reel-theater-player-box">
+            <div
+              className="gs-reel-theater-player-box"
+              style={{ backgroundImage: `url(${toAssetUrl(gramSetuReels[activeReelIndex].poster)})` }}
+            >
+              <div className="gs-theater-ambient-blur" />
               <video
                 ref={theaterVideoRef}
                 key={gramSetuReels[activeReelIndex].videoSrc}
@@ -1370,6 +1395,11 @@ const GramSetu = () => {
       {/* Fullscreen Lightbox Modal */}
       {lightboxIndex !== null && activePhotos[lightboxIndex] && (
         <div className="lightbox-backdrop" onClick={() => setLightboxIndex(null)}>
+          {/* Ambient backdrop glow of the active photo */}
+          <div
+            className="lightbox-ambient-backdrop"
+            style={{ backgroundImage: `url(${toAssetUrl(activePhotos[lightboxIndex].src)})` }}
+          />
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
             <button
               type="button"
