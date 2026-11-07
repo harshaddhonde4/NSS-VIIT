@@ -90,7 +90,7 @@ const CoreTeamReel = () => {
             ref={videoRef}
             src={toAssetUrl("/videos/core_team_reveal.mp4")}
             poster={toAssetUrl("/videos/core_team_reveal_poster.jpg")}
-            preload="metadata"
+            preload="none"
             playsInline
             controls
             onPlay={() => {

@@ -3,12 +3,13 @@ import Carousel from 'react-bootstrap/Carousel';
 import './css/home.css';
 import { Link } from 'react-router-dom';
 import { FaLinkedin, FaInstagram, FaExternalLinkAlt } from 'react-icons/fa';
+import { toAssetUrl } from '../utils/assetHelper';
 
-const img1 = '/images/GramSetu_2026/hero_banner.webp';
-const img2 = '/images/reports/11_Blood_Donation_Camp/img_07.webp';
-const img3 = '/images/reports/6_SPO/img_02.webp';
-const img4 = '/images/reports/9_Swachata_hi_seva/img_02.webp';
-const img5 = '/images/reports/3_Independence_Day_Documentation/img_02.webp';
+const img1 = toAssetUrl('/images/GramSetu_2026/hero_banner.webp');
+const img2 = toAssetUrl('/images/reports/11_Blood_Donation_Camp/img_07.webp');
+const img3 = toAssetUrl('/images/reports/6_SPO/img_02.webp');
+const img4 = toAssetUrl('/images/reports/9_Swachata_hi_seva/img_02.webp');
+const img5 = toAssetUrl('/images/reports/3_Independence_Day_Documentation/img_02.webp');
 
 import History from './History';
 import { useEffect, useState } from 'react';

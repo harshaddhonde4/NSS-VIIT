@@ -708,7 +708,7 @@ const GramSetu = () => {
                         poster={toAssetUrl(reel.poster)}
                         controls
                         playsInline
-                        preload="metadata"
+                        preload="none"
                         className="gs-reel-video-player"
                         aria-label={`${reel.day} Gram-Setu 2026 Video Reel`}
                       />
@@ -782,7 +782,7 @@ const GramSetu = () => {
                     poster={toAssetUrl("/videos/reels/gramsetu_camp_announcement_poster.jpg")}
                     controls
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     className="gs-extra-video"
                   />
                 </div>
@@ -799,7 +799,7 @@ const GramSetu = () => {
                     poster={toAssetUrl("/videos/reels/gramsetu_camp_highlight_poster.jpg")}
                     controls
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     className="gs-extra-video"
                   />
                 </div>
