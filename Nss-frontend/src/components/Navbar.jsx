@@ -85,7 +85,7 @@ const Navbar = () => {
               <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Facebook">
                 <FaFacebookF className="facebook" />
               </a>
-              <a href="https://www.instagram.com/nss.viit.pune/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
+              <a href="https://www.instagram.com/nss.a_70/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
                 <FaInstagram className="instagram" />
               </a>
               <a href="https://www.youtube.com/@nssviit8764" target="_blank" rel="noreferrer" aria-label="NSS VIIT YouTube">
