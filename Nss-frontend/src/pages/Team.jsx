@@ -1,3 +1,4 @@
+import useSEO from '../components/useSEO';
 import { lazy, Suspense, useEffect, useState } from "react";
 import TeamCard from "./TeamCard";
 import "./css/Team.css";
@@ -7,6 +8,13 @@ const Team_23_24 = lazy(() => import("./Team_23-24"));
 const Team_25_26 = lazy(() => import("./Team_25-26"));
 
 const Team = () => {
+  useSEO({
+    title: 'Our Team | NSS VIIT Pune · Leaders & Volunteers',
+    description: 'Meet the dedicated volunteer leaders, core coordinators, and advisory committee of NSS VIIT Pune Unit A-70 across historical tenures.',
+    keywords: 'NSS VIIT Team, NSS VIIT core committee, student coordinators, NSS volunteers Pune',
+    canonical: 'https://nss-viit.vercel.app/team',
+  });
+
   useEffect(() => {
     document.title = "NSS VIIT Pune | Our Team";
   }, []);

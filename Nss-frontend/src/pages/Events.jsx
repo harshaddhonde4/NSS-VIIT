@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import EventCard from './EventCard';
+import useSEO from '../components/useSEO';
 import { eventsData } from '../data/eventsData';
 import { FaSearch, FaTimes, FaFilter } from 'react-icons/fa';
 
@@ -15,6 +16,13 @@ const CATEGORIES = [
 ];
 
 const Events = () => {
+  useSEO({
+    title: 'Events & Initiatives | NSS VIIT Pune · Social Impact Drives',
+    description: 'Explore all flagship events and community drives of NSS VIIT Pune: Gram-Setu Annual Camp, Mega Blood Donation Drives, SPO Ganesh Bandobast, Swachhata Hi Seva, and health checkups.',
+    keywords: 'NSS VIIT Events, Gram Setu camp, Rakta Setu blood donation, SPO duty Pune police, Swachhata Abhiyan',
+    canonical: 'https://nss-viit.vercel.app/events',
+  });
+
   useEffect(() => {
     document.title = 'NSS VIIT Pune | Events & Initiatives';
   }, []);

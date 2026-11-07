@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 import { toAssetUrl } from '../utils/assetHelper';
 import { eventsData } from '../data/eventsData';
+import useSEO from '../components/useSEO';
 import {
   FaArrowLeft,
   FaPrint,
@@ -46,6 +47,14 @@ const SingleEvent = () => {
       }
     }
   }
+
+  useSEO({
+    title: `${name} | NSS VIIT Pune · Initiative Details`,
+    description: text || `Explore details, photos, and impact reports from ${name} organized by NSS VIIT Pune.`,
+    keywords: `${name}, NSS VIIT event, ${venue || 'Pune'}, NSS initiatives`,
+    canonical: `https://nss-viit.vercel.app/events/singleevent?name=${encodeURIComponent(name)}`,
+    ogImage: img && img.length > 0 ? toAssetUrl(img[0]) : undefined,
+  });
 
   useEffect(() => {
     document.title = `${name} | NSS VIIT Pune`;

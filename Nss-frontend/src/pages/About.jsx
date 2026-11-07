@@ -1,8 +1,16 @@
+import useSEO from '../components/useSEO';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const About = () => {
+  useSEO({
+    title: 'About Us | NSS VIIT Pune · 18-Year Legacy & Heritage',
+    description: 'Learn about the origin, mission, values, and 18-year legacy of NSS VIIT Unit A-70 (2008–2026). Explore our rural adoption at Jamgaon and transition to NSS VIT Unit A-65.',
+    keywords: 'About NSS VIIT, NSS VIIT history, Jamgaon adoption, NSS motto Not Me But You, VIIT social initiatives',
+    canonical: 'https://nss-viit.vercel.app/about',
+  });
+
   useEffect(() => {
     document.title = 'NSS VIIT Pune | About';
   }, []);

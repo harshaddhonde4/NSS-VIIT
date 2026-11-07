@@ -79,7 +79,7 @@ function Footer() {
           <a href="https://www.facebook.com/www.nssviit.org/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Facebook">
             <FaFacebookF />
           </a>
-          <a href="https://www.instagram.com/nss.a_70/" target="_blank" rel="noreferrer">
+          <a href="https://www.instagram.com/nss.a_70/" target="_blank" rel="noreferrer" aria-label="NSS VIIT Instagram">
             <FaInstagram />
           </a>
           <a href="https://www.linkedin.com/company/national-service-scheme-nss-viit/" target="_blank" rel="noreferrer" aria-label="NSS VIIT LinkedIn">

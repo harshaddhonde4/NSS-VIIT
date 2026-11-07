@@ -4,6 +4,7 @@ import './css/home.css';
 import { Link } from 'react-router-dom';
 import { FaLinkedin, FaInstagram, FaExternalLinkAlt } from 'react-icons/fa';
 import { toAssetUrl } from '../utils/assetHelper';
+import useSEO from '../components/useSEO';
 
 const img1 = toAssetUrl('/images/GramSetu_2026/hero_banner.webp');
 const img2 = toAssetUrl('/images/reports/11_Blood_Donation_Camp/img_07.webp');
@@ -18,6 +19,13 @@ import ScrollTrigger from 'react-scroll-trigger';
 import Partnership from './Partnerships';
 
 const Home = () => {
+  useSEO({
+    title: 'NSS VIIT Pune | National Service Scheme · Unit A-70',
+    description: 'Official portal of NSS VIIT Pune (Unit A-70, 2008–2026). Discover 18 years of transformative rural development at Jamgaon, blood donation drives, SPO police bandobast, and youth empowerment.',
+    keywords: 'NSS VIIT, NSS VIIT Pune, National Service Scheme VIIT, Gram-Setu, Jamgaon, NSS Unit A-70, NSS VIT Pune, social work Pune engineering',
+    canonical: 'https://nss-viit.vercel.app/',
+  });
+
   useEffect(() => {
     document.title = 'NSS VIIT Pune | National Service Scheme';
   }, []);
@@ -379,7 +387,7 @@ const Home = () => {
             <div className="yt-card" data-aos="fade-up">
               <iframe
                 src="https://www.youtube.com/embed/BpmAQ0vZqzI?si=kswNR7ylTQ4v8WMd"
-                title="NSS VIIT Pune video"
+                title="NSS VIIT Annual Camp Documentary Video"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -389,7 +397,7 @@ const Home = () => {
             <div className="yt-card" data-aos="fade-up" data-aos-delay="80">
               <iframe
                 src="https://www.youtube.com/embed/27fwd07CkZQ?si=kiYPj3WRRXm3djv4"
-                title="NSS VIIT Pune video"
+                title="NSS VIIT Swachhata & Social Awareness Video"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -399,7 +407,7 @@ const Home = () => {
             <div className="yt-card" data-aos="fade-up" data-aos-delay="160">
               <iframe
                 src="https://www.youtube.com/embed/m_V9093Wpow?si=gaeUnG4OFoSw3xi0"
-                title="NSS VIIT Pune video"
+                title="NSS VIIT Youth Leadership & Cultural Drive Video"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
