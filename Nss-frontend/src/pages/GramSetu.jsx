@@ -648,6 +648,17 @@ const GramSetu = () => {
                 <span>Visit Official Instagram Page (@nss.a_70) ↗</span>
               </a>
 
+              <a
+                href="https://www.instagram.com/reel/DThn17diOxK/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gs-insta-follow-btn"
+                style={{ background: 'rgba(236, 72, 153, 0.15)', borderColor: 'rgba(236, 72, 153, 0.4)', color: '#F472B6' }}
+              >
+                <FaInstagram />
+                <span>Featured Reel: &quot;Served, Not Flexed&quot; ↗</span>
+              </a>
+
               <div className="gs-reels-mode-toggle">
                 <span className="mode-label">Viewing Mode:</span>
                 <button
@@ -806,6 +817,51 @@ const GramSetu = () => {
                 <div className="gs-extra-info">
                   <h4>Camp Cinematic Moments &amp; Volunteer Energy ⚡</h4>
                   <p>7 days of Shramdaan, rural camaraderie, and purposeful youth leadership summarized.</p>
+                </div>
+              </div>
+
+              <div className="gs-extra-card">
+                <div className="gs-extra-video-wrap">
+                  <video
+                    src={toAssetUrl("/videos/reels/nss_camp_served_not_flexed.mp4")}
+                    poster={toAssetUrl("/videos/reels/nss_camp_served_not_flexed_poster.jpg")}
+                    controls
+                    playsInline
+                    preload="none"
+                    className="gs-extra-video"
+                  />
+                </div>
+                <div className="gs-extra-info">
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.8rem', gap: '0.8rem', flexWrap: 'wrap' }}>
+                    <span style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      background: 'rgba(236, 72, 153, 0.15)',
+                      color: '#F472B6',
+                      padding: '0.3rem 0.9rem',
+                      borderRadius: '20px',
+                      fontSize: '1.15rem',
+                      fontWeight: 700
+                    }}>
+                      <FaInstagram /> @vit_k_diariies
+                    </span>
+                    <a
+                      href="https://www.instagram.com/reel/DThn17diOxK/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: '#93C5FD',
+                        fontSize: '1.2rem',
+                        fontWeight: 600,
+                        textDecoration: 'none'
+                      }}
+                    >
+                      View on Instagram ↗
+                    </a>
+                  </div>
+                  <h4>NSS Camp Spotlight: &quot;Served, Not Flexed&quot; 🌟🎬</h4>
+                  <p>Viral student media chronicle capturing the spirit, sweat, camaraderie, and selfless leadership of NSS Camp volunteers.</p>
                 </div>
               </div>
             </div>
